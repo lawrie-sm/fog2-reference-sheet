@@ -32,6 +32,20 @@ Experience - Experience - trop quality is the average of Experience and elan. Ea
 Elan	- Elan
 Reserve - not used
 
+QUALITY:
+0 = untrained
+50 = raw
+75 = below average
+100 = avg
+200 = superior
+300 = elite
+
+ARMOUR
+0 = none
+50 = protected
+100 = armoured
+300 = fully armoured
+
 These are all capabilities:
 Light_Artillery
 Heavy_Artillery	
