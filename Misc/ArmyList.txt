@@ -1,0 +1,4619 @@
+// Note: Allies, if any, must be listed consecutively from ALLIES1 to ALLIES.
+
+// NOTE: *** Add new army lists at the end of the file, otherwise previously saved campaigns will not work correctly.
+
+// CORE ARMY LISTS (RISE OF ROME)
+
+// POTLUCK - this MUST be the first chunk in the file.
+
+[POTLUCK_CLASSICAL]
+NAME IDS_SKIRMISH_ARMYLIST_RANDOM1
+YEARS 0 4000
+LONGMIN -10000
+LONGMAX 200
+LATMIN -200
+LATMAX 10000
+INTRO IDS_ARMY_INTRO_POTLUCK
+SORTNAME AAAAAAAA
+
+// 500 BC - 319 AD
+[EC_INDIAN]
+SIDEID 17
+NAME IDS_ARMY_EC_INDIAN
+YEARS 2500 3319 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 63
+LONGMAX 94
+LATMIN 5
+LATMAX 35
+INTRO IDS_ARMY_INTRO_INDIAN
+SORTNAME Indian
+MAPSET Tropical
+ 
+UNIT_0 Indian_Elephants
+// fixed quantity for 2000 point army
+MIN_0 2
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 11
+ 
+UNIT_1 Indian_H_Chariots
+MIN_1 0
+MAX_1 3
+ 
+UNIT_2 Indian_L_Chariots
+MIN_2 2
+MAX_2 5
+ 
+UNIT_3 Indian_Cavalry
+MIN_3 2
+MAX_3 9
+ 
+UNIT_4 Indian_Archers
+MIN_4 7
+MAX_4 30
+ 
+UNIT_5 Indian_Javelinmen
+MIN_5 2
+MAX_5 10
+ 
+UNIT_6 Nomad_LH
+MIN_6 0
+MAX_6 3
+ 
+UNIT_7 Indian_Light_Archers
+MIN_7 0
+MAX_7 3
+ 
+UNIT_8 Heavy_Artillery
+MIN_8 0
+MAX_8 1
+ 
+UNIT_9 Light_Artillery
+MIN_9 0
+MAX_9 1
+
+// 490-275 BC
+[ITALIAN_HILL]
+SIDEID 69
+NAME IDS_ARMY_ITALIAN_HILL
+YEARS 2510 2725 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 11
+LONGMAX 16
+LATMIN 40
+LATMAX 44
+INTRO IDS_ARMY_INTRO_ITALIAN_HILL
+SORTNAME Italian
+MAPSET Medi
+ 
+UNIT_0 Bruttian_Veterans
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 5
+ 
+UNIT_1 Italian_Foot
+MIN_1 11
+MAX_1 56
+ 
+UNIT_2 Grk_Arm_Cav
+MIN_2 1
+MAX_2 4
+ 
+UNIT_3 Light_Javelins
+MIN_3 2
+MAX_3 12
+
+// 490-260 BC
+[UMBRIAN]
+SIDEID 68
+NAME IDS_ARMY_UMBRIAN
+YEARS 2510 2740 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 11
+LONGMAX 13
+LATMIN 42
+LATMAX 44
+INTRO IDS_ARMY_INTRO_UMBRIAN
+SORTNAME Umbrian
+MAPSET Medi
+ALLIES1 SAMNITE
+ALLIES2 M_GALLIC
+//ALLIES3 L_ETRUSCAN
+ 
+UNIT_0 Citizen_Hoplites
+// fixed quantity for 2000 point army
+MIN_0 2
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 12
+ 
+UNIT_1 Italian_Foot
+MIN_1 8
+MAX_1 48
+ 
+UNIT_2 Grk_Arm_Cav
+MIN_2 1
+MAX_2 4
+ 
+UNIT_3 Light_Javelins
+MIN_3 2
+MAX_3 12
+
+// 492 - 170 BC
+[MOUNTAIN_INDIAN]
+SIDEID 51
+NAME IDS_ARMY_MOUNTAIN_INDIAN
+YEARS 2508 2830 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 60
+LONGMAX 75
+LATMIN 30
+LATMAX 40
+INTRO IDS_ARMY_INTRO_MOUNTAIN_INDIAN
+SORTNAME Mountain
+MAPSET MidEast
+ALLIES1 EC_INDIAN
+ 
+UNIT_0 Indian_Elephants
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 3
+ 
+UNIT_1 Hillmen
+MIN_1 7
+MAX_1 36
+ 
+UNIT_2 Light_Javelins
+MIN_2 0
+MAX_2 8
+ 
+UNIT_3 Medium_Archers
+MIN_3 7
+MAX_3 36
+ 
+UNIT_4 Light_Archers
+MIN_4 2
+MAX_4 8
+ 
+UNIT_5 LH_Javelin
+MIN_5 3
+MAX_5 12 
+
+// 480-145 BC
+[LIGURIAN]
+SIDEID 49
+NAME IDS_ARMY_LIGURIAN
+YEARS 2520 2855 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 7
+LONGMAX 10
+LATMIN 43
+LATMAX 45
+INTRO IDS_ARMY_INTRO_LIGURIAN
+SORTNAME Ligurian
+MAPSET Medi
+ 
+UNIT_0 Light_Javelins
+// fixed quantity for 2000 point army
+MIN_0 6
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 30
+ 
+UNIT_1 Hillmen
+MIN_1 11
+MAX_1 70
+ 
+UNIT_2 Noble_Cavalry_Prot
+MIN_2 0
+MAX_2 3
+
+// 420-203 BC
+[APULIAN]
+SIDEID 55
+NAME IDS_ARMY_APULIAN
+YEARS 2580 2797 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 14
+LONGMAX 18
+LATMIN 40
+LATMAX 42
+INTRO IDS_ARMY_INTRO_APULIAN
+SORTNAME Apulian
+MAPSET Medi
+ 
+UNIT_0 Light_Javelins
+// fixed quantity for 2000 point army
+MIN_0 2
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 12
+ 
+UNIT_1 Italian_Foot
+MIN_1 11
+MAX_1 52
+ 
+UNIT_2 Vet_Arm_Cavalry
+MIN_2 4
+MAX_2 14
+
+// 420-203 BC
+[BRUTTIAN]
+SIDEID 54
+NAME IDS_ARMY_BRUTTIAN
+YEARS 2580 2797 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 15
+LONGMAX 17
+LATMIN 38
+LATMAX 41
+INTRO IDS_ARMY_INTRO_BRUTTIAN
+SORTNAME Bruttian
+MAPSET Medi
+ 
+UNIT_0 Bruttian_Veterans
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 11
+ 
+UNIT_1 Italian_Foot
+MIN_1 11
+MAX_1 44
+ 
+UNIT_2 Vet_Arm_Cavalry
+MIN_2 2
+MAX_2 7
+ 
+UNIT_3 Light_Javelins
+MIN_3 2
+MAX_3 12
+
+// 355-272 BC
+[SAMNITE]
+SIDEID 66
+NAME IDS_ARMY_SAMNITE
+YEARS 2645 2728 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 12
+LONGMAX 16
+LATMIN 40
+LATMAX 43
+INTRO IDS_ARMY_INTRO_SAMNITE
+SORTNAME Samnite
+MAPSET Medi
+ALLIES1 M_GALLIC
+ALLIES2 UMBRIAN
+ALLIES3 APULIAN
+ALLIES4 ITALIAN_HILL
+//ALLIES5 E_CAMPANIAN
+//ALLIES6 L_ETRUSCAN
+ 
+UNIT_0 Vet_Samnite_Foot
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 11
+ 
+UNIT_1 Samnite_Foot
+MIN_1 11
+MAX_1 44
+ 
+UNIT_2 Grk_arm_cav
+MIN_2 2
+MAX_2 4
+ 
+UNIT_3 Light_Javelins
+MIN_3 2
+MAX_3 12
+
+UNIT_4 Vet_Arm_Cavalry
+MIN_4 0
+MAX_4 3
+
+// 350 BC - 24 AD
+[E_SARMATIAN]
+SIDEID 33
+NAME IDS_ARMY_E_SARMATIAN
+YEARS 2650 3024 // Note start era from 3000 BC
+DEPLOYMENT Skythian
+LONGMIN 25
+LONGMAX 54
+LATMIN 44
+LATMAX 55
+INTRO IDS_ARMY_INTRO_SARMATIAN
+SORTNAME Sarmatian
+MAPSET North
+ALLIES1 L_SKYTHIAN
+ 
+UNIT_0 Noble_Lancers_Arm
+// fixed quantity for 2000 point army
+MIN_0 4
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 12
+ 
+UNIT_1 Noble_Lancers_Prot
+MIN_1 4
+MAX_1 24
+ 
+UNIT_2 Barbarian_Light_Archers
+MIN_2 0
+MAX_2 8
+ 
+UNIT_3 Barbarian_Light_Javelins
+MIN_3 0
+MAX_3 6
+ 
+UNIT_4 Barbarian_Light_Slingers
+MIN_4 0
+MAX_4 2
+
+UNIT_5 Nomad_LH
+MIN_5 0
+MAX_5 4
+
+UNIT_6 Hillmen
+MIN_6 0
+MAX_6 8
+
+UNIT_7 Levies
+MIN_7 0
+MAX_7 6
+
+// 350 BC - 24 AD
+[E_RHOXOLANI]
+SIDEID 33
+NAME IDS_ARMY_E_RHOXOLANI
+YEARS 2650 3024 // Note start era from 3000 BC
+DEPLOYMENT Skythian
+LONGMIN 25
+LONGMAX 54
+LATMIN 44
+LATMAX 55
+INTRO IDS_ARMY_INTRO_SARMATIAN
+SORTNAME Rhoxolani
+MAPSET North
+ALLIES1 E_SARMATIAN
+ALLIES2 L_SKYTHIAN
+ 
+UNIT_0 Noble_Lancers_Arm
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 10
+ 
+UNIT_1 Rhoxolani_Cavalry
+MIN_1 8
+MAX_1 24
+ 
+UNIT_2 Barbarian_Light_Archers
+MIN_2 0
+MAX_2 8
+ 
+UNIT_3 Barbarian_Light_Javelins
+MIN_3 0
+MAX_3 6
+ 
+UNIT_4 Barbarian_Light_Slingers
+MIN_4 0
+MAX_4 2
+
+UNIT_5 Nomad_LH
+MIN_5 0
+MAX_5 4
+
+UNIT_6 Hillmen
+MIN_6 0
+MAX_6 8
+
+UNIT_7 Levies
+MIN_7 0
+MAX_7 6
+
+// 350 BC - 25 AD
+[ILLYRIAN]
+SIDEID 16
+NAME IDS_ARMY_ILLYRIAN
+YEARS 2650 3025 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 13
+LONGMAX 23
+LATMIN 39
+LATMAX 47
+INTRO IDS_ARMY_INTRO_ILLYRIAN
+SORTNAME Illyrian
+MAPSET Medi
+ 
+UNIT_0 Thureophoroi
+// fixed quantity for 2000 point army
+MIN_0 8
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 48
+ 
+UNIT_1 LH_Javelin
+MIN_1 0
+MAX_1 6
+ 
+UNIT_2 Light_Javelins
+MIN_2 0
+MAX_2 6
+ 
+UNIT_3 Light_Slingers
+MIN_3 0
+MAX_3 4
+ 
+UNIT_4 Light_Archers
+MIN_4 0
+MAX_4 4
+
+
+// 350 BC - 46 AD
+[L_THRACIAN]
+SIDEID 41
+NAME IDS_ARMY_L_THRACIAN
+YEARS 2650 2954 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 19
+LONGMAX 30
+LATMIN 40
+LATMAX 50
+INTRO IDS_ARMY_INTRO_THRACIAN
+SORTNAME Thracian
+MAPSET North
+ 
+UNIT_0 Thracians
+// fixed quantity for 2000 point army
+MIN_0 8
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 32
+ 
+UNIT_1 Noble_Cavalry_Arm
+MIN_1 0
+MAX_1 4
+ 
+UNIT_2 LH_Javelin
+MIN_2 2
+MAX_2 16
+ 
+UNIT_3 LH_Bow
+MIN_3 0
+MAX_3 16
+ 
+UNIT_4 Light_Javelins
+MIN_4 3
+MAX_4 8
+ 
+UNIT_5 Light_Archers
+MIN_5 0
+MAX_5 4
+ 
+UNIT_6 Light_Slingers
+MIN_6 0
+MAX_6 4
+ 
+UNIT_7 Levies
+MIN_7 0
+MAX_7 4
+ 
+// 348-85 BC
+[E_BOSPORAN]
+SIDEID 6
+NAME IDS_ARMY_E_BOSPORAN
+YEARS 2652 2915 // Note start era from 3000 BC
+DEPLOYMENT Skythian
+LONGMIN 27
+LONGMAX 45
+LATMIN 43
+LATMAX 52
+INTRO IDS_ARMY_INTRO_BOSPORAN
+SORTNAME Bosporan
+MAPSET North
+ALLIES1 E_SARMATIAN
+ALLIES2 L_SKYTHIAN
+ 
+UNIT_0 Noble_Lancers_Arm
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 8
+ 
+UNIT_1 Noble_Lancers_Prot
+MIN_1 0
+MAX_1 4
+ 
+UNIT_2 Barbarian_Light_Archers
+MIN_2 2
+MAX_2 8
+ 
+UNIT_3 Barbarian_Light_Javelins
+MIN_3 0
+MAX_3 6
+ 
+UNIT_4 Barbarian_Light_Slingers
+MIN_4 0
+MAX_4 4
+
+UNIT_5 Nomad_LH
+MIN_5 3
+MAX_5 12
+
+UNIT_6 Hillmen
+MIN_6 2
+MAX_6 8
+
+UNIT_7 Nomad_Cavalry
+MIN_7 0
+MAX_7 8
+
+UNIT_8 Thureophoroi
+MIN_8 0
+MAX_8 4
+
+UNIT_9 Thracians
+MIN_9 0
+MAX_9 4
+
+UNIT_10 Warband
+MIN_10 0
+MAX_10 4
+
+UNIT_11 Merc_Hoplites
+MIN_11 0
+MAX_11 4
+
+// 331 BC - 252 AD
+[E_ARMENIAN]
+SIDEID 5
+NAME IDS_ARMY_E_ARMENIAN
+YEARS 2669 3252 // Note start era from 3000 BC
+DEPLOYMENT Skythian
+LONGMIN 38
+LONGMAX 52
+LATMIN 36
+LATMAX 44
+INTRO IDS_ARMY_INTRO_ARMENIAN
+SORTNAME Armenian
+MAPSET MidEast
+ 
+UNIT_0 Cataphracts
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 10
+ 
+UNIT_1 LH_Bow
+MIN_1 5
+MAX_1 12
+ 
+UNIT_2 Hillmen
+MIN_2 6
+MAX_2 26
+ 
+UNIT_3 Light_Archers
+MIN_3 2
+MAX_3 14
+ 
+UNIT_4 Medium_Archers
+MIN_4 0
+MAX_4 8
+ 
+UNIT_5 Light_Slingers
+MIN_5 0
+MAX_5 2
+
+// 331 BC - 252 AD
+[E_IBERIAN]
+SIDEID 47
+NAME IDS_ARMY_E_IBERIAN
+YEARS 2669 3252 // Note start era from 3000 BC
+DEPLOYMENT Skythian
+LONGMIN 38
+LONGMAX 50
+LATMIN 38
+LATMAX 44
+INTRO IDS_ARMY_INTRO_IBERIAN
+SORTNAME Iberian
+MAPSET MidEast
+ 
+UNIT_0 Noble_Lancers_Arm
+// fixed quantity for 2000 point army
+MIN_0 2
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 7
+ 
+UNIT_1 LH_Bow
+MIN_1 0
+MAX_1 7
+ 
+UNIT_2 Hillmen
+MIN_2 11
+MAX_2 50
+ 
+UNIT_3 Light_Archers
+MIN_3 0
+MAX_3 7
+ 
+UNIT_4 Noble_Lancers_Prot
+MIN_4 0
+MAX_4 3
+ 
+UNIT_5 Light_Slingers
+MIN_5 3
+MAX_5 11
+
+UNIT_6 Light_Javelins
+MIN_6 0
+MAX_6 7
+
+UNIT_7 Nomad_LH
+MIN_7 0
+MAX_7 3
+ 
+// 320-261 BC
+[M_MACEDONIAN]
+SIDEID 22
+NAME IDS_ARMY_M_MACEDONIAN
+YEARS 2680 2739 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 19
+LONGMAX 28
+LATMIN 36
+LATMAX 43
+INTRO IDS_ARMY_INTRO_MACEDON2
+SORTNAME Macedonian
+MAPSET Medi
+ 
+UNIT_0 Pike
+// fixed quantity for 2000 point army
+MIN_0 2
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 7
+ 
+UNIT_1 Pike_Vet
+MIN_1 1
+MAX_1 3
+ 
+UNIT_2 Thureophoroi
+MIN_2 2
+MAX_2 7
+ 
+UNIT_3 Light_Javelins
+MIN_3 0
+MAX_3 3
+ 
+UNIT_4 Cretan_Archers
+MIN_4 0
+MAX_4 3
+ 
+UNIT_5 Light_Archers
+MIN_5 0
+MAX_5 3
+ 
+UNIT_6 Light_Slingers
+MIN_6 0
+MAX_6 3
+ 
+UNIT_7 LH_Javelin
+MIN_7 1
+MAX_7 3
+ 
+UNIT_8 Xystophoroi
+MIN_8 2
+MAX_8 5
+ 
+UNIT_9 Grk_arm_cav
+MIN_9 0
+MAX_9 2
+ 
+UNIT_10 Vet_Arm_Cavalry
+MIN_10 0
+MAX_10 2
+
+UNIT_11 Merc_Hoplites
+MIN_11 0
+MAX_11 5
+
+UNIT_12 Heavy_Artillery
+MIN_12 0
+MAX_12 2
+
+UNIT_13 Citizen_Hoplites
+MIN_13 0
+MAX_13 3
+
+UNIT_14 Thracians
+MIN_14 0
+MAX_14 3
+
+UNIT_15 Thorakitai
+MIN_15 0
+MAX_15 3
+
+UNIT_16 Noble_Cavalry_Arm
+MIN_16 0
+MAX_16 3
+
+UNIT_17 Elephants
+MIN_17 0
+MAX_17 3
+
+UNIT_18 Superior_Warband
+MIN_18 0
+MAX_18 5
+
+// 300-206 BC
+[E_SELEUCID]
+SIDEID 35
+NAME IDS_ARMY_E_SELEUCID
+YEARS 2700 2794 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 24
+LONGMAX 70
+LATMIN 31
+LATMAX 42
+INTRO IDS_ARMY_INTRO_SELEUCID1
+SORTNAME Seleucid
+MAPSET MidEast
+ 
+UNIT_0 Pike
+// fixed quantity for 2000 point army
+MIN_0 2
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 7
+ 
+UNIT_1 Pike_Vet
+MIN_1 1
+MAX_1 3
+ 
+UNIT_2 Thureophoroi
+MIN_2 0
+MAX_2 3
+ 
+UNIT_3 Light_Javelins
+MIN_3 0
+MAX_3 3
+ 
+UNIT_4 Cretan_Archers
+MIN_4 0
+MAX_4 3
+ 
+UNIT_5 Persian_Light_Archers
+MIN_5 0
+MAX_5 3
+ 
+UNIT_6 Persian_Light_Slingers
+MIN_6 0
+MAX_6 3
+ 
+UNIT_7 LH_Javelin
+MIN_7 1
+MAX_7 3
+ 
+UNIT_8 Xystophoroi
+MIN_8 2
+MAX_8 5
+ 
+UNIT_9 Grk_arm_cav
+MIN_9 0
+MAX_9 2
+ 
+UNIT_10 Vet_Arm_Cavalry
+MIN_10 0
+MAX_10 2
+
+UNIT_11 Thorakitai
+MIN_11 0
+MAX_11 3
+
+UNIT_12 Heavy_Artillery
+MIN_12 0
+MAX_12 2
+
+UNIT_13 Levies
+MIN_13 0
+MAX_13 3
+
+UNIT_14 Thracians
+MIN_14 0
+MAX_14 3
+
+UNIT_15 Nomad_LH
+MIN_15 0
+MAX_15 3
+
+UNIT_16 LH_Bow
+MIN_16 0
+MAX_16 3
+
+UNIT_17 Elephants
+MIN_17 0
+MAX_17 5
+
+UNIT_18 Arab_Camelry
+MIN_18 0
+MAX_18 1
+
+UNIT_19 Superior_Warband
+MIN_19 0
+MAX_19 1
+
+UNIT_20 Noble_Cavalry_Arm
+MIN_20 0
+MAX_20 3
+
+UNIT_21 Scythed_Chariots
+MIN_21 0
+MAX_21 2
+
+// 320-167 BC
+[E_PTOLEMAIC]
+SIDEID 30
+NAME IDS_ARMY_E_PTOLEMAIC
+YEARS 2680 2833 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 20
+LONGMAX 38
+LATMIN 15
+LATMAX 41
+INTRO IDS_ARMY_INTRO_PTOLEMAIC
+SORTNAME Ptolemaic
+MAPSET MidEast
+ 
+UNIT_0 Pike
+// fixed quantity for 2000 point army
+MIN_0 2
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 7
+ 
+UNIT_1 Pike_Vet
+MIN_1 1
+MAX_1 3
+ 
+UNIT_2 Thureophoroi
+MIN_2 0
+MAX_2 3
+ 
+UNIT_3 Light_Javelins
+MIN_3 0
+MAX_3 3
+ 
+UNIT_4 Cretan_Archers
+MIN_4 0
+MAX_4 3
+ 
+UNIT_5 Light_Archers
+MIN_5 0
+MAX_5 3
+ 
+UNIT_6 Light_Slingers
+MIN_6 0
+MAX_6 3
+ 
+UNIT_7 LH_Javelin
+MIN_7 1
+MAX_7 3
+ 
+UNIT_8 Xystophoroi
+MIN_8 2
+MAX_8 5
+ 
+UNIT_9 Grk_arm_cav
+MIN_9 0
+MAX_9 2
+ 
+UNIT_10 Vet_Arm_Cavalry
+MIN_10 0
+MAX_10 2
+
+UNIT_11 Pike_Raw
+MIN_11 0
+MAX_11 3
+
+UNIT_12 Heavy_Artillery
+MIN_12 0
+MAX_12 2
+
+UNIT_13 Thureophoroi_Raw
+MIN_13 0
+MAX_13 3
+
+UNIT_14 Thracians
+MIN_14 0
+MAX_14 3
+
+UNIT_15 Superior_Warband
+MIN_15 0
+MAX_15 1
+
+UNIT_16 Arab_Camelry
+MIN_16 0
+MAX_16 1
+
+UNIT_17 Elephants
+MIN_17 0
+MAX_17 3
+
+UNIT_18 Noble_Cavalry_Arm
+MIN_18 0
+MAX_18 3
+
+// 320-145 BC
+[E_ATROPATENE]
+SIDEID 45
+NAME IDS_ARMY_E_ATROPATENE
+YEARS 2680 2855 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 44
+LONGMAX 50
+LATMIN 36
+LATMAX 40
+INTRO IDS_ARMY_INTRO_ATROPATENE
+SORTNAME Atropatene
+MAPSET MidEast
+ 
+UNIT_0 Persian_Cav_Jav_Arm
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 12
+ 
+UNIT_1 Hillmen
+MIN_1 8
+MAX_1 48
+
+UNIT_2 Light_Javelins
+MIN_2 2
+MAX_2 8
+ 
+UNIT_3 Persian_Light_Archers
+MIN_3 2
+MAX_3 12
+ 
+UNIT_4 LH_Bow
+MIN_4 2
+MAX_4 9
+
+// 320-476 BC
+[CAUCASIAN]
+SIDEID 57
+NAME IDS_ARMY_CAUCASIAN
+YEARS 2680 3476 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 40
+LONGMAX 51
+LATMIN 40
+LATMAX 45
+INTRO IDS_ARMY_INTRO_CAUCASIAN
+SORTNAME Caucasian
+MAPSET MidEast
+ 
+UNIT_0 Persian_Cav_Jav_Arm
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 5
+ 
+UNIT_1 Hillmen
+MIN_1 8
+MAX_1 56
+
+UNIT_2 Light_Javelins
+MIN_2 2
+MAX_2 8
+ 
+UNIT_3 Persian_Light_Archers
+MIN_3 2
+MAX_3 12
+ 
+UNIT_4 LH_Bow
+MIN_4 2
+MAX_4 7
+
+UNIT_5 Persian_Cav_Jav_Prot
+MIN_5 0
+MAX_5 5
+
+// 312 BC - 476 AD
+[LPI_ARAB]
+SIDEID 44
+NAME IDS_ARMY_LPI_ARAB
+YEARS 2688 3476 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 33
+LONGMAX 60
+LATMIN 12
+LATMAX 33
+INTRO IDS_ARMY_INTRO_ARAB
+SORTNAME Arab
+MAPSET Desert
+
+UNIT_0 LH_Javelin
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 10
+ 
+UNIT_1 Light_Javelins
+MIN_1 0
+MAX_1 6
+ 
+UNIT_2 Hillmen
+MIN_2 14
+MAX_2 48
+ 
+UNIT_3 Light_Archers
+MIN_3 0
+MAX_3 7
+
+UNIT_4 Medium_Archers
+MIN_4 0
+MAX_4 3
+
+UNIT_5 Light_Slingers
+MIN_5 0
+MAX_5 6
+
+UNIT_6 Arab_Camelry
+MIN_6 0
+MAX_6 10
+
+UNIT_7 Vet_Arm_Cavalry
+MIN_7 0
+MAX_7 4
+
+UNIT_8 Levies
+MIN_8 0
+MAX_8 4
+
+// 300 - 101 BC
+[M_GALLIC]
+SIDEID 10
+NAME IDS_ARMY_M_GALLIC
+YEARS 2700 2899 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN -5
+LONGMAX 30
+LATMIN 42
+LATMAX 54
+INTRO IDS_ARMY_INTRO_GALLIC
+SORTNAME Gallic
+MAPSET North
+ 
+UNIT_0 Celtic_Chariots
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 10
+ 
+UNIT_1 Noble_Cavalry_Arm
+MIN_1 0
+MAX_1 4
+ 
+UNIT_2 Noble_Cavalry_Prot
+MIN_2 2
+MAX_2 9
+ 
+UNIT_3 Superior_Warband
+MIN_3 0
+MAX_3 6
+ 
+UNIT_4 Warband
+MIN_4 3
+MAX_4 16
+ 
+UNIT_5 Medium_Warband
+MIN_5 0
+MAX_5 10
+
+UNIT_6 Barbarian_Light_Javelins
+MIN_6 0
+MAX_6 4
+
+UNIT_7 Barbarian_Light_Archers
+MIN_7 0
+MAX_7 2
+
+UNIT_8 Barbarian_Light_Slingers
+MIN_8 0
+MAX_8 2
+
+UNIT_9 Levies
+MIN_9 0
+MAX_9 4
+
+// 300 BC - 50 AD
+[L_SKYTHIAN]
+SIDEID 36
+NAME IDS_ARMY_L_SKYTHIAN
+YEARS 2700 3050 // Note start era from 3000 BC
+DEPLOYMENT Skythian
+LONGMIN 25
+LONGMAX 90
+LATMIN 43
+LATMAX 60
+INTRO IDS_ARMY_INTRO_SKYTHIAN
+SORTNAME Skythian
+MAPSET Steppe
+ 
+UNIT_0 Noble_Lancers_Arm
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 7
+ 
+UNIT_1 Nomad_Cavalry
+MIN_1 4
+MAX_1 20
+ 
+UNIT_2 Nomad_LH
+MIN_2 4
+MAX_2 20
+ 
+UNIT_3 Persian_Light_Archers
+MIN_3 0
+MAX_3 10
+ 
+UNIT_4 Hillmen
+MIN_4 0
+MAX_4 10
+ 
+UNIT_5 Persian_Light_Slingers
+MIN_5 0
+MAX_5 2
+
+// 300 BC - 50 AD
+[L_SAKA]
+SIDEID 36
+NAME IDS_ARMY_L_SAKA
+YEARS 2700 3050 // Note start era from 3000 BC
+DEPLOYMENT Skythian
+LONGMIN 50
+LONGMAX 80
+LATMIN 18
+LATMAX 65
+INTRO IDS_ARMY_INTRO_SKYTHIAN
+SORTNAME Saka
+MAPSET Steppe
+ 
+UNIT_0 Cataphracts
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 7
+ 
+UNIT_1 Nomad_Cavalry
+MIN_1 4
+MAX_1 20
+ 
+UNIT_2 Nomad_LH
+MIN_2 4
+MAX_2 20
+ 
+UNIT_3 Persian_Light_Archers
+MIN_3 0
+MAX_3 10
+ 
+UNIT_4 Hillmen
+MIN_4 0
+MAX_4 10
+ 
+UNIT_5 Persian_Light_Slingers
+MIN_5 0
+MAX_5 2
+
+// 280-203 BC
+[L_CAMPANIAN]
+SIDEID 53
+NAME IDS_ARMY_L_CAMPANIAN
+YEARS 2720 2797 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 12
+LONGMAX 16
+LATMIN 40
+LATMAX 42
+INTRO IDS_ARMY_INTRO_CAMPANIAN
+SORTNAME Campanian
+MAPSET Medi
+ 
+UNIT_0 Citizen_Hoplites
+// fixed quantity for 2000 point army
+MIN_0 4
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 20
+ 
+UNIT_1 Italian_Foot
+MIN_1 4
+MAX_1 30
+ 
+UNIT_2 Vet_Arm_Cavalry
+MIN_2 2
+MAX_2 9
+ 
+UNIT_3 Light_Javelins
+MIN_3 2
+MAX_3 12
+
+// 300 - 10 BC
+[A_SPANISH]
+SIDEID 38
+NAME IDS_ARMY_A_SPANISH
+YEARS 2700 2990 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN -10
+LONGMAX 4
+LATMIN 36
+LATMAX 44
+INTRO IDS_ARMY_INTRO_SPANISH
+SORTNAME Spanish
+MAPSET Medi
+ 
+UNIT_0 Spanish_Scutarii
+// fixed quantity for 2000 point army
+MIN_0 6
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 30
+ 
+UNIT_1 Noble_Cavalry_Prot
+MIN_1 0
+MAX_1 6
+ 
+UNIT_2 LH_Javelin
+MIN_2 0
+MAX_2 8
+ 
+UNIT_3 Warband
+MIN_3 0
+MAX_3 8
+ 
+UNIT_4 Light_Javelins
+MIN_4 3
+MAX_4 25
+ 
+UNIT_5 Light_Slingers
+MIN_5 0
+MAX_5 8
+
+// 297-74 BC
+[BITHYNIAN]
+SIDEID 46
+NAME IDS_ARMY_BITHYNIAN
+YEARS 2703 2926 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 28
+LONGMAX 34
+LATMIN 39
+LATMAX 42
+INTRO IDS_ARMY_INTRO_BITHYNIAN
+SORTNAME Bithynian
+MAPSET Medi
+ 
+UNIT_0 Thracians
+// fixed quantity for 2000 point army
+MIN_0 4
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 22
+ 
+UNIT_1 Vet_Arm_Cavalry
+MIN_1 0
+MAX_1 5
+ 
+UNIT_2 LH_Javelin
+MIN_2 2
+MAX_2 5
+ 
+UNIT_3 Hillmen
+MIN_3 4
+MAX_3 22
+ 
+UNIT_4 Light_Javelins
+MIN_4 3
+MAX_4 8
+ 
+UNIT_5 Light_Archers
+MIN_5 0
+MAX_5 5
+ 
+UNIT_6 Superior_Warband
+MIN_6 0
+MAX_6 5
+ 
+UNIT_7 Thureophoroi
+MIN_7 0
+MAX_7 7
+
+// 281-111 BC
+[VE_PONTIC]
+SIDEID 29
+NAME IDS_ARMY_VE_PONTIC
+YEARS 2719 2889 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 20
+LONGMAX 42
+LATMIN 36
+LATMAX 43
+INTRO IDS_ARMY_INTRO_PONTIC
+SORTNAME Pontic
+MAPSET Medi
+ 
+UNIT_0 Pike
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 5
+ 
+UNIT_1 Thureophoroi
+MIN_1 2
+MAX_1 7
+
+UNIT_2 Thracians
+MIN_2 0
+MAX_2 5
+ 
+UNIT_3 Light_Javelins
+MIN_3 2
+MAX_3 5
+ 
+UNIT_4 Hillmen
+MIN_4 5
+MAX_4 20
+ 
+UNIT_5 Persian_Light_Archers
+MIN_5 2
+MAX_5 7
+ 
+UNIT_6 Persian_Light_Slingers
+MIN_6 0
+MAX_6 3
+ 
+UNIT_7 LH_Javelin
+MIN_7 1
+MAX_7 7
+ 
+UNIT_8 Persian_Cav_Jav_Arm
+MIN_8 2
+MAX_8 12
+ 
+UNIT_9 Warband
+MIN_9 0
+MAX_9 3
+
+// 280-272 BC
+[PYRRHIC]
+SIDEID 31
+NAME IDS_ARMY_PYRRHIC
+YEARS 2720 2728 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 12
+LONGMAX 26
+LATMIN 36
+LATMAX 43
+INTRO IDS_ARMY_INTRO_PYRRHIC
+SORTNAME Pyrrhic
+MAPSET Medi
+ALLIES1 BRUTTIAN
+ALLIES2 SAMNITE
+ALLIES3 L_SYRACUSAN
+ 
+UNIT_0 Pike
+// fixed quantity for 2000 point army
+MIN_0 4
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 12
+ 
+UNIT_1 Pike_Raw
+MIN_1 0
+MAX_1 5
+ 
+UNIT_2 Italian_Foot
+MIN_2 2
+MAX_2 8
+ 
+UNIT_3 Light_Javelins
+MIN_3 1
+MAX_3 3
+ 
+UNIT_4 Light_Archers
+MIN_4 1
+MAX_4 3
+ 
+UNIT_5 Light_Slingers
+MIN_5 1
+MAX_5 3
+ 
+UNIT_6 LH_Javelin
+MIN_6 0
+MAX_6 3
+ 
+UNIT_7 Xystophoroi
+MIN_7 1
+MAX_7 3
+ 
+UNIT_8 Superior_Warband
+MIN_8 0
+MAX_8 2
+ 
+UNIT_9 Grk_arm_cav
+MIN_9 1
+MAX_9 3
+ 
+UNIT_10 Vet_Arm_Cavalry
+MIN_10 1
+MAX_10 3
+
+UNIT_11 Elephants
+MIN_11 0
+MAX_11 2
+
+UNIT_12 Merc_Hoplites
+MIN_12 0
+MAX_12 4
+
+UNIT_13 Citizen_Hoplites
+MIN_13 0
+MAX_13 4
+
+UNIT_14 Raw_Hoplites
+MIN_14 0
+MAX_14 4
+
+// 280-263 BC
+[VEL_CARTHAGINIAN]
+SIDEID 8
+NAME IDS_ARMY_VEL_CARTHAGINIAN
+YEARS 2720 2737 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN -10
+LONGMAX 20
+LATMIN 30
+LATMAX 44
+INTRO IDS_ARMY_INTRO_CARTHAGINIAN
+SORTNAME Carthaginian
+MAPSET Medi
+ALLIES1 E_NUMIDIAN
+ALLIES2 WEST_GREEK
+ALLIES3 A_SPANISH
+ 
+UNIT_0 African_Spearmen
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 8
+ 
+UNIT_1 Light_Javelins
+MIN_1 3
+MAX_1 8
+ 
+UNIT_2 LH_Javelin
+MIN_2 3
+MAX_2 8
+ 
+UNIT_3 Noble_Cavalry_Prot
+MIN_3 1
+MAX_3 6
+ 
+UNIT_4 Noble_Cavalry_Arm
+MIN_4 0
+MAX_4 2
+ 
+UNIT_5 Vet_Arm_Cavalry
+MIN_5 0
+MAX_5 2
+ 
+UNIT_6 Balearic_Slingers
+MIN_6 0
+MAX_6 2
+ 
+UNIT_7 Merc_Hoplites
+MIN_7 0
+MAX_7 6
+ 
+UNIT_8 Hillmen
+MIN_8 0
+MAX_8 4
+ 
+UNIT_9 Warband
+MIN_9 0
+MAX_9 4
+
+UNIT_10 Thureophoroi
+MIN_10 0
+MAX_10 2
+ 
+UNIT_11 Italian_Foot
+MIN_11 0
+MAX_11 3
+
+UNIT_12 Spanish_Scutarii
+MIN_12 0
+MAX_12 8
+
+UNIT_13 Poeni_Foot
+MIN_13 0
+MAX_13 12
+
+UNIT_14 Heavy_Artillery
+MIN_14 0
+MAX_14 1
+
+
+// 280-228BC
+[E_HELL_GREEK]
+SIDEID 14
+NAME IDS_ARMY_E_HELL_GREEK
+YEARS 2720 2772 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 19
+LONGMAX 26
+LATMIN 35
+LATMAX 41
+INTRO IDS_ARMY_INTRO_GREEK2
+SORTNAME Greek
+MAPSET Medi
+
+UNIT_0 Citizen_Hoplites
+// fixed quantity for 2000 point army
+MIN_0 0 
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 6
+ 
+UNIT_1 Merc_Hoplites
+MIN_1 0
+MAX_1 6
+ 
+UNIT_2 Vet_Hoplites
+MIN_2 0
+MAX_2 5
+ 
+UNIT_3 Light_Archers
+MIN_3 0
+MAX_3 3
+ 
+UNIT_4 Light_Javelins
+MIN_4 2
+MAX_4 12
+ 
+UNIT_5 Thureophoroi
+MIN_5 4
+MAX_5 27
+ 
+UNIT_6 Thorakitai
+MIN_6 0
+MAX_6 3
+ 
+UNIT_7 Light_Slingers
+MIN_7 0
+MAX_7 3
+ 
+UNIT_8 Grk_arm_cav
+MIN_8 1
+MAX_8 3
+ 
+UNIT_9 LH_Javelin
+MIN_9 0
+MAX_9 3
+
+UNIT_10 Heavy_Artillery
+MIN_10 0
+MAX_10 1
+
+// 280-211 BC
+[L_SYRACUSAN]
+SIDEID 40
+NAME IDS_ARMY_L_SYRACUSAN
+YEARS 2720 2789 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 11
+LONGMAX 16
+LATMIN 36
+LATMAX 39
+INTRO IDS_ARMY_INTRO_SYRACUSAN
+SORTNAME Syracusan
+MAPSET Medi
+ALLIES1 WEST_GREEK
+ 
+UNIT_0 Merc_Hoplites
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 10
+ 
+UNIT_1 Vet_Hoplites
+MIN_1 0
+MAX_1 3
+ 
+UNIT_2 Citizen_Hoplites
+MIN_2 3
+MAX_2 8
+ 
+UNIT_3 Raw_Hoplites
+MIN_3 0
+MAX_3 8
+ 
+UNIT_4 Vet_Arm_Cavalry
+MIN_4 1
+MAX_4 4
+ 
+UNIT_5 Grk_arm_cav
+MIN_5 1
+MAX_5 4
+ 
+UNIT_6 LH_Javelin
+MIN_6 0
+MAX_6 4
+ 
+UNIT_7 Light_Archers
+MIN_7 1
+MAX_7 4
+ 
+UNIT_8 Light_Slingers
+MIN_8 1
+MAX_8 4
+ 
+UNIT_9 Light_Javelins
+MIN_9 0
+MAX_9 6
+ 
+UNIT_10 Warband
+MIN_10 0
+MAX_10 3
+
+UNIT_11 Italian_Foot
+MIN_11 0
+MAX_11 4
+
+UNIT_12 Spanish_Scutarii
+MIN_12 0
+MAX_12 3
+
+UNIT_13 Hillmen
+MIN_13 0
+MAX_13 3
+
+UNIT_14 Heavy_Artillery
+MIN_14 0
+MAX_14 3
+
+UNIT_15 Thureophoroi
+MIN_15 0
+MAX_15 2
+
+// 280-220 BC
+[MR_ROMAN]
+SIDEID 32
+NAME IDS_ARMY_MR_ROMAN
+YEARS 2720 2780 // Note start era from 3000 BC
+DEPLOYMENT Roman
+LONGMIN -10
+LONGMAX 34
+LATMIN 28
+LATMAX 45
+INTRO IDS_ARMY_INTRO_ROMAN1
+SORTNAME Roman
+MAPSET Medi
+ALLIES1 WEST_GREEK
+ 
+UNIT_0 Hast_Princ
+// fixed quantity for 2000 point army
+MIN_0 6
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 16
+ 
+UNIT_1 Hast_Princ_Vet
+MIN_1 0
+MAX_1 6
+ 
+UNIT_2 Raw_Legionaries
+MIN_2 0
+MAX_2 6
+ 
+UNIT_3 Light_Javelins
+MIN_3 6
+MAX_3 16
+ 
+UNIT_4 Grk_Arm_Cav
+MIN_4 1
+MAX_4 4
+ 
+UNIT_5 Triarii
+MIN_5 3
+MAX_5 8
+
+UNIT_6 Italian_Foot
+MIN_6 0
+MAX_6 12
+
+UNIT_7 Light_Slingers
+MIN_7 0
+MAX_7 2 
+
+// 280 - 63 BC
+[E_GALATIAN]
+SIDEID 70
+NAME IDS_ARMY_E_GALATIAN
+YEARS 2720 2937 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 18
+LONGMAX 36
+LATMIN 36
+LATMAX 44
+INTRO IDS_ARMY_INTRO_GALATIAN
+SORTNAME Galatian
+MAPSET Medi
+ 
+UNIT_0 Celtic_Chariots
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 4
+ 
+UNIT_1 Noble_Cavalry_Arm
+MIN_1 0
+MAX_1 4
+ 
+UNIT_2 Noble_Cavalry_Prot
+MIN_2 2
+MAX_2 9
+ 
+UNIT_3 Superior_Warband
+MIN_3 3
+MAX_3 14
+ 
+UNIT_4 Warband
+MIN_4 0
+MAX_4 16
+ 
+UNIT_5 Barbarian_Light_Javelins
+MIN_5 0
+MAX_5 6
+
+UNIT_6 Scythed_Chariots
+MIN_6 0
+MAX_6 2
+
+// 280-49BC
+[WEST_GREEK]
+SIDEID 14
+NAME IDS_ARMY_WEST_GREEK
+YEARS 2720 2951 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 2
+LONGMAX 16
+LATMIN 37
+LATMAX 41
+INTRO IDS_ARMY_INTRO_WEST_GREEK
+SORTNAME Greek
+MAPSET Medi
+
+UNIT_0 Citizen_Hoplites
+// fixed quantity for 2000 point army
+MIN_0 0 
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 12
+ 
+UNIT_1 Merc_Hoplites
+MIN_1 0
+MAX_1 9
+ 
+UNIT_2 Vet_Hoplites
+MIN_2 0
+MAX_2 1
+ 
+UNIT_3 Light_Archers
+MIN_3 0
+MAX_3 3
+ 
+UNIT_4 Light_Javelins
+MIN_4 2
+MAX_4 12
+ 
+UNIT_5 Thureophoroi
+MIN_5 0
+MAX_5 8
+ 
+UNIT_6 Raw_Hoplites
+MIN_6 6
+MAX_6 20
+ 
+UNIT_7 Light_Slingers
+MIN_7 0
+MAX_7 3
+ 
+UNIT_8 Grk_arm_cav
+MIN_8 1
+MAX_8 3
+ 
+UNIT_9 LH_Javelin
+MIN_9 0
+MAX_9 3
+
+UNIT_10 Heavy_Artillery
+MIN_10 0
+MAX_10 1
+
+// 262-236 BC
+[EL_CARTHAGINIAN]
+SIDEID 8
+NAME IDS_ARMY_EL_CARTHAGINIAN
+YEARS 2738 2764 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN -10
+LONGMAX 20
+LATMIN 30
+LATMAX 44
+INTRO IDS_ARMY_INTRO_CARTHAGINIAN
+SORTNAME Carthaginian
+MAPSET Medi
+ALLIES1 E_NUMIDIAN
+ALLIES2 WEST_GREEK
+ALLIES3 A_SPANISH
+ 
+UNIT_0 African_Spearmen
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 8
+ 
+UNIT_1 Light_Javelins
+MIN_1 3
+MAX_1 8
+ 
+UNIT_2 LH_Javelin
+MIN_2 3
+MAX_2 8
+ 
+UNIT_3 Noble_Cavalry_Prot
+MIN_3 1
+MAX_3 6
+ 
+UNIT_4 Noble_Cavalry_Arm
+MIN_4 0
+MAX_4 2
+ 
+UNIT_5 Vet_Arm_Cavalry
+MIN_5 0
+MAX_5 2
+ 
+UNIT_6 Balearic_Slingers
+MIN_6 0
+MAX_6 2
+ 
+UNIT_7 Merc_Hoplites
+MIN_7 0
+MAX_7 6
+ 
+UNIT_8 Hillmen
+MIN_8 0
+MAX_8 4
+ 
+UNIT_9 Warband
+MIN_9 0
+MAX_9 4
+ 
+UNIT_10 Elephants
+MIN_10 0
+MAX_10 5
+
+UNIT_11 Italian_Foot
+MIN_11 0
+MAX_11 3
+
+UNIT_12 Spanish_Scutarii
+MIN_12 0
+MAX_12 8
+
+UNIT_13 Poeni_Foot
+MIN_13 0
+MAX_13 12
+
+UNIT_14 Heavy_Artillery
+MIN_14 0
+MAX_14 1
+
+UNIT_15 Thureophoroi
+MIN_15 0
+MAX_15 2
+ 
+// 262-191 BC
+[E_PERGAMENE]
+SIDEID 26
+NAME IDS_ARMY_E_PERGAMENE
+YEARS 2738 2809 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 26
+LONGMAX 30
+LATMIN 36
+LATMAX 42
+INTRO IDS_ARMY_INTRO_PERGAMENE
+SORTNAME Pergamene
+MAPSET Medi
+ALLIES1 KAPPADOKIAN
+ 
+UNIT_0 Hillmen
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 14
+ 
+UNIT_1 Thureophoroi
+MIN_1 3
+MAX_1 16
+ 
+UNIT_2 Thureophoroi_Raw
+MIN_2 0
+MAX_2 6
+ 
+UNIT_3 Light_Javelins
+MIN_3 1
+MAX_3 12
+ 
+UNIT_4 Cretan_Archers
+MIN_4 1
+MAX_4 4
+ 
+UNIT_5 Light_Slingers
+MIN_5 0
+MAX_5 4
+ 
+UNIT_6 LH_Javelin
+MIN_6 0
+MAX_6 4
+ 
+UNIT_7 Xystophoroi
+MIN_7 1
+MAX_7 6
+ 
+UNIT_8 Superior_Warband
+MIN_8 0
+MAX_8 5
+ 
+UNIT_9 Noble_Cavalry_Arm
+MIN_9 0
+MAX_9 3
+ 
+UNIT_10 Heavy_Artillery
+MIN_10 0
+MAX_10 3
+
+// 260-148 BC
+[L_MACEDONIAN]
+SIDEID 22
+NAME IDS_ARMY_L_MACEDONIAN
+YEARS 2740 2852 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 19
+LONGMAX 28
+LATMIN 36
+LATMAX 43
+INTRO IDS_ARMY_INTRO_MACEDON2
+SORTNAME Macedonian
+MAPSET Medi
+ALLIES1 L_HELL_GREEK
+ 
+UNIT_0 Pike
+// fixed quantity for 2000 point army
+MIN_0 4
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 11
+ 
+UNIT_1 Pike_Vet
+MIN_1 1
+MAX_1 5
+ 
+UNIT_2 Thureophoroi
+MIN_2 2
+MAX_2 8
+ 
+UNIT_3 Light_Javelins
+MIN_3 2
+MAX_3 4
+ 
+UNIT_4 Thorakitai
+MIN_4 0
+MAX_4 3
+ 
+UNIT_5 Thracians
+MIN_5 0
+MAX_5 4
+ 
+UNIT_6 LH_Javelin
+MIN_6 0
+MAX_6 3
+ 
+UNIT_7 Noble_Cavalry_Arm
+MIN_7 0
+MAX_7 3
+ 
+UNIT_8 Superior_Warband
+MIN_8 0
+MAX_8 2
+ 
+UNIT_9 Grk_arm_cav
+MIN_9 1
+MAX_9 3
+ 
+UNIT_10 Vet_Arm_Cavalry
+MIN_10 1
+MAX_10 3
+
+UNIT_11 Cretan_Archers
+MIN_11 0
+MAX_11 3
+
+UNIT_12 Heavy_Artillery
+MIN_12 0
+MAX_12 1
+
+// 260 BC - 17 AD
+[KAPPADOKIAN]
+SIDEID 56
+NAME IDS_ARMY_KAPPADOKIAN
+YEARS 2740 3017 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 34
+LONGMAX 42
+LATMIN 36
+LATMAX 40
+INTRO IDS_ARMY_INTRO_KAPPADOKIAN
+SORTNAME Kappadokian
+MAPSET MidEast
+ 
+UNIT_0 Hillmen
+// fixed quantity for 2000 point army
+MIN_0 11
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 40
+ 
+UNIT_1 Thureophoroi
+MIN_1 0
+MAX_1 3
+
+UNIT_2 Thracians
+MIN_2 0
+MAX_2 2
+ 
+UNIT_3 Light_Javelins
+MIN_3 0
+MAX_3 7
+ 
+UNIT_4 Persian_Cav_Jav_Arm
+MIN_4 2
+MAX_4 11
+ 
+UNIT_5 Persian_Cav_Jav_Prot
+MIN_5 1
+MAX_5 5
+ 
+UNIT_6 Persian_Light_Archers
+MIN_6 2
+MAX_6 9
+ 
+UNIT_7 LH_Javelin
+MIN_7 1
+MAX_7 7
+ 
+UNIT_8 Superior_Warband
+MIN_8 0
+MAX_8 2
+ 
+// 260BC-106AD
+[L_NABATAEAN]
+SIDEID 52
+NAME IDS_ARMY_L_NABATAEAN
+YEARS 2740 3106 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 32
+LONGMAX 52
+LATMIN 22
+LATMAX 32
+INTRO IDS_ARMY_INTRO_NABATAEAN
+SORTNAME Nabataean
+MAPSET Desert
+
+UNIT_0 Medium_Archers
+// fixed quantity for 2000 point army
+MIN_0 15
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 30
+ 
+UNIT_1 LH_Bow
+MIN_1 4
+MAX_1 8
+ 
+UNIT_2 Xystophoroi
+MIN_2 0
+MAX_2 4
+ 
+UNIT_3 Hillmen
+MIN_3 8
+MAX_3 24
+ 
+UNIT_4 Light_Archers
+MIN_4 4
+MAX_4 7
+ 
+UNIT_5 Light_Slingers
+MIN_5 0
+MAX_5 4
+ 
+UNIT_6 Light_Javelins
+MIN_6 0
+MAX_6 4
+ 
+UNIT_7 Arab_Camelry
+MIN_7 0
+MAX_7 3
+ 
+// 250-130 BC
+[GRAECO_BACTRIAN]
+SIDEID 13
+NAME IDS_ARMY_GRAECO_BACTRIAN
+YEARS 2750 2870 // Note start era from 3000 BC
+DEPLOYMENT Skythian
+LONGMIN 55
+LONGMAX 80
+LATMIN 28
+LATMAX 50
+INTRO IDS_ARMY_INTRO_GRAECO_BACTRIAN
+SORTNAME Graecobactrian
+MAPSET MidEast
+ALLIES1 L_SAKA
+ 
+UNIT_0 Pike
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 4
+ 
+UNIT_1 Thureophoroi
+MIN_1 0
+MAX_1 4
+ 
+UNIT_2 Xystophoroi
+MIN_2 0
+MAX_2 4
+ 
+UNIT_3 Noble_Lancers_Arm
+MIN_3 3
+MAX_3 8
+ 
+UNIT_4 Cataphracts
+MIN_4 0
+MAX_4 8
+ 
+UNIT_5 LH_Bow
+MIN_5 3
+MAX_5 10
+ 
+UNIT_6 Nomad_LH
+MIN_6 0
+MAX_6 4
+ 
+UNIT_7 LH_Javelin
+MIN_7 0
+MAX_7 4
+ 
+UNIT_8 Persian_Light_Archers
+MIN_8 0
+MAX_8 6
+ 
+UNIT_9 Cretan_Archers
+MIN_9 0
+MAX_9 1
+ 
+UNIT_10 Hillmen
+MIN_10 0
+MAX_10 6
+
+UNIT_11 Elephants
+MIN_11 0
+MAX_11 4
+
+// 250 BC - 225 AD
+[PARTHIAN]
+SIDEID 25
+NAME IDS_ARMY_PARTHIAN
+YEARS 2750 3225 // Note start era from 3000 BC
+DEPLOYMENT Skythian
+LONGMIN 35
+LONGMAX 80
+LATMIN 28
+LATMAX 40
+INTRO IDS_ARMY_INTRO_PARTHIAN
+SORTNAME Parthian
+MAPSET MidEast
+ALLIES1 L_SAKA
+ALLIES2 LPI_ARAB
+ALLIES3 E_ARMENIAN
+ALLIES4 L_ATROPATENE
+ 
+UNIT_0 Cataphracts
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 13
+ 
+UNIT_1 LH_Bow
+MIN_1 10
+MAX_1 44
+ 
+UNIT_2 Thureophoroi_Raw
+MIN_2 0
+MAX_2 5
+ 
+UNIT_3 Hillmen
+MIN_3 0
+MAX_3 5
+ 
+UNIT_4 Persian_Light_Archers
+MIN_4 0
+MAX_4 3
+ 
+UNIT_5 Persian_Light_Slingers
+MIN_5 0
+MAX_5 3
+ 
+UNIT_6 Levy_Psiloi
+MIN_6 0
+MAX_6 3
+ 
+UNIT_7 Light_Javelins
+MIN_7 0
+MAX_7 3
+
+UNIT_8 Medium_Archers
+MIN_8 0
+MAX_8 5
+
+// 235-146 BC
+[LL_CARTHAGINIAN]
+SIDEID 8
+NAME IDS_ARMY_LL_CARTHAGINIAN
+YEARS 2765 2854 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN -10
+LONGMAX 20
+LATMIN 30
+LATMAX 44
+INTRO IDS_ARMY_INTRO_CARTHAGINIAN
+SORTNAME Carthaginian
+MAPSET Medi
+ALLIES1 E_NUMIDIAN
+ALLIES2 A_SPANISH
+ 
+UNIT_0 African_Spearmen
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 8
+ 
+UNIT_1 Light_Javelins
+MIN_1 3
+MAX_1 8
+ 
+UNIT_2 LH_Javelin
+MIN_2 3
+MAX_2 8
+ 
+UNIT_3 Noble_Cavalry_Prot
+MIN_3 1
+MAX_3 6
+ 
+UNIT_4 Noble_Cavalry_Arm
+MIN_4 0
+MAX_4 2
+ 
+UNIT_5 Vet_Arm_Cavalry
+MIN_5 0
+MAX_5 2
+ 
+UNIT_6 Balearic_Slingers
+MIN_6 0
+MAX_6 2
+ 
+UNIT_7 Merc_Hoplites
+MIN_7 0
+MAX_7 3
+ 
+UNIT_8 Hillmen
+MIN_8 0
+MAX_8 4
+ 
+UNIT_9 Warband
+MIN_9 0
+MAX_9 4
+ 
+UNIT_10 Elephants
+MIN_10 0
+MAX_10 5
+
+UNIT_11 Italian_Foot
+MIN_11 0
+MAX_11 3
+
+UNIT_12 Spanish_Scutarii
+MIN_12 0
+MAX_12 8
+
+UNIT_13 Poeni_Foot
+MIN_13 0
+MAX_13 12
+
+UNIT_14 Heavy_Artillery
+MIN_14 0
+MAX_14 1
+
+// 219-200 BC
+[MMR_ROMAN]
+SIDEID 32
+NAME IDS_ARMY_MMR_ROMAN
+YEARS 2781 2800 // Note start era from 3000 BC
+DEPLOYMENT Roman
+LONGMIN -10
+LONGMAX 34
+LATMIN 28
+LATMAX 45
+INTRO IDS_ARMY_INTRO_ROMAN1
+SORTNAME Roman
+MAPSET Medi
+ALLIES1 L_HELL_GREEK
+ALLIES2 A_SPANISH
+ALLIES3 E_PERGAMENE
+ALLIES4 E_NUMIDIAN
+ALLIES5 WEST_GREEK
+ 
+UNIT_0 Hast_Princ
+// fixed quantity for 2000 point army
+MIN_0 6
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 14
+ 
+UNIT_1 Hast_Princ_Vet
+MIN_1 0
+MAX_1 6
+ 
+UNIT_2 Raw_Legionaries
+MIN_2 0
+MAX_2 6
+ 
+UNIT_3 Velites
+MIN_3 6
+MAX_3 14
+ 
+UNIT_4 Grk_Arm_Cav
+MIN_4 1
+MAX_4 4
+ 
+UNIT_5 Triarii
+MIN_5 3
+MAX_5 7
+
+UNIT_6 Warband
+MIN_6 0
+MAX_6 1
+ 
+UNIT_7 Light_Slingers
+MIN_7 0
+MAX_7 2
+ 
+UNIT_8 Hillmen
+MIN_8 0
+MAX_8 2
+ 
+UNIT_9 LH_Javelin
+MIN_9 0
+MAX_9 2
+
+UNIT_10 Spanish_Scutarii
+MIN_10 0
+MAX_10 2
+ 
+UNIT_11 Italian_Foot
+MIN_11 0
+MAX_11 8
+
+// 218-217 BC
+[HIE_CARTHAGINIAN]
+SIDEID 8
+NAME IDS_ARMY_HIE_CARTHAGINIAN
+YEARS 2782 2783 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 7
+LONGMAX 19
+LATMIN 37
+LATMAX 46
+INTRO IDS_ARMY_INTRO_CARTHAGINIAN
+SORTNAME Carthaginian
+MAPSET Medi
+ALLIES1 M_GALLIC
+ 
+UNIT_0 African_Spearmen
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 8
+ 
+UNIT_1 Light_Javelins
+MIN_1 3
+MAX_1 8
+ 
+UNIT_2 LH_Javelin
+MIN_2 3
+MAX_2 8
+ 
+UNIT_3 Noble_Cavalry_Prot
+MIN_3 1
+MAX_3 8
+ 
+UNIT_4 Noble_Cavalry_Arm
+MIN_4 0
+MAX_4 2
+
+UNIT_5 Spanish_Scutarii
+MIN_5 3
+MAX_5 10
+ 
+UNIT_6 Balearic_Slingers
+MIN_6 0
+MAX_6 2
+ 
+UNIT_7 Warband
+MIN_7 0
+MAX_7 10
+ 
+UNIT_8 Elephants
+MIN_8 0
+MAX_8 5
+
+// 216-203 BC
+[HI_CARTHAGINIAN]
+SIDEID 8
+NAME IDS_ARMY_HI_CARTHAGINIAN
+YEARS 2784 2797 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 7
+LONGMAX 19
+LATMIN 37
+LATMAX 46
+INTRO IDS_ARMY_INTRO_CARTHAGINIAN
+SORTNAME Carthaginian
+MAPSET Medi
+ALLIES1 L_CAMPANIAN
+ALLIES2 BRUTTIAN
+ALLIES3 L_MACEDONIAN
+ALLIES4 SAMNITE
+ 
+UNIT_0 Vet_African_Spearmen
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 7
+ 
+UNIT_1 Light_Javelins
+MIN_1 3
+MAX_1 8
+ 
+UNIT_2 LH_Javelin
+MIN_2 3
+MAX_2 8
+ 
+UNIT_3 Noble_Cavalry_Prot
+MIN_3 1
+MAX_3 6
+ 
+UNIT_4 Noble_Cavalry_Arm
+MIN_4 0
+MAX_4 2
+ 
+UNIT_5 Vet_Arm_Cavalry
+MIN_5 0
+MAX_5 2
+ 
+UNIT_6 Balearic_Slingers
+MIN_6 0
+MAX_6 2
+ 
+UNIT_7 Imitation_Legion
+MIN_7 2
+MAX_7 10
+ 
+UNIT_8 Hillmen
+MIN_8 0
+MAX_8 4
+ 
+UNIT_9 Italian_Foot
+MIN_9 0
+MAX_9 8
+ 
+UNIT_10 Elephants
+MIN_10 0
+MAX_10 1
+
+UNIT_11 Spanish_Scutarii
+MIN_11 0
+MAX_11 8
+
+// 202-202 BC
+[HA_CARTHAGINIAN]
+SIDEID 8
+NAME IDS_ARMY_HA_CARTHAGINIAN
+YEARS 2798 2798 // Note start era from 3000 BC
+DEPLOYMENT Roman
+LONGMIN 8
+LONGMAX 12
+LATMIN 30
+LATMAX 38
+INTRO IDS_ARMY_INTRO_CARTHAGINIAN
+SORTNAME Carthaginian
+MAPSET Medi
+ALLIES1 E_NUMIDIAN
+ 
+UNIT_0 African_Spearmen
+// fixed quantity for 2000 point army
+MIN_0 2
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 4
+ 
+UNIT_1 Light_Javelins
+MIN_1 3
+MAX_1 12
+ 
+UNIT_2 LH_Javelin
+MIN_2 3
+MAX_2 12
+ 
+UNIT_3 Noble_Cavalry_Prot
+MIN_3 1
+MAX_3 6
+ 
+UNIT_4 Noble_Cavalry_Arm
+MIN_4 0
+MAX_4 2
+ 
+UNIT_5 Vet_Arm_Cavalry
+MIN_5 0
+MAX_5 2
+ 
+UNIT_6 Balearic_Slingers
+MIN_6 0
+MAX_6 2
+ 
+UNIT_7 Light_Archers
+MIN_7 0
+MAX_7 1
+ 
+UNIT_8 Hillmen
+MIN_8 0
+MAX_8 4
+ 
+UNIT_9 Warband
+MIN_9 0
+MAX_9 4
+ 
+UNIT_10 Elephants
+MIN_10 0
+MAX_10 5
+
+UNIT_11 Italian_Foot
+MIN_11 0
+MAX_11 3
+
+UNIT_12 Spanish_Scutarii
+MIN_12 0
+MAX_12 8
+
+UNIT_13 Poeni_Foot
+MIN_13 0
+MAX_13 12
+
+UNIT_14 Heavy_Artillery
+MIN_14 0
+MAX_14 1
+
+UNIT_15 Vet_African_Spearmen
+MIN_15 2
+MAX_15 4
+
+UNIT_16 Bruttian_Veterans
+MIN_16 2
+MAX_16 4
+
+// 227-146 BC
+[L_HELL_GREEK]
+SIDEID 14
+NAME IDS_ARMY_L_HELL_GREEK
+YEARS 2773 2854 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 19
+LONGMAX 26
+LATMIN 35
+LATMAX 41
+INTRO IDS_ARMY_INTRO_GREEK2
+SORTNAME Greek
+MAPSET Medi
+ALLIES1 MR_ROMAN
+
+UNIT_0 Pike
+// fixed quantity for 2000 point army
+MIN_0 0 
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 7
+ 
+UNIT_1 Pike_Raw
+MIN_1 0
+MAX_1 3
+ 
+UNIT_2 Xystophoroi
+MIN_2 0
+MAX_2 3
+ 
+UNIT_3 Light_Archers
+MIN_3 0
+MAX_3 3
+ 
+UNIT_4 Light_Javelins
+MIN_4 2
+MAX_4 12
+ 
+UNIT_5 Thureophoroi
+MIN_5 4
+MAX_5 27
+ 
+UNIT_6 Thorakitai
+MIN_6 0
+MAX_6 3
+ 
+UNIT_7 Light_Slingers
+MIN_7 0
+MAX_7 3
+ 
+UNIT_8 Grk_arm_cav
+MIN_8 1
+MAX_8 3
+ 
+UNIT_9 LH_Javelin
+MIN_9 0
+MAX_9 3
+
+UNIT_10 Heavy_Artillery
+MIN_10 0
+MAX_10 1
+
+// 220 - 56 BC
+[E_NUMIDIAN]
+SIDEID 23
+NAME IDS_ARMY_E_NUMIDIAN
+YEARS 2780 2944 // Note start era from 3000 BC
+DEPLOYMENT Skythian
+LONGMIN -10
+LONGMAX 10
+LATMIN 30
+LATMAX 37
+INTRO IDS_ARMY_INTRO_NUMIDIAN
+SORTNAME Numidian
+MAPSET Medi
+ 
+UNIT_0 LH_Javelin
+// fixed quantity for 2000 point army
+MIN_0 12
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 40
+ 
+UNIT_1 Light_Javelins
+MIN_1 8
+MAX_1 40
+ 
+UNIT_2 Poeni_Foot
+MIN_2 0
+MAX_2 12
+ 
+UNIT_3 Light_Archers
+MIN_3 0
+MAX_3 3
+ 
+UNIT_4 Light_Slingers
+MIN_4 0
+MAX_4 3
+ 
+UNIT_5 Elephants
+MIN_5 0
+MAX_5 3
+
+UNIT_6 Hillmen
+MIN_6 8
+MAX_6 20
+
+// 220 - 70 AD
+[L_LIBYAN]
+SIDEID 48
+NAME IDS_ARMY_L_LIBYAN
+YEARS 2780 3070 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 7
+LONGMAX 30
+LATMIN 20
+LATMAX 36
+INTRO IDS_ARMY_INTRO_LIBYAN
+SORTNAME Libyan
+MAPSET Medi
+ 
+UNIT_0 LH_Javelin
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 7
+ 
+UNIT_1 Light_Javelins
+MIN_1 10
+MAX_1 40
+ 
+UNIT_2 Hillmen
+MIN_2 10
+MAX_2 50
+ 
+UNIT_3 Light_Archers
+MIN_3 0
+MAX_3 7
+
+// 205-167 BC
+[M_SELEUCID]
+SIDEID 35
+NAME IDS_ARMY_M_SELEUCID
+YEARS 2795 2833 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 24
+LONGMAX 70
+LATMIN 31
+LATMAX 42
+INTRO IDS_ARMY_INTRO_SELEUCID2
+SORTNAME Seleucid
+MAPSET Medi
+ALLIES1 L_HELL_GREEK
+ 
+UNIT_0 Pike
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 6
+ 
+UNIT_1 Pike_Vet
+MIN_1 0
+MAX_1 3
+ 
+UNIT_2 Thureophoroi
+MIN_2 0
+MAX_2 3
+ 
+UNIT_3 Persian_Light_Archers
+MIN_3 1
+MAX_3 4
+ 
+UNIT_4 Persian_Light_Slingers
+MIN_4 1
+MAX_4 4
+ 
+UNIT_5 Levy_Psiloi
+MIN_5 0
+MAX_5 4
+ 
+UNIT_6 Light_Javelins
+MIN_6 0
+MAX_6 4
+ 
+UNIT_7 Xystophoroi
+MIN_7 0
+MAX_7 1
+ 
+UNIT_8 Cataphracts
+MIN_8 2
+MAX_8 6
+ 
+UNIT_9 Thorakitai
+MIN_9 0
+MAX_9 1
+ 
+UNIT_10 Nomad_LH
+MIN_10 0
+MAX_10 2
+
+UNIT_11 LH_Bow
+MIN_11 0
+MAX_11 2
+
+UNIT_12 Thracians
+MIN_12 0
+MAX_12 2
+
+UNIT_13 Hillmen
+MIN_13 0
+MAX_13 2
+
+UNIT_14 LH_Javelin
+MIN_14 0
+MAX_14 2
+
+UNIT_15 Elephants
+MIN_15 0
+MAX_15 3
+
+UNIT_16 Levies
+MIN_16 0
+MAX_16 4
+
+UNIT_17 Noble_Cavalry_Arm
+MIN_17 0
+MAX_17 1
+
+UNIT_18 Superior_Warband
+MIN_18 0
+MAX_18 1
+
+UNIT_19 Heavy_Artillery
+MIN_19 0
+MAX_19 1
+
+UNIT_20 Arab_Camelry
+MIN_20 0
+MAX_20 1
+
+UNIT_21 Scythed_Chariots
+MIN_21 0
+MAX_21 2
+
+// 199-106 BC
+[LMR_ROMAN]
+SIDEID 32
+NAME IDS_ARMY_LMR_ROMAN
+YEARS 2801 2894 // Note start era from 3000 BC
+DEPLOYMENT Roman
+LONGMIN -10
+LONGMAX 34
+LATMIN 28
+LATMAX 45
+INTRO IDS_ARMY_INTRO_ROMAN1
+SORTNAME Roman
+MAPSET Medi
+ALLIES1 L_HELL_GREEK
+ALLIES2 A_SPANISH
+ALLIES3 E_PERGAMENE
+ALLIES4 E_NUMIDIAN
+ALLIES5 WEST_GREEK
+ 
+UNIT_0 Hast_Princ
+// fixed quantity for 2000 point army
+MIN_0 6
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 12
+ 
+UNIT_1 Hast_Princ_Vet
+MIN_1 0
+MAX_1 6
+ 
+UNIT_2 Raw_Legionaries
+MIN_2 0
+MAX_2 6
+ 
+UNIT_3 Velites
+MIN_3 6
+MAX_3 12
+ 
+UNIT_4 Grk_Arm_Cav
+MIN_4 1
+MAX_4 4
+ 
+UNIT_5 Triarii
+MIN_5 3
+MAX_5 6
+ 
+UNIT_6 Cretan_Archers
+MIN_6 0
+MAX_6 2
+ 
+UNIT_7 Light_Slingers
+MIN_7 0
+MAX_7 2
+ 
+UNIT_8 Hillmen
+MIN_8 0
+MAX_8 2
+ 
+UNIT_9 LH_Javelin
+MIN_9 0
+MAX_9 2
+ 
+UNIT_10 Elephants
+MIN_10 0
+MAX_10 1
+
+UNIT_11 Italian_Foot
+MIN_11 0
+MAX_11 4
+
+UNIT_12 Spanish_Scutarii
+MIN_12 0
+MAX_12 2
+
+UNIT_13 Warband
+MIN_13 0
+MAX_13 1
+
+UNIT_14 Thureophoroi
+MIN_14 0
+MAX_14 4
+
+// 190-129 BC
+[L_PERGAMENE]
+SIDEID 26
+NAME IDS_ARMY_L_PERGAMENE
+YEARS 2810 2871 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 26
+LONGMAX 36
+LATMIN 36
+LATMAX 42
+INTRO IDS_ARMY_INTRO_PERGAMENE
+SORTNAME Pergamene
+MAPSET Medi
+ALLIES1 KAPPADOKIAN
+ 
+UNIT_0 Pike
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 3
+ 
+UNIT_1 Thureophoroi
+MIN_1 3
+MAX_1 12
+ 
+UNIT_2 Thureophoroi_Raw
+MIN_2 0
+MAX_2 6
+ 
+UNIT_3 Light_Javelins
+MIN_3 1
+MAX_3 12
+ 
+UNIT_4 Cretan_Archers
+MIN_4 1
+MAX_4 4
+ 
+UNIT_5 Light_Slingers
+MIN_5 0
+MAX_5 4
+ 
+UNIT_6 LH_Javelin
+MIN_6 0
+MAX_6 4
+ 
+UNIT_7 Xystophoroi
+MIN_7 1
+MAX_7 4
+ 
+UNIT_8 Superior_Warband
+MIN_8 0
+MAX_8 4
+ 
+UNIT_9 Noble_Cavalry_Arm
+MIN_9 0
+MAX_9 3
+ 
+UNIT_10 Heavy_Artillery
+MIN_10 0
+MAX_10 3
+
+UNIT_11 Hillmen
+MIN_11 0
+MAX_11 14
+
+UNIT_12 Cataphracts
+MIN_12 0
+MAX_12 3
+
+UNIT_13 Elephants
+MIN_13 0
+MAX_13 2
+
+
+// 175 BC - 10 AD
+[INDO_GREEK]
+SIDEID 18
+NAME IDS_ARMY_INDO_GREEK
+YEARS 2825 3010 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 63
+LONGMAX 94
+LATMIN 5
+LATMAX 35
+INTRO IDS_ARMY_INTRO_INDO_GREEK
+SORTNAME Indogreek
+MAPSET Tropical
+ALLIES1 EC_INDIAN
+ALLIES2 L_SAKA
+ 
+UNIT_0 Pike
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 4
+ 
+UNIT_1 Thureophoroi
+MIN_1 0
+MAX_1 4
+ 
+UNIT_2 Vet_Arm_Cavalry
+MIN_2 0
+MAX_2 4
+ 
+UNIT_3 Indian_Archers
+MIN_3 4
+MAX_3 20
+ 
+UNIT_4 Indian_Javelinmen
+MIN_4 0
+MAX_4 8
+ 
+UNIT_5 Indian_Cavalry
+MIN_5 2
+MAX_5 6
+ 
+UNIT_6 Nomad_LH
+MIN_6 0
+MAX_6 4
+ 
+UNIT_7 LH_Javelin
+MIN_7 0
+MAX_7 4
+ 
+UNIT_8 Light_Archers
+MIN_8 0
+MAX_8 6
+ 
+UNIT_9 Cretan_Archers
+MIN_9 0
+MAX_9 1
+ 
+UNIT_10 Hillmen
+MIN_10 0
+MAX_10 6
+
+UNIT_11 Elephants
+MIN_11 0
+MAX_11 4
+
+
+// 167-64 BC
+[EH_JEWISH]
+SIDEID 19
+NAME IDS_ARMY_EH_JEWISH
+YEARS 2833 2936 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 34
+LONGMAX 38
+LATMIN 30
+LATMAX 34
+INTRO IDS_ARMY_INTRO_JEWISH
+SORTNAME Jewish
+MAPSET MidEast
+ 
+UNIT_0 Pike
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 4
+ 
+UNIT_1 Thureophoroi
+MIN_1 6
+MAX_1 20
+ 
+UNIT_2 Hillmen
+MIN_2 0
+MAX_2 20
+ 
+UNIT_3 Light_Archers
+MIN_3 2
+MAX_3 8
+ 
+UNIT_4 Light_Slingers
+MIN_4 2
+MAX_4 6
+ 
+UNIT_5 Light_Javelins
+MIN_5 2
+MAX_5 8
+ 
+UNIT_6 Xystophoroi
+MIN_6 0
+MAX_6 4
+ 
+UNIT_7 LH_Bow
+MIN_7 2
+MAX_7 8
+ 
+
+// 166-125 BC
+[EL_SELEUCID]
+SIDEID 35
+NAME IDS_ARMY_EL_SELEUCID
+YEARS 2834 2875 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 32
+LONGMAX 52
+LATMIN 31
+LATMAX 42
+INTRO IDS_ARMY_INTRO_SELEUCID2
+SORTNAME Seleucid
+MAPSET MidEast
+ALLIES1 PARTHIAN
+ 
+UNIT_0 Pike
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 6
+ 
+UNIT_1 Pike_Vet
+MIN_1 0
+MAX_1 2
+ 
+UNIT_2 Thureophoroi
+MIN_2 0
+MAX_2 3
+ 
+UNIT_3 Persian_Light_Archers
+MIN_3 1
+MAX_3 4
+ 
+UNIT_4 Persian_Light_Slingers
+MIN_4 1
+MAX_4 4
+ 
+UNIT_5 Levy_Psiloi
+MIN_5 0
+MAX_5 4
+ 
+UNIT_6 Light_Javelins
+MIN_6 0
+MAX_6 4
+ 
+UNIT_7 Xystophoroi
+MIN_7 0
+MAX_7 1
+ 
+UNIT_8 Cataphracts
+MIN_8 2
+MAX_8 6
+ 
+UNIT_9 Thorakitai
+MIN_9 0
+MAX_9 1
+ 
+UNIT_10 Nomad_LH
+MIN_10 0
+MAX_10 2
+
+UNIT_11 LH_Bow
+MIN_11 0
+MAX_11 2
+
+UNIT_12 Thracians
+MIN_12 0
+MAX_12 2
+
+UNIT_13 Hillmen
+MIN_13 0
+MAX_13 2
+
+UNIT_14 LH_Javelin
+MIN_14 0
+MAX_14 2
+
+UNIT_15 Elephants
+MIN_15 0
+MAX_15 3
+
+UNIT_16 Levies
+MIN_16 0
+MAX_16 4
+
+UNIT_17 Noble_Cavalry_Arm
+MIN_17 0
+MAX_17 1
+
+UNIT_18 Superior_Warband
+MIN_18 0
+MAX_18 1
+
+UNIT_19 Heavy_Artillery
+MIN_19 0
+MAX_19 1
+
+UNIT_20 Arab_Camelry
+MIN_20 0
+MAX_20 1
+
+UNIT_21 Rom_Argyraspids
+MIN_21 0
+MAX_21 3
+
+UNIT_22 Thureophoroi_Raw
+MIN_22 0
+MAX_22 4
+
+UNIT_23 Scythed_Chariots
+MIN_23 0
+MAX_23 2
+
+
+// 166-56 BC
+[M_PTOLEMAIC]
+SIDEID 30
+NAME IDS_ARMY_M_PTOLEMAIC
+YEARS 2834 2944 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 20
+LONGMAX 38
+LATMIN 15
+LATMAX 36
+INTRO IDS_ARMY_INTRO_PTOLEMAIC
+SORTNAME Ptolemaic
+MAPSET MidEast
+ 
+UNIT_0 Pike
+// fixed quantity for 2000 point army
+MIN_0 2
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 7
+ 
+UNIT_1 Pike_Vet
+MIN_1 0
+MAX_1 1
+ 
+UNIT_2 Thureophoroi
+MIN_2 0
+MAX_2 3
+ 
+UNIT_3 Light_Javelins
+MIN_3 0
+MAX_3 3
+ 
+UNIT_4 Cretan_Archers
+MIN_4 0
+MAX_4 3
+ 
+UNIT_5 Light_Archers
+MIN_5 0
+MAX_5 3
+ 
+UNIT_6 Light_Slingers
+MIN_6 0
+MAX_6 3
+ 
+UNIT_7 LH_Javelin
+MIN_7 0
+MAX_7 3
+ 
+UNIT_8 Xystophoroi
+MIN_8 2
+MAX_8 5
+ 
+UNIT_9 Grk_arm_cav
+MIN_9 0
+MAX_9 1
+ 
+UNIT_10 Noble_Cavalry_Prot
+MIN_10 0
+MAX_10 1
+
+UNIT_11 Pike_Raw
+MIN_11 0
+MAX_11 5
+
+UNIT_12 Heavy_Artillery
+MIN_12 0
+MAX_12 2
+
+UNIT_13 Thureophoroi_Raw
+MIN_13 0
+MAX_13 3
+
+UNIT_14 Thracians
+MIN_14 0
+MAX_14 3
+
+UNIT_15 Superior_Warband
+MIN_15 0
+MAX_15 1
+
+UNIT_16 Arab_Camelry
+MIN_16 0
+MAX_16 1
+
+UNIT_17 Elephants
+MIN_17 0
+MAX_17 3
+
+UNIT_18 Noble_Cavalry_Arm
+MIN_18 0
+MAX_18 1
+
+UNIT_19 Imitation_Legion
+MIN_19 0
+MAX_19 3
+
+UNIT_20 Thorakitai
+MIN_20 0
+MAX_20 3
+
+// 144 BC - 226 AD
+[L_ATROPATENE]
+SIDEID 45
+NAME IDS_ARMY_L_ATROPATENE
+YEARS 2856 3226 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 44
+LONGMAX 50
+LATMIN 36
+LATMAX 40
+INTRO IDS_ARMY_INTRO_ATROPATENE
+SORTNAME Atropatene
+MAPSET MidEast
+ALLIES1 PARTHIAN
+ 
+UNIT_0 Cataphracts
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 10
+ 
+UNIT_1 Hillmen
+MIN_1 12
+MAX_1 48
+
+UNIT_2 Light_Javelins
+MIN_2 2
+MAX_2 8
+ 
+UNIT_3 Persian_Light_Archers
+MIN_3 2
+MAX_3 12
+ 
+UNIT_4 LH_Bow
+MIN_4 3
+MAX_4 12
+
+// 130 BC - 476 AD
+[KUSHAN]
+SIDEID 20
+NAME IDS_ARMY_KUSHAN
+YEARS 2870 3476 // Note start era from 3000 BC
+DEPLOYMENT Skythian
+LONGMIN 63
+LONGMAX 94
+LATMIN 5
+LATMAX 44
+INTRO IDS_ARMY_INTRO_KUSHAN
+SORTNAME Kushan
+MAPSET Tropical
+ 
+UNIT_0 Cataphracts
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 9
+ 
+UNIT_1 Nomad_LH
+MIN_1 5
+MAX_1 13
+ 
+UNIT_2 LH_Bow
+MIN_2 0
+MAX_2 13
+ 
+UNIT_3 Nomad_Cavalry
+MIN_3 0
+MAX_3 11
+ 
+UNIT_4 Persian_Light_Archers
+MIN_4 0
+MAX_4 3
+ 
+UNIT_5 Hillmen
+MIN_5 0
+MAX_5 3
+ 
+UNIT_6 Indian_Elephants
+MIN_6 0
+MAX_6 5
+ 
+UNIT_7 LH_Javelin
+MIN_7 0
+MAX_7 2
+ 
+UNIT_8 Indian_Archers
+MIN_8 2
+MAX_8 7
+ 
+UNIT_9 Indian_Javelinmen
+MIN_9 0
+MAX_9 3
+ 
+UNIT_10 Indian_Cavalry
+MIN_10 0
+MAX_10 3
+
+
+// 124-63 BC
+[LL_SELEUCID]
+SIDEID 35
+NAME IDS_ARMY_LL_SELEUCID
+YEARS 2876 2937 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 32
+LONGMAX 52
+LATMIN 31
+LATMAX 42
+INTRO IDS_ARMY_INTRO_SELEUCID2
+SORTNAME Seleucid
+MAPSET MidEast
+ALLIES1 EH_JEWISH
+ 
+UNIT_0 Pike
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 6
+ 
+UNIT_1 Pike_Vet
+MIN_1 0
+MAX_1 2
+ 
+UNIT_2 Thureophoroi
+MIN_2 0
+MAX_2 3
+ 
+UNIT_3 Light_Archers
+MIN_3 1
+MAX_3 4
+ 
+UNIT_4 Light_Slingers
+MIN_4 1
+MAX_4 4
+ 
+UNIT_5 Levy_Psiloi
+MIN_5 0
+MAX_5 4
+ 
+UNIT_6 Light_Javelins
+MIN_6 0
+MAX_6 4
+ 
+UNIT_7 Xystophoroi
+MIN_7 0
+MAX_7 1
+ 
+UNIT_8 Cataphracts
+MIN_8 2
+MAX_8 6
+ 
+UNIT_9 Thorakitai
+MIN_9 0
+MAX_9 1
+ 
+UNIT_10 Nomad_LH
+MIN_10 0
+MAX_10 2
+
+UNIT_11 LH_Bow
+MIN_11 0
+MAX_11 2
+
+UNIT_12 Thracians
+MIN_12 0
+MAX_12 2
+
+UNIT_13 Hillmen
+MIN_13 0
+MAX_13 2
+
+UNIT_14 LH_Javelin
+MIN_14 0
+MAX_14 2
+
+UNIT_15 Thureophoroi_Raw
+MIN_15 0
+MAX_15 4
+
+UNIT_16 Levies
+MIN_16 0
+MAX_16 4
+
+UNIT_17 Noble_Cavalry_Arm
+MIN_17 0
+MAX_17 1
+
+UNIT_18 Superior_Warband
+MIN_18 0
+MAX_18 1
+
+UNIT_19 Heavy_Artillery
+MIN_19 0
+MAX_19 1
+
+UNIT_20 Arab_Camelry
+MIN_20 0
+MAX_20 1
+
+UNIT_21 Rom_Argyraspids
+MIN_21 0
+MAX_21 3
+
+UNIT_22 Scythed_Chariots
+MIN_22 0
+MAX_22 2
+
+
+// 110-85 BC
+[E_PONTIC]
+SIDEID 29
+NAME IDS_ARMY_E_PONTIC
+YEARS 2890 2915 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 20
+LONGMAX 42
+LATMIN 36
+LATMAX 48
+INTRO IDS_ARMY_INTRO_PONTIC
+SORTNAME Pontic
+MAPSET Medi
+ALLIES1 E_ARMENIAN
+ 
+UNIT_0 Pike
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 5
+ 
+UNIT_1 Imitation_Legion
+MIN_1 0
+MAX_1 3
+ 
+UNIT_2 Thureophoroi
+MIN_2 2
+MAX_2 7
+ 
+UNIT_3 Light_Javelins
+MIN_3 2
+MAX_3 5
+ 
+UNIT_4 Hillmen
+MIN_4 0
+MAX_4 7
+ 
+UNIT_5 Persian_Light_Archers
+MIN_5 2
+MAX_5 7
+ 
+UNIT_6 Persian_Light_Slingers
+MIN_6 0
+MAX_6 2
+ 
+UNIT_7 LH_Javelin
+MIN_7 1
+MAX_7 4
+ 
+UNIT_8 Persian_Cav_Jav_Arm
+MIN_8 2
+MAX_8 6
+ 
+UNIT_9 Noble_Lancers_Arm
+MIN_9 0
+MAX_9 3
+ 
+UNIT_10 Cataphracts 
+MIN_10 0
+MAX_10 3
+
+UNIT_11 Nomad_LH
+MIN_11 0
+MAX_11 3
+
+UNIT_12 LH_Bow
+MIN_12 0
+MAX_12 3
+
+UNIT_13 Warband
+MIN_13 0
+MAX_13 2
+
+UNIT_14 Thracians
+MIN_14 0
+MAX_14 3
+
+UNIT_15 Falxmen
+MIN_15 0
+MAX_15 1
+
+UNIT_16 Scythed_Chariots
+MIN_16 0
+MAX_16 2
+
+
+// 105-25 BC
+[LR_ROMAN]
+SIDEID 32
+NAME IDS_ARMY_LR_ROMAN
+YEARS 2895 2975 // Note start era from 3000 BC
+DEPLOYMENT Roman
+LONGMIN -10
+LONGMAX 40
+LATMIN 15
+LATMAX 54
+INTRO IDS_ARMY_INTRO_ROMAN2
+SORTNAME Roman
+MAPSET Medi
+ALLIES1 E_ARMENIAN
+ALLIES2 BITHYNIAN
+ALLIES3 LH_JEWISH
+ALLIES4 L_NUMIDIAN
+ 
+UNIT_0 Legionary_LRepub
+// fixed quantity for 2000 point army
+MIN_0 6
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 12
+ 
+UNIT_1 Vet_Legionaries
+MIN_1 0
+MAX_1 5
+ 
+UNIT_2 Slack_Legionaries
+MIN_2 0
+MAX_2 5
+ 
+UNIT_3 Raw_Legionaries
+MIN_3 0
+MAX_3 5
+ 
+UNIT_4 Noble_Cavalry_Arm
+MIN_4 0
+MAX_4 3
+ 
+UNIT_5 Noble_Cavalry_Prot
+MIN_5 0
+MAX_5 3
+ 
+UNIT_6 Cretan_Archers
+MIN_6 0
+MAX_6 1
+ 
+UNIT_7 Light_Slingers
+MIN_7 1
+MAX_7 3
+ 
+UNIT_8 Hillmen
+MIN_8 0
+MAX_8 3
+ 
+UNIT_9 LH_Javelin
+MIN_9 0
+MAX_9 3
+ 
+UNIT_10 Elephants
+MIN_10 0
+MAX_10 1
+
+UNIT_11 Thracians
+MIN_11 0
+MAX_11 3
+
+UNIT_12 Spanish_Scutarii
+MIN_12 0
+MAX_12 3
+
+UNIT_13 Light_Javelins
+MIN_13 1
+MAX_13 3
+
+UNIT_14 Thureophoroi
+MIN_14 0
+MAX_14 3
+
+UNIT_15 LH_Bow
+MIN_15 0
+MAX_15 4
+
+UNIT_16 Heavy_Artillery
+MIN_16 0
+MAX_16 3
+
+UNIT_17 Light_Archers 
+MIN_17 0
+MAX_17 3
+
+// 105 BC - 259 AD
+[E_GERMAN_FOOT]
+SIDEID 11
+NAME IDS_ARMY_E_GERMAN_FOOT
+YEARS 2895 3259 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 5
+LONGMAX 35
+LATMIN 46
+LATMAX 55
+INTRO IDS_ARMY_INTRO_GERMANIC_FOOT
+SORTNAME German
+MAPSET North
+ 
+UNIT_0 Noble_Cavalry_Prot
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 3
+ 
+UNIT_1 Medium_Warband
+MIN_1 0
+MAX_1 11
+ 
+UNIT_2 Barbarian_Light_Archers
+MIN_2 0
+MAX_2 3
+ 
+UNIT_3 Warband
+MIN_3 5
+MAX_3 21
+ 
+UNIT_4 Barbarian_Light_Javelins
+MIN_4 0
+MAX_4 5
+ 
+UNIT_5 Superior_Warband
+MIN_5 0
+MAX_5 7
+ 
+UNIT_6 Barb_LH_Jav
+MIN_6 0
+MAX_6 3
+
+
+// 100 - 50 BC
+[L_GALLIC]
+SIDEID 10
+NAME IDS_ARMY_L_GALLIC
+YEARS 2900 2950 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN -5
+LONGMAX 30
+LATMIN 42
+LATMAX 54
+INTRO IDS_ARMY_INTRO_GALLIC
+SORTNAME Gallic
+MAPSET North
+ALLIES1 E_GERMAN_FOOT
+ 
+UNIT_0 Levies
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 4
+ 
+UNIT_1 Noble_Cavalry_Arm
+MIN_1 0
+MAX_1 4
+ 
+UNIT_2 Noble_Cavalry_Prot
+MIN_2 2
+MAX_2 9
+ 
+UNIT_3 Superior_Warband
+MIN_3 0
+MAX_3 4
+ 
+UNIT_4 Warband
+MIN_4 3
+MAX_4 16
+ 
+UNIT_5 Medium_Warband
+MIN_5 0
+MAX_5 10
+
+UNIT_6 Barbarian_Light_Javelins
+MIN_6 0
+MAX_6 4
+
+UNIT_7 Barbarian_Light_Archers
+MIN_7 0
+MAX_7 2
+
+UNIT_8 Barbarian_Light_Slingers
+MIN_8 0
+MAX_8 2
+
+// 95 BC - 50 AD
+[INDOSKYTHIAN]
+SIDEID 36
+NAME IDS_ARMY_INDOSKYTHIAN
+YEARS 2905 3050 // Note start era from 3000 BC
+DEPLOYMENT Skythian
+LONGMIN 66
+LONGMAX 78
+LATMIN 22
+LATMAX 36
+INTRO IDS_ARMY_INTRO_INDOSKYTHIAN
+SORTNAME Indoskythian
+MAPSET Tropical
+ALLIES1 EC_INDIAN
+ 
+UNIT_0 Cataphracts
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 9
+ 
+UNIT_1 Nomad_LH
+MIN_1 5
+MAX_1 13
+ 
+UNIT_2 LH_Bow
+MIN_2 0
+MAX_2 13
+ 
+UNIT_3 Nomad_Cavalry
+MIN_3 0
+MAX_3 11
+ 
+UNIT_4 Persian_Light_Archers
+MIN_4 0
+MAX_4 3
+ 
+UNIT_5 Hillmen
+MIN_5 0
+MAX_5 3
+ 
+UNIT_6 Indian_Elephants
+MIN_6 0
+MAX_6 5
+ 
+UNIT_7 LH_Javelin
+MIN_7 0
+MAX_7 2
+ 
+UNIT_8 Indian_Archers
+MIN_8 2
+MAX_8 7
+ 
+UNIT_9 Indian_Javelinmen
+MIN_9 0
+MAX_9 3
+ 
+UNIT_10 Indian_Cavalry
+MIN_10 0
+MAX_10 3
+
+// 84-47 BC
+[L_PONTIC]
+SIDEID 29
+NAME IDS_ARMY_L_PONTIC
+YEARS 2916 2953 // Note start era from 3000 BC
+DEPLOYMENT Roman
+LONGMIN 26
+LONGMAX 42
+LATMIN 36
+LATMAX 48
+INTRO IDS_ARMY_INTRO_PONTIC
+SORTNAME Pontic
+MAPSET Medi
+ALLIES1 E_ARMENIAN_TIG
+ 
+UNIT_0 Imitation_Legion
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 11
+ 
+UNIT_1 Falxmen
+MIN_1 0
+MAX_1 1
+ 
+UNIT_2 Thureophoroi
+MIN_2 2
+MAX_2 7
+ 
+UNIT_3 Light_Javelins
+MIN_3 2
+MAX_3 5
+ 
+UNIT_4 Hillmen
+MIN_4 0
+MAX_4 7
+ 
+UNIT_5 Persian_Light_Archers
+MIN_5 2
+MAX_5 7
+ 
+UNIT_6 Persian_Light_Slingers
+MIN_6 0
+MAX_6 2
+ 
+UNIT_7 LH_Javelin
+MIN_7 1
+MAX_7 4
+ 
+UNIT_8 Persian_Cav_Jav_Arm
+MIN_8 2
+MAX_8 6
+ 
+UNIT_9 Noble_Lancers_Arm
+MIN_9 0
+MAX_9 3
+ 
+UNIT_10 Cataphracts 
+MIN_10 0
+MAX_10 3
+
+UNIT_11 Nomad_LH
+MIN_11 0
+MAX_11 3
+
+UNIT_12 LH_Bow
+MIN_12 0
+MAX_12 3
+
+UNIT_13 Warband
+MIN_13 0
+MAX_13 2
+
+UNIT_14 Thracians
+MIN_14 0
+MAX_14 3
+
+UNIT_15 Scythed_Chariots
+MIN_15 0
+MAX_15 2
+
+
+// 84 BC - 10 AD
+[M_BOSPORAN]
+SIDEID 6
+NAME IDS_ARMY_M_BOSPORAN
+YEARS 2916 3010 // Note start era from 3000 BC
+DEPLOYMENT Skythian
+LONGMIN 27
+LONGMAX 45
+LATMIN 43
+LATMAX 52
+INTRO IDS_ARMY_INTRO_BOSPORAN
+SORTNAME Bosporan
+MAPSET North
+ALLIES1 E_SARMATIAN
+ALLIES2 L_SKYTHIAN
+ 
+UNIT_0 Noble_Lancers_Arm
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 8
+ 
+UNIT_1 Noble_Lancers_Prot
+MIN_1 0
+MAX_1 4
+ 
+UNIT_2 Barbarian_Light_Archers
+MIN_2 2
+MAX_2 8
+ 
+UNIT_3 Barbarian_Light_Javelins
+MIN_3 0
+MAX_3 6
+ 
+UNIT_4 Barbarian_Light_Slingers
+MIN_4 0
+MAX_4 4
+
+UNIT_5 Nomad_LH
+MIN_5 3
+MAX_5 8
+
+UNIT_6 Hillmen
+MIN_6 2
+MAX_6 8
+
+UNIT_7 Nomad_Cavalry
+MIN_7 0
+MAX_7 4
+
+UNIT_8 Thureophoroi
+MIN_8 0
+MAX_8 4
+
+UNIT_9 Thracians
+MIN_9 0
+MAX_9 4
+
+UNIT_10 Warband
+MIN_10 0
+MAX_10 4
+
+UNIT_11 Imitation_Legion
+MIN_11 0
+MAX_11 8
+
+
+// 83 - 69 BC
+[E_ARMENIAN_TIG]
+SIDEID 5
+NAME IDS_ARMY_E_ARMENIAN_TIG
+YEARS 2917 2931 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 35
+LONGMAX 52
+LATMIN 35
+LATMAX 44
+INTRO IDS_ARMY_INTRO_ARMENIAN
+SORTNAME Armenian
+MAPSET MidEast
+ALLIES1 L_PONTIC
+ 
+UNIT_0 Cataphracts
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 10
+ 
+UNIT_1 LH_Bow
+MIN_1 5
+MAX_1 12
+ 
+UNIT_2 Hillmen
+MIN_2 5
+MAX_2 26
+ 
+UNIT_3 Light_Archers
+MIN_3 2
+MAX_3 14
+ 
+UNIT_4 Medium_Archers
+MIN_4 0
+MAX_4 8
+ 
+UNIT_5 Light_Slingers
+MIN_5 0
+MAX_5 2
+
+UNIT_6 Pike
+MIN_6 0
+MAX_6 4
+
+UNIT_7 Imitation_Legion
+MIN_7 0
+MAX_7 6
+
+
+// 80 - 72 BC
+[A_SPANISH_SERT]
+SIDEID 38
+NAME IDS_ARMY_A_SPANISH_SERT
+YEARS 2920 2928 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN -10
+LONGMAX 4
+LATMIN 36
+LATMAX 44
+INTRO IDS_ARMY_INTRO_SPANISH
+SORTNAME Spanish
+MAPSET Medi
+ 
+UNIT_0 Spanish_Scutarii
+// fixed quantity for 2000 point army
+MIN_0 6
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 18
+ 
+UNIT_1 Noble_Cavalry_Prot
+MIN_1 0
+MAX_1 6
+ 
+UNIT_2 LH_Javelin
+MIN_2 0
+MAX_2 8
+ 
+UNIT_3 Warband
+MIN_3 0
+MAX_3 4
+ 
+UNIT_4 Light_Javelins
+MIN_4 8
+MAX_4 30
+ 
+UNIT_5 Light_Slingers
+MIN_5 0
+MAX_5 8
+
+UNIT_6 Legionary_LRepub
+MIN_6 0
+MAX_6 4
+
+
+// 73-71 BC
+[SPARTACUS]
+SIDEID 37
+NAME IDS_ARMY_SPARTACUS
+YEARS 2927 2929 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 12
+LONGMAX 19
+LATMIN 37
+LATMAX 46
+INTRO IDS_ARMY_INTRO_SLAVE_REVOLT
+SORTNAME Slave
+MAPSET Medi
+ 
+UNIT_0 Well_Armed_Slaves
+// fixed quantity for 2000 point army
+MIN_0 6
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 25
+ 
+UNIT_1 Poorly_Armed_Slaves
+MIN_1 4
+MAX_1 28
+ 
+UNIT_2 Light_Slingers
+MIN_2 0
+MAX_2 3
+ 
+UNIT_3 Light_Javelins
+MIN_3 2
+MAX_3 6
+ 
+UNIT_4 Noble_Cavalry_Prot
+MIN_4 0
+MAX_4 2
+ 
+UNIT_5 Levies
+MIN_5 0
+MAX_5 4
+ 
+// 63 BC - 6 AD
+[LH_JEWISH]
+SIDEID 19
+NAME IDS_ARMY_LH_JEWISH
+YEARS 2937 3006 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 34
+LONGMAX 38
+LATMIN 30
+LATMAX 34
+INTRO IDS_ARMY_INTRO_JEWISH
+SORTNAME Jewish
+MAPSET MidEast
+ALLIES1 LR_ROMAN
+ALLIES2 PARTHIAN
+ 
+UNIT_0 Imitation_Legion
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 8
+ 
+UNIT_1 Thureophoroi
+MIN_1 6
+MAX_1 20
+ 
+UNIT_2 Hillmen
+MIN_2 0
+MAX_2 20
+ 
+UNIT_3 Light_Archers
+MIN_3 2
+MAX_3 8
+ 
+UNIT_4 Light_Slingers
+MIN_4 2
+MAX_4 6
+ 
+UNIT_5 Light_Javelins
+MIN_5 2
+MAX_5 8
+ 
+UNIT_6 Xystophoroi
+MIN_6 0
+MAX_6 3
+ 
+UNIT_7 LH_Bow
+MIN_7 2
+MAX_7 8
+
+UNIT_8 Thracians
+MIN_8 0
+MAX_8 4
+
+UNIT_9 Noble_Cavalry_Arm
+MIN_9 0
+MAX_9 4
+
+
+// 62 - 25 BC
+[L_GALATIAN]
+SIDEID 70
+NAME IDS_ARMY_L_GALATIAN
+YEARS 2938 2975 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 30
+LONGMAX 38
+LATMIN 37
+LATMAX 43
+INTRO IDS_ARMY_INTRO_GALATIAN
+SORTNAME Galatian
+MAPSET Medi
+ALLIES1 LR_ROMAN
+ 
+UNIT_0 Warband
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 16
+ 
+UNIT_1 Noble_Cavalry_Arm
+MIN_1 0
+MAX_1 4
+ 
+UNIT_2 Noble_Cavalry_Prot
+MIN_2 2
+MAX_2 9
+ 
+UNIT_3 Imitation_Legion
+MIN_3 0
+MAX_3 14
+ 
+UNIT_4 Barbarian_Light_Javelins
+MIN_4 0
+MAX_4 6
+ 
+
+// 60 BC - 80 AD
+[ANC_BRIT]
+SIDEID 3
+NAME IDS_ARMY_ANC_BRIT
+YEARS 2940 3080 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN -6
+LONGMAX 2
+LATMIN 50
+LATMAX 56
+INTRO IDS_ARMY_INTRO_ANCIENT_BRITISH
+SORTNAME AncientBritish
+MAPSET North
+ 
+UNIT_0 Celtic_Chariots
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 20
+ 
+UNIT_1 Barb_LH_Jav
+MIN_1 2
+MAX_1 8
+ 
+UNIT_2 Medium_Warband
+MIN_2 3
+MAX_2 16
+ 
+UNIT_3 Med_Sup_Warband
+MIN_3 0
+MAX_3 2
+ 
+UNIT_4 Barbarian_Light_Slingers
+MIN_4 0
+MAX_4 12
+ 
+UNIT_5 Barbarian_Light_Javelins
+MIN_5 0
+MAX_5 6
+ 
+UNIT_6 Levies
+MIN_6 0
+MAX_6 2
+
+// 60 BC - 130 AD
+[INDOPARTHIAN]
+SIDEID 25
+NAME IDS_ARMY_INDOPARTHIAN
+YEARS 2940 3130 // Note start era from 3000 BC
+DEPLOYMENT Skythian
+LONGMIN 65
+LONGMAX 78
+LATMIN 22
+LATMAX 36
+INTRO IDS_ARMY_INTRO_INDOPARTHIAN
+SORTNAME IndoParthian
+MAPSET Tropical
+ALLIES1 EC_INDIAN
+ 
+UNIT_0 Cataphracts
+// fixed quantity for 2000 point army
+MIN_0 3
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 9
+ 
+UNIT_1 LH_Bow
+MIN_1 9
+MAX_1 36
+ 
+UNIT_2 Nomad_LH
+MIN_2 0
+MAX_2 7
+ 
+UNIT_3 Nomad_Cavalry
+MIN_3 0
+MAX_3 3
+ 
+UNIT_4 Persian_Light_Archers
+MIN_4 0
+MAX_4 3
+ 
+UNIT_5 Hillmen
+MIN_5 0
+MAX_5 3
+ 
+UNIT_6 Indian_Elephants
+MIN_6 0
+MAX_6 4
+ 
+UNIT_7 LH_Javelin
+MIN_7 0
+MAX_7 2
+ 
+UNIT_8 Indian_Archers
+MIN_8 2
+MAX_8 7
+ 
+UNIT_9 Indian_Javelinmen
+MIN_9 0
+MAX_9 3
+ 
+UNIT_10 Indian_Cavalry
+MIN_10 0
+MAX_10 3
+
+// 55-30 BC
+[L_PTOLEMAIC]
+SIDEID 30
+NAME IDS_ARMY_L_PTOLEMAIC
+YEARS 2945 2970 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 24
+LONGMAX 38
+LATMIN 15
+LATMAX 36
+INTRO IDS_ARMY_INTRO_PTOLEMAIC
+SORTNAME Ptolemaic
+MAPSET MidEast
+ALLIES1 LR_ROMAN
+ 
+UNIT_0 Pike
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 2
+ 
+UNIT_1 Legionary_LRepub
+MIN_1 0
+MAX_1 3
+ 
+UNIT_2 Thureophoroi
+MIN_2 0
+MAX_2 5
+ 
+UNIT_3 Light_Javelins
+MIN_3 0
+MAX_3 3
+ 
+UNIT_4 Cretan_Archers
+MIN_4 0
+MAX_4 3
+ 
+UNIT_5 Light_Archers
+MIN_5 0
+MAX_5 3
+ 
+UNIT_6 Light_Slingers
+MIN_6 0
+MAX_6 3
+ 
+UNIT_7 LH_Javelin
+MIN_7 0
+MAX_7 3
+ 
+UNIT_8 Xystophoroi
+MIN_8 2
+MAX_8 5
+ 
+UNIT_9 Grk_arm_cav
+MIN_9 0
+MAX_9 1
+ 
+UNIT_10 Noble_Cavalry_Prot
+MIN_10 0
+MAX_10 1
+
+UNIT_11 Pike_Raw
+MIN_11 0
+MAX_11 5
+
+UNIT_12 Heavy_Artillery
+MIN_12 0
+MAX_12 2
+
+UNIT_13 Thureophoroi_Raw
+MIN_13 0
+MAX_13 6
+
+UNIT_14 Thracians
+MIN_14 0
+MAX_14 3
+
+UNIT_15 Thorakitai
+MIN_15 0
+MAX_15 3
+
+UNIT_16 Arab_Camelry
+MIN_16 0
+MAX_16 1
+
+UNIT_17 Imitation_Legion
+MIN_17 0
+MAX_17 5
+
+UNIT_18 Noble_Cavalry_Arm
+MIN_18 0
+MAX_18 1
+
+// 55 BC - 6 AD
+[L_NUMIDIAN]
+SIDEID 23
+NAME IDS_ARMY_L_NUMIDIAN
+YEARS 2945 3006 // Note start era from 3000 BC
+DEPLOYMENT Skythian
+LONGMIN -10
+LONGMAX 10
+LATMIN 30
+LATMAX 37
+INTRO IDS_ARMY_INTRO_NUMIDIAN
+SORTNAME Numidian
+MAPSET Medi
+ 
+UNIT_0 LH_Javelin
+// fixed quantity for 2000 point army
+MIN_0 12
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 32
+ 
+UNIT_1 Light_Javelins
+MIN_1 8
+MAX_1 32
+ 
+UNIT_2 Poeni_Foot
+MIN_2 0
+MAX_2 8
+ 
+UNIT_3 Light_Archers
+MIN_3 0
+MAX_3 3
+ 
+UNIT_4 Light_Slingers
+MIN_4 0
+MAX_4 3
+ 
+UNIT_5 Elephants
+MIN_5 0
+MAX_5 3
+
+UNIT_6 Imitation_Legion
+MIN_6 0
+MAX_6 12
+
+UNIT_7 Spanish_Scutarii
+MIN_7 0
+MAX_7 4
+
+UNIT_8 Noble_Cavalry_Prot
+MIN_8 0
+MAX_8 2
+
+UNIT_9 Hillmen
+MIN_9 8
+MAX_9 20
+
+
+// 50 BC - 106 AD
+[DACIAN]
+SIDEID 9
+NAME IDS_ARMY_DACIAN
+YEARS 2950 3106 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN 20
+LONGMAX 30
+LATMIN 43
+LATMAX 50
+INTRO IDS_ARMY_INTRO_DACIAN
+SORTNAME Dacian
+MAPSET North
+ALLIES1 L_SARMATIAN
+ 
+UNIT_0 Falxmen
+// fixed quantity for 2000 point army
+MIN_0 2
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 9
+ 
+UNIT_1 Medium_Warband
+MIN_1 3
+MAX_1 19
+ 
+UNIT_2 Barb_LH_Jav
+MIN_2 0
+MAX_2 3
+ 
+UNIT_3 Noble_Cavalry_Prot
+MIN_3 0
+MAX_3 3
+ 
+UNIT_4 Noble_Lancers_Arm
+MIN_4 0
+MAX_4 9
+ 
+UNIT_5 Barbarian_Light_Javelins
+MIN_5 0
+MAX_5 5
+ 
+UNIT_6 Heavy_Artillery
+MIN_6 0
+MAX_6 1
+ 
+UNIT_7 Light_Artillery
+MIN_7 0
+MAX_7 1
+
+UNIT_8 Barbarian_Light_Archers
+MIN_8 2
+MAX_8 7
+
+
+// 50 BC - 476 AD
+[E_SCOTS_IRISH]
+SIDEID 34
+NAME IDS_ARMY_E_SCOTS_IRISH
+YEARS 2950 3476 // Note start era from 3000 BC
+DEPLOYMENT Hellenistic
+LONGMIN -11
+LONGMAX -5
+LATMIN 51
+LATMAX 56
+INTRO IDS_ARMY_INTRO_SCOTS_IRISH
+SORTNAME ScotsIrish
+MAPSET North
+ 
+UNIT_0 Celtic_Chariots
+// fixed quantity for 2000 point army
+MIN_0 0
+// total (fixed + selection) quantity for 2000 point army
+MAX_0 14
+ 
+UNIT_1 Scots_Irish
+MIN_1 8
+MAX_1 28
+ 
+UNIT_2 Sup_Scots_Irish
+MIN_2 0
+MAX_2 7
+ 
+UNIT_3 Barbarian_Light_Javelins
+MIN_3 2
+MAX_3 12
+
+UNIT_4 Barbarian_Light_Slingers
+MIN_4 0
+MAX_4 3
+
+UNIT_5 Med_Sup_Warband
+MIN_5 0
+MAX_5 4

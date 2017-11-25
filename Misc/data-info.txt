@@ -2,7 +2,7 @@ Name - this is the name of the unit used in scenario .BAM files and also in Army
 ID - this is the units index number for IDS_UNITNAME and IDS_UNITINFO strings
 Type	- this is the troop type ("squad type"). You can see the full list in /Data/Terrain.txt
 IconID - not used
-ManCount - this is the number of models in the unit
+ManCount - this is the number of models in the unit (DISPLAY ONLY)
 IconSIze - not used
 IconHeight - not used	
 LOS	- this is the LOS in the open x 10

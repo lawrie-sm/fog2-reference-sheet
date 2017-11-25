@@ -16,7 +16,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      {this.state.unitCardList}
+        <div className="container col-md row">
+            {this.state.unitCardList}
+        </div>
       </div>
     );
   }
