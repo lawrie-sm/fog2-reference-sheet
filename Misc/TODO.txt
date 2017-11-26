@@ -3,3 +3,7 @@ Group cards by army lists
 Match cards up using an emulation of the game formula / some other comparison
 
 Other games using the same engine (P&S etc.)
+
+
+LINKS:
+https://react.rocks/tag/DataTable

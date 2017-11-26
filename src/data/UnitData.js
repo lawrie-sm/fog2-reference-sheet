@@ -1,4 +1,4 @@
-const squads = [
+const UnitData = [
 {"Name":"Levies","ID":"20","Type":"Mob","Cost":"15","ViewFlags":"1","AP":"10","TotalMen":"1024","UnitSize":"750","BodyArmour":"0","Experience":"0","Elan":"0","Light Artillery":"0","Heavy Artillery":"0","Bow":"0","Sling":"0","Javelins":"0","Light Lancers":"0","Impact Foot":"0","Pike":"0","Heavy Weapon":"0","Offensive Spearmen":"0","Defensive Spearmen":"0","Light Spear":"0","Swordsmen":"0"},
 {"Name":"Baggage","ID":"98","Type":"Train","Cost":"0","ViewFlags":"1","AP":"12","TotalMen":"120","UnitSize":"200","BodyArmour":"0","Experience":"0","Elan":"0","Light Artillery":"0","Heavy Artillery":"0","Bow":"0","Sling":"0","Javelins":"0","Light Lancers":"0","Impact Foot":"0","Pike":"0","Heavy Weapon":"0","Offensive Spearmen":"0","Defensive Spearmen":"0","Light Spear":"0","Swordsmen":"0"},
 {"Name":"Levy Psiloi","ID":"9","Type":"Light Foot","Cost":"20","ViewFlags":"1","AP":"12","TotalMen":"240","UnitSize":"300","BodyArmour":"0","Experience":"50","Elan":"50","Light Artillery":"0","Heavy Artillery":"0","Bow":"34","Sling":"33","Javelins":"33","Light Lancers":"0","Impact Foot":"0","Pike":"0","Heavy Weapon":"0","Offensive Spearmen":"0","Defensive Spearmen":"0","Light Spear":"33","Swordsmen":"0"},
@@ -86,4 +86,4 @@ const squads = [
 {"Name":"Triarii","ID":"30","Type":"Heavy Foot","Cost":"43","ViewFlags":"1","AP":"10","TotalMen":"240","UnitSize":"300","BodyArmour":"100","Experience":"250","Elan":"250","Light Artillery":"0","Heavy Artillery":"0","Bow":"0","Sling":"0","Javelins":"0","Light Lancers":"0","Impact Foot":"0","Pike":"0","Heavy Weapon":"0","Offensive Spearmen":"100","Defensive Spearmen":"0","Light Spear":"0","Swordsmen":"0"},
 {"Name":"Vet Legionaries","ID":"44","Type":"Heavy Foot","Cost":"96","ViewFlags":"1","AP":"10","TotalMen":"480","UnitSize":"600","BodyArmour":"100","Experience":"300","Elan":"300","Light Artillery":"0","Heavy Artillery":"0","Bow":"0","Sling":"0","Javelins":"0","Light Lancers":"0","Impact Foot":"100","Pike":"0","Heavy Weapon":"0","Offensive Spearmen":"0","Defensive Spearmen":"0","Light Spear":"0","Swordsmen":"100"}
 ];
-export default squads;
+export default UnitData;
