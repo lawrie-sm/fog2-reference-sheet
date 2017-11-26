@@ -79,3 +79,9 @@ ShaderValue - the number of variants on the texture sheet
 BannerHeight - the height of the bottom of the banner above ground level.
 3DViewZoom - camera zoom on the unit in 3D view boxes - e.g. the unit UI at the bottom of the battle screen
 3DViewHeight - camera height in the 3D view boxes
+
+
+REGEX for replacing quoted digits
+
+Find: "([0-9]+)"
+Replace: $1
