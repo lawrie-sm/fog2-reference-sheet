@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import ReactTable from 'react-table';
 import MatchSorter from 'match-sorter';
-import UnitData from '../data/UnitData';
 import TableUtils from '../utils/TableUtils';
 
 class UnitTable extends Component {
   
-  render() {
-    const columns = [
+  constructor() {
+    super();
+    this.state = { columns: [
       {
         Header: 'Name', //TODO: Renaming util
         accessor: 'Name',
@@ -25,6 +25,7 @@ class UnitTable extends Component {
         Cell: props => TableUtils.getTraitsCellText(props.value),
         filterable: true,
         filterMethod: (filter, row) => MatchSorter(row[filter.id], filter.value, {keys: ['name']}).length,
+        sortMethod: TableUtils.getTraitSortFunction(),
         minWidth: 200
       },
       {
@@ -63,19 +64,21 @@ class UnitTable extends Component {
         Header: 'Cost',
         accessor: 'Cost',
         maxWidth: 50
-      },
-    ];
+      }]};
+  }
 
+  render() {
     return (
     <ReactTable
-    data={UnitData}
-    columns={columns}
+    data={this.props.units}
+    columns={this.state.columns}
     showPagination={false}
     showPaginationTop={false}
     showPaginationBottom={false}
     showPageSizeOptions={false}
     defaultPageSize={100}
     showPageJump={false}
+    defaultSorted={[{id: "Type"}]}
     />
   );
   }

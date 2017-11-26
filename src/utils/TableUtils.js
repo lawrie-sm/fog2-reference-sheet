@@ -75,4 +75,14 @@ export function getTraitsCellText(traits) {
   return traitsText;
 }
 
-export default { getArmourCellText, getQualityCellText, getTraits, getTraitsCellText };
+export function getTraitSortFunction() {
+  return function(a, b) {
+    if (a.length === 0) return 1;
+    if (b.length === 0) return -1;
+    let txtA = a[0].name.toUpperCase();
+    let txtB = b[0].name.toUpperCase();
+    return (txtA < txtB) ? -1 : (txtA > txtB) ? 1 : 0;
+  };
+}
+
+export default { getArmourCellText, getQualityCellText, getTraits, getTraitsCellText, getTraitSortFunction };
