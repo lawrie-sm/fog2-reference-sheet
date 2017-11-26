@@ -16,7 +16,7 @@ class UnitTable extends Component {
       {
         Header: 'Type',
         accessor: 'Type',
-        filterable: true
+        filterable: true,
       },
       {
         id: 'traits',
@@ -26,29 +26,29 @@ class UnitTable extends Component {
         filterable: true,
         filterMethod: (filter, row) => MatchSorter(row[filter.id], filter.value, {keys: ['name']}).length,
         sortMethod: TableUtils.getTraitSortFunction(),
-        minWidth: 200
+        minWidth: 200,
       },
       {
         id: 'quality',
         Header: 'Quality',
         accessor: u => (u.Experience + u.Elan) / 2,
-        Cell: props => <span>{TableUtils.getQualityCellText(props.value)}</span>
+        Cell: props => TableUtils.getQualityCellText(props.value),
       },
       {
         id: 'armour',
         Header: 'Armour',
         accessor: 'BodyArmour',
-        Cell: props => <span>{TableUtils.getArmourCellText(props.value)}</span>,
+        Cell: props => TableUtils.getArmourCellText(props.value),
       },
       {
         Header: 'AP',
         accessor: 'AP',
-        maxWidth: 50
+        maxWidth: 75
       },
       {
         Header: 'Men',
         accessor: 'TotalMen',
-        maxWidth: 60
+        maxWidth: 75
       },
       {
         Header: 'Strength',
@@ -63,7 +63,7 @@ class UnitTable extends Component {
       {
         Header: 'Cost',
         accessor: 'Cost',
-        maxWidth: 50
+        maxWidth: 75
       }]};
   }
 
