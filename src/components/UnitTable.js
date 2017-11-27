@@ -12,33 +12,34 @@ class UnitTable extends Component {
       {
         Header: 'Name', //TODO: Renaming util
         accessor: 'Name',
-        filterable: true
+        filterMethod: TableUtils.filterCaseInsensitive()
       },
       {
         Header: 'Type',
         accessor: 'Type',
-        filterable: true,
+        filterMethod: TableUtils.filterCaseInsensitive()
       },
       {
         id: 'traits',
         Header: 'Traits',
-        accessor: u => TableUtils.getTraits(u),
+        accessor: u => TableUtils.getTraitAccessor(u),
         Cell: props => TableUtils.getTraitsCellText(props.value),
-        filterable: true,
         filterMethod: (filter, row) => MatchSorter(row[filter.id], filter.value, {keys: ['name']}).length,
         sortMethod: TableUtils.getTraitSortFunction(),
       },
       {
         id: 'quality',
-        Header: 'Quality',
-        accessor: u => (u.Experience + u.Elan) / 2,
-        Cell: props => TableUtils.getQualityCellText(props.value),
+        Header: 'Quality', //TODO: Fix 0 values dont work
+        accessor: u => TableUtils.getQualityAccessor(u.Experience, u.Elan),
+        Cell: props => TableUtils.getNamedValueCellText(props.value),
+        filterMethod: (filter, row) => TableUtils.filterNamedValue(row[filter.id], filter.value)
       },
       {
         id: 'armour',
         Header: 'Armour',
-        accessor: 'BodyArmour',
-        Cell: props => TableUtils.getArmourCellText(props.value),
+        accessor: u => TableUtils.getArmourAccessor(u.BodyArmour),
+        Cell: props => TableUtils.getNamedValueCellText(props.value),
+        filterMethod: (filter, row) => TableUtils.filterNamedValue(row[filter.id], filter.value)
       },
       {
         Header: 'AP',
@@ -79,7 +80,7 @@ class UnitTable extends Component {
     defaultPageSize={100}
     showPageJump={false}
     defaultSorted={[{id: "Type"}]}
-    defaultFilterMethod={TableUtils.filterCaseInsensitive()}
+    filterable={true}
     />
   );
   }

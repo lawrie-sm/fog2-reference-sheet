@@ -1,29 +1,34 @@
 import MatchSorter from 'match-sorter';
 
-export function getQualityCellText(qualityVal) {
-  let qualityDesc = 'Untrained';
-  if (qualityVal > 0) {
-    qualityDesc = 'Raw';
-    if (qualityVal > 50) {
-      qualityDesc = 'Below Average';
-      if (qualityVal > 75) {
-        qualityDesc = 'Average';
-        if (qualityVal > 100) {
-          qualityDesc = 'Above Average';
-          if (qualityVal >= 200) {
-            qualityDesc = 'Superior';
-            if (qualityVal > 200 ) {
-              qualityDesc = 'Elite';
-            }
-          }
-        } 
-      }
-    }
-  }
-  return `${qualityDesc} (${qualityVal})`;
+export function getNamedValueCellText(qualityObj) {
+  return `${qualityObj.name} (${qualityObj.value})`;
 }
 
-export function getArmourCellText(armourVal) {
+export function getQualityAccessor(experience, elan) {
+    let qualityVal = (experience + elan) / 2;
+    let qualityDesc = 'Untrained';
+    if (qualityVal > 0) {
+      qualityDesc = 'Raw';
+      if (qualityVal > 50) {
+        qualityDesc = 'Below Average';
+        if (qualityVal > 75) {
+          qualityDesc = 'Average';
+          if (qualityVal > 100) {
+            qualityDesc = 'Above Average';
+            if (qualityVal >= 200) {
+              qualityDesc = 'Superior';
+              if (qualityVal > 200 ) {
+                qualityDesc = 'Elite';
+              }
+            }
+          } 
+        }
+      }
+    }
+    return ({'name': qualityDesc, 'value': qualityVal});
+}
+
+export function getArmourAccessor(armourVal) {
   let armourDesc = 'None';
   if (armourVal > 0) {
     armourDesc = 'Lightly Protected';
@@ -40,10 +45,10 @@ export function getArmourCellText(armourVal) {
       }
     }
   }
-  return `${armourDesc} (${armourVal})`;
+  return ({'name': armourDesc, 'value': armourVal});
 }
 
-export function getTraits(unit) {
+export function getTraitAccessor(unit) {
   const traitNames = [
     'Bow',
     'Defensive Spearmen',
@@ -87,7 +92,7 @@ export function getTraitSortFunction() {
   };
 }
 
-export function filterCaseInsensitive() {
+export function filterCaseInsensitive(keys) {
   return function (filter, row) {
     const id = filter.pivotId || filter.id;
     if (row[id] !== null) {
@@ -99,11 +104,18 @@ export function filterCaseInsensitive() {
   }
 }
 
+export function filterNamedValue(cell, filter) {
+  let tempArr = Object.keys(cell).map((key) => cell[key]);
+  return MatchSorter(tempArr, filter).length
+}
+
 export default {
-  getArmourCellText,
-  getQualityCellText,
-  getTraits,
+  getNamedValueCellText,
+  getArmourAccessor,  
+  getQualityAccessor,
+  getTraitAccessor,
   getTraitsCellText,
   getTraitSortFunction,
-  filterCaseInsensitive
+  filterCaseInsensitive,
+  filterNamedValue
 }
