@@ -469,7 +469,7 @@
 
 /* Fixed header and scrolling */
 .ReactTable {
-  height: 100%;
+  height: 400px;
   overflow: auto;
 }
 

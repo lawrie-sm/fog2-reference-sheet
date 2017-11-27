@@ -79,6 +79,7 @@ class UnitTable extends Component {
     defaultPageSize={100}
     showPageJump={false}
     defaultSorted={[{id: "Type"}]}
+    defaultFilterMethod={TableUtils.filterCaseInsensitive()}
     />
   );
   }

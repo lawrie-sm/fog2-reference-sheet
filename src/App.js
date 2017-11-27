@@ -9,7 +9,7 @@ class App extends Component {
       <div className='app container'>
         <div className='row'>
           <div className='twelve columns'>
-            Header
+            <h3>Field of Glory 2 Unit Browser</h3>
           </div>
         </div>
         <div className='row'>

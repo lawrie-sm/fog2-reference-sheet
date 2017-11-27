@@ -1,3 +1,5 @@
+import MatchSorter from 'match-sorter';
+
 export function getQualityCellText(qualityVal) {
   let qualityDesc = 'Untrained';
   if (qualityVal > 0) {
@@ -85,4 +87,23 @@ export function getTraitSortFunction() {
   };
 }
 
-export default { getArmourCellText, getQualityCellText, getTraits, getTraitsCellText, getTraitSortFunction };
+export function filterCaseInsensitive() {
+  return function (filter, row) {
+    const id = filter.pivotId || filter.id;
+    if (row[id] !== null) {
+        let input = filter.value.toUpperCase();
+        let words = row[id].toUpperCase();
+        words = words.split(' ');
+        return MatchSorter(words, input).length;
+    }
+  }
+}
+
+export default {
+  getArmourCellText,
+  getQualityCellText,
+  getTraits,
+  getTraitsCellText,
+  getTraitSortFunction,
+  filterCaseInsensitive
+}
