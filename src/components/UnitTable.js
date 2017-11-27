@@ -32,14 +32,16 @@ class UnitTable extends Component {
         Header: 'Quality', //TODO: Fix 0 values dont work
         accessor: u => TableUtils.getQualityAccessor(u.Experience, u.Elan),
         Cell: props => TableUtils.getNamedValueCellText(props.value),
-        filterMethod: (filter, row) => TableUtils.filterNamedValue(row[filter.id], filter.value)
+        filterMethod: (filter, row) => TableUtils.filterNamedValue(row[filter.id], filter.value),
+        sortMethod: (a,b) => (a.value < b.value) ? -1 : 1
       },
       {
         id: 'armour',
         Header: 'Armour',
         accessor: u => TableUtils.getArmourAccessor(u.BodyArmour),
         Cell: props => TableUtils.getNamedValueCellText(props.value),
-        filterMethod: (filter, row) => TableUtils.filterNamedValue(row[filter.id], filter.value)
+        filterMethod: (filter, row) => TableUtils.filterNamedValue(row[filter.id], filter.value),
+        sortMethod: (a,b) => (a.value < b.value) ? -1 : 1
       },
       {
         Header: 'AP',
@@ -79,7 +81,7 @@ class UnitTable extends Component {
     showPageSizeOptions={false}
     defaultPageSize={100}
     showPageJump={false}
-    defaultSorted={[{id: "Type"}]}
+    defaultSorted={[{id: 'Type'}]}
     filterable={true}
     minRows={10}
     />
