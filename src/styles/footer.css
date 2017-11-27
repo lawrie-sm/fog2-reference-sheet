@@ -1,19 +1,18 @@
 #footer {
   width: 100%;
-  height: 40px;
-  display: flex;
+  height: 120px;
+  padding: 0;
+  text-align: center;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.025);
+ 
 }
 
-#footer a {
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
+#footer a, p {
   color: rgba(0, 0, 0, 0.5);
 }
 
-#footer a:hover {
-  text-decoration: underline;
+#footer p {
+  margin: 0;
+  padding-top: 1em;
 }

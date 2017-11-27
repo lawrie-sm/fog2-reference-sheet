@@ -85,3 +85,9 @@ REGEX for replacing quoted digits
 
 Find: "([0-9]+)"
 Replace: $1
+
+FILE CHANGES for raw game data squads.csv:
+- Remove unused headers and columns
+- Convert to JSON
+- Convert string digits into ints
+- add export syntax and store in data

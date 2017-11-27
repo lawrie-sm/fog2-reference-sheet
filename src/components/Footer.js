@@ -3,7 +3,12 @@ import '../styles/footer.css';
 
 const Footer = ({props}) => (
   <div id='footer'>
-    <a href='http://lsm.scot/'>© Lawrie Scott-McFarlane 2017</a>
+    <p>
+      Made by <a href='http://lsm.scot/'>Lawrie Scott-McFarlane.</a>
+    </p>
+    <p>
+      Field of Glory II was developed by Byzantine Games and published by <a href='http://www.slitherine.com/'>Slitherine</a>.
+    </p>
   </div>
 );
 

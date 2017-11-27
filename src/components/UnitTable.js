@@ -12,12 +12,12 @@ class UnitTable extends Component {
       {
         Header: 'Name', //TODO: Renaming util
         accessor: 'Name',
-        filterMethod: TableUtils.filterCaseInsensitive()
+        filterMethod: (filter, row) => MatchSorter([row[filter.id]], filter.value).length,
       },
       {
         Header: 'Type',
         accessor: 'Type',
-        filterMethod: TableUtils.filterCaseInsensitive()
+        filterMethod: (filter, row) => MatchSorter([row[filter.id]], filter.value).length
       },
       {
         id: 'traits',
@@ -33,7 +33,8 @@ class UnitTable extends Component {
         accessor: u => TableUtils.getQualityAccessor(u.Experience, u.Elan),
         Cell: props => TableUtils.getNamedValueCellText(props.value),
         filterMethod: (filter, row) => TableUtils.filterNamedValue(row[filter.id], filter.value),
-        sortMethod: (a,b) => (a.value < b.value) ? -1 : 1
+        sortMethod: (a,b) => (a.value < b.value) ? -1 : 1,
+        maxWidth: 160
       },
       {
         id: 'armour',
@@ -41,7 +42,8 @@ class UnitTable extends Component {
         accessor: u => TableUtils.getArmourAccessor(u.BodyArmour),
         Cell: props => TableUtils.getNamedValueCellText(props.value),
         filterMethod: (filter, row) => TableUtils.filterNamedValue(row[filter.id], filter.value),
-        sortMethod: (a,b) => (a.value < b.value) ? -1 : 1
+        sortMethod: (a,b) => (a.value < b.value) ? -1 : 1,
+        maxWidth: 160
       },
       {
         Header: 'AP',

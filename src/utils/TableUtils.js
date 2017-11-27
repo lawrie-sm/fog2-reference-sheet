@@ -101,12 +101,12 @@ export function filterCaseInsensitive(keys) {
         words = words.split(' ');
         return MatchSorter(words, input).length;
     }
-  }
+  };
 }
 
 export function filterNamedValue(cell, filter) {
   let tempArr = Object.keys(cell).map((key) => cell[key]);
-  return MatchSorter(tempArr, filter).length
+  return MatchSorter(tempArr, filter).length;
 }
 
 export default {
@@ -118,4 +118,4 @@ export default {
   getTraitSortFunction,
   filterCaseInsensitive,
   filterNamedValue
-}
+};
