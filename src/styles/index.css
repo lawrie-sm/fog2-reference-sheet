@@ -1,4 +1,17 @@
-html, body, #root, .app
-{
-    height: 100%;
+#footer {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.025);
+}
+
+#footer p {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding-bottom: 40px;
 }

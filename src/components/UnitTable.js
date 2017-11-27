@@ -44,12 +44,12 @@ class UnitTable extends Component {
       {
         Header: 'AP',
         accessor: 'AP',
-        maxWidth: 75
+        maxWidth: 50
       },
       {
         Header: 'Men',
         accessor: 'TotalMen',
-        maxWidth: 75
+        maxWidth: 50
       },
       {
         Header: 'Strength',
@@ -64,7 +64,7 @@ class UnitTable extends Component {
       {
         Header: 'Cost',
         accessor: 'Cost',
-        maxWidth: 75
+        maxWidth: 50
       }]};
   }
 
@@ -81,6 +81,7 @@ class UnitTable extends Component {
     showPageJump={false}
     defaultSorted={[{id: "Type"}]}
     filterable={true}
+    minRows={10}
     />
   );
   }
