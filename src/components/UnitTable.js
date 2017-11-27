@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactTable from 'react-table';
 import MatchSorter from 'match-sorter';
 import TableUtils from '../utils/TableUtils';
+import '../styles/react-table.css';
 
 class UnitTable extends Component {
   
@@ -26,7 +27,6 @@ class UnitTable extends Component {
         filterable: true,
         filterMethod: (filter, row) => MatchSorter(row[filter.id], filter.value, {keys: ['name']}).length,
         sortMethod: TableUtils.getTraitSortFunction(),
-        minWidth: 200,
       },
       {
         id: 'quality',
