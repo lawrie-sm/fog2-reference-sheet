@@ -477,12 +477,6 @@
   margin-bottom: 0;
 }
 
-/* Fixed header and scrolling */
-.ReactTable {
-  overflow: auto;
-  height: 800px;
-}
-
 .ReactTable .rt-thead {
   background-color: rgba(0, 0, 0, 0.025);
 }

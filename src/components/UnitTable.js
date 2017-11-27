@@ -46,17 +46,20 @@ class UnitTable extends Component {
       {
         Header: 'AP',
         accessor: 'AP',
-        maxWidth: 50
+        maxWidth: 50,
+        style: {'text-align': 'center'}
       },
       {
         Header: 'Men',
         accessor: 'TotalMen',
-        maxWidth: 50
+        maxWidth: 50,
+        style: {'text-align': 'center'}
       },
       {
         Header: 'Strength',
         accessor: 'UnitSize',
-        maxWidth: 75
+        maxWidth: 75,
+        style: {'text-align': 'center'}
       },
       /*{
         Header: 'Stealthy',
@@ -66,7 +69,8 @@ class UnitTable extends Component {
       {
         Header: 'Cost',
         accessor: 'Cost',
-        maxWidth: 50
+        maxWidth: 50,
+        style: {'text-align': 'center'}
       }]};
   }
 
@@ -81,7 +85,7 @@ class UnitTable extends Component {
     showPageSizeOptions={false}
     defaultPageSize={100}
     showPageJump={false}
-    defaultSorted={[{id: 'Type'}]}
+    defaultSorted={[{id: 'Name'}]}
     filterable={true}
     minRows={10}
     />
