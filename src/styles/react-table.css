@@ -480,3 +480,7 @@
 .ReactTable .rt-thead {
   background-color: rgba(0, 0, 0, 0.025);
 }
+
+.ReactTable {
+  height: 400px;
+}

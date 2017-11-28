@@ -5,8 +5,8 @@ import TableUtils from '../utils/TableUtils';
 import '../styles/react-table.css';
 
 class UnitTable extends Component {
-  
-  constructor() {
+
+    constructor() {
     super();
     this.state = { columns: [
       {
@@ -49,19 +49,19 @@ class UnitTable extends Component {
         Header: 'AP',
         accessor: 'AP',
         maxWidth: 50,
-        style: {'text-align': 'center'}
+        style: {'textAlign': 'center'}
       },
       {
         Header: 'Men',
         accessor: 'TotalMen',
         maxWidth: 50,
-        style: {'text-align': 'center'}
+        style: {'textAlign': 'center'}
       },
       {
         Header: 'Strength',
         accessor: 'UnitSize',
         maxWidth: 75,
-        style: {'text-align': 'center'}
+        style: {'textAlign': 'center'}
       },
       /*{
         Header: 'Stealthy',
@@ -72,9 +72,10 @@ class UnitTable extends Component {
         Header: 'Cost',
         accessor: 'Cost',
         maxWidth: 50,
-        style: {'text-align': 'center'}
+        style: {'textAlign': 'center'}
       }]};
   }
+
 
   render() {
     return (
@@ -90,6 +91,7 @@ class UnitTable extends Component {
     defaultSorted={[{id: 'Name'}]}
     filterable={true}
     minRows={10}
+    getTrProps={this.props.onRowClick}
     />
   );
   }
