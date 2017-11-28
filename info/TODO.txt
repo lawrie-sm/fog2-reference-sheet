@@ -1,4 +1,6 @@
-Group cards by army lists
+Renaming
+
+Group cards by army lists (will need to parse ArmyLists.txt)
 
 Match cards up using an emulation of the game formula / some other comparison
 

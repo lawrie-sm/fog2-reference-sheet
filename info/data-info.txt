@@ -1,3 +1,7 @@
+---------------------------------------------------------------------------
+DEV POST
+---------------------------------------------------------------------------
+
 Name - this is the name of the unit used in scenario .BAM files and also in ArmyList.txt files
 ID - this is the units index number for IDS_UNITNAME and IDS_UNITINFO strings
 Type	- this is the troop type ("squad type"). You can see the full list in /Data/Terrain.txt
@@ -31,20 +35,6 @@ BodyArmour - armour 0 = none, 50 = protected, 100 = armoured, 300 = fully armour
 Experience - Experience - trop quality is the average of Experience and elan. Each value can be 0 to 300
 Elan	- Elan
 Reserve - not used
-
-QUALITY:
-0 = untrained
-50 = raw
-75 = below average
-100 = avg
-200 = superior
-300 = elite
-
-ARMOUR
-0 = none
-50 = protected
-100 = armoured
-300 = fully armoured
 
 These are all capabilities:
 Light_Artillery
@@ -80,14 +70,35 @@ BannerHeight - the height of the bottom of the banner above ground level.
 3DViewZoom - camera zoom on the unit in 3D view boxes - e.g. the unit UI at the bottom of the battle screen
 3DViewHeight - camera height in the 3D view boxes
 
+---------------------------------------------------------------------------
+DESCRIPTORS
+---------------------------------------------------------------------------
 
+QUALITY:
+0 = untrained
+50 = raw
+75 = below average
+100 = avg
+200 = superior
+300 = elite
+
+ARMOUR
+0 = none
+50 = protected
+100 = armoured
+300 = fully armoured
+
+---------------------------------------------------------------------------
 REGEX for replacing quoted digits
+---------------------------------------------------------------------------
 
 Find: "([0-9]+)"
 Replace: $1
 
+---------------------------------------------------------------------------
 FILE CHANGES for raw game data squads.csv:
-- Remove unused headers and columns
+---------------------------------------------------------------------------
+- Remove unused headers and columns (can include unused capabilities e.g hand cannon)
 - Convert to JSON
-- Convert string digits into ints
-- add export syntax and store in data
+- Convert string digits into ints (Regex)
+- add 'export' syntax and store in hardcoded js file
