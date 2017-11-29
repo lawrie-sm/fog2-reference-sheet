@@ -29,7 +29,10 @@ const TypeDesc = ({type, descs}) => {
   let rules = descs.find((r) => type === r.name);
   if (type && rules) {
 
-    //TODO: Good way to deal with undefineds/default for set rules (cohesion etc.
+    // ******
+    //NB: GROUP RELATED HEADINGS TOGETHER (Cohesion, terrain etc) rather than by type/trait
+    //TODO: An elegant way to deal with null values
+    // ******
 
     let otherRules;
     if (rules.other) {
