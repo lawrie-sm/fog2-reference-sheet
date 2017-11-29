@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/footer.css';
+import '../styles/components/Footer.css';
 
 const Footer = ({props}) => (
   <div id='footer'>
