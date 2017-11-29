@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import UnitTable from './components/UnitTable';
-import UnitData from './data/UnitData';
+import UnitBrowserContainer from './containers/UnitBrowserContainer';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import './styles/normalize.css';
@@ -12,7 +11,7 @@ class App extends Component {
     return (
       <div className='app'>
         <Header />
-          <UnitTable units={UnitData} />
+          <UnitBrowserContainer />
         <Footer />
       </div>
     );

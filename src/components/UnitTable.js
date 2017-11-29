@@ -49,19 +49,19 @@ class UnitTable extends Component {
         Header: 'AP',
         accessor: 'AP',
         maxWidth: 50,
-        style: {'text-align': 'center'}
+        style: {'textAlign': 'center'}
       },
       {
         Header: 'Men',
         accessor: 'TotalMen',
         maxWidth: 50,
-        style: {'text-align': 'center'}
+        style: {'textAlign': 'center'}
       },
       {
         Header: 'Strength',
         accessor: 'UnitSize',
         maxWidth: 75,
-        style: {'text-align': 'center'}
+        style: {'textAlign': 'center'}
       },
       /*{
         Header: 'Stealthy',
@@ -72,7 +72,7 @@ class UnitTable extends Component {
         Header: 'Cost',
         accessor: 'Cost',
         maxWidth: 50,
-        style: {'text-align': 'center'}
+        style: {'textAlign': 'center'}
       }]};
   }
 
@@ -90,6 +90,16 @@ class UnitTable extends Component {
     defaultSorted={[{id: 'Name'}]}
     filterable={true}
     minRows={10}
+    getTdProps={(state, rowInfo, column, instance) => { //TODO: Move this up to container
+      return {
+        onClick: (e, handleOriginal) => {
+          console.log('It was in this row:', rowInfo)
+          if (handleOriginal) {
+            handleOriginal()
+          }
+        }
+      }
+    }}
     />
   );
   }
