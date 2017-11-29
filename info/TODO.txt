@@ -1,4 +1,6 @@
-Renaming
+Renaming properly (e.g fix grk arm cav)
+
+Move to inline styles?
 
 Group cards by army lists (will need to parse ArmyLists.txt)
 
@@ -9,3 +11,4 @@ Other games using the same engine (P&S etc.)
 
 LINKS:
 https://react.rocks/tag/DataTable
+

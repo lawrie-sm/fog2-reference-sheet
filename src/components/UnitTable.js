@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import ReactTable from 'react-table';
 import MatchSorter from 'match-sorter';
 import TableUtils from '../utils/TableUtils';
-import '../styles/react-table.css';
+import '../styles/components/UnitTable.css';
 
 class UnitTable extends Component {
   
+
   constructor() {
     super();
     this.state = { columns: [
@@ -63,11 +64,6 @@ class UnitTable extends Component {
         maxWidth: 75,
         style: {'textAlign': 'center'}
       },
-      /*{
-        Header: 'Stealthy',
-        accessor: 'ViewFlags',
-        Cell: props => <span>{(props.value === 1) ? 'Yes' : 'No'}</span>
-      },*/
       {
         Header: 'Cost',
         accessor: 'Cost',
@@ -90,16 +86,7 @@ class UnitTable extends Component {
     defaultSorted={[{id: 'Name'}]}
     filterable={true}
     minRows={10}
-    getTdProps={(state, rowInfo, column, instance) => { //TODO: Move up to container
-      return {
-        onClick: (e, handleOriginal) => {
-          console.log(rowInfo)
-          if (handleOriginal) {
-            handleOriginal()
-          }
-        }
-      }
-    }}
+    getTdProps={this.props.handleClick}
     />
   );
   }
