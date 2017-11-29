@@ -90,10 +90,10 @@ class UnitTable extends Component {
     defaultSorted={[{id: 'Name'}]}
     filterable={true}
     minRows={10}
-    getTdProps={(state, rowInfo, column, instance) => { //TODO: Move this up to container
+    getTdProps={(state, rowInfo, column, instance) => { //TODO: Move up to container
       return {
         onClick: (e, handleOriginal) => {
-          console.log('It was in this row:', rowInfo)
+          console.log(rowInfo)
           if (handleOriginal) {
             handleOriginal()
           }

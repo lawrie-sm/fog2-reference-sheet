@@ -4,20 +4,12 @@ import UnitData from '../data/UnitData';
 
 class UnitBrowserContainer extends Component {
 
-handleClick = (state, rowInfo, column, instance)  => {
-  return (e, handleOriginal) => {
-    console.log(rowInfo)
-    if (handleOriginal) {
-      handleOriginal();
-    }
-  }
-}
+
 
   render() {
     return (
       <div className='UnitBrowserContainer'>
-          <UnitTable units={UnitData}
-          onClick={this.handleClick}/>
+          <UnitTable units={UnitData} />
       </div>
     );
   }
