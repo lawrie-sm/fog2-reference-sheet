@@ -1,0 +1,16 @@
+Difficult terrain includes Woods, Marsh and Difficult Slopes. It does not
+disorder Light Foot. It disorders Medium Foot, Warriors, Bowmen and Mob. It
+causes severe disorder to other types.
+Rough terrain does not disorder Light Foot, Medium Foot, Warriors, Bowmen or
+Mob. It severely disorders Cataphracts, Heavy Chariots and Scythed Chariots. It
+disorders other types.
+Non-Open terrain (e.g. Enclosures, some Streams) does not cause disorder,
+but stops combats counting as “In Open Terrain” thus reducing Impact POAs
+for some troops.
+Open has no effect.
+Streams vary in difficulty level according to the size of the str eam.
+Built-up areas protect occupying foot from the ill effects of flank/rear charges.
+Impassable Terrain, Water squares (including moderately large rivers except
+at bridges or fords) are impassable to land troops.
+Mountains and Cliffs are impassable to all troops.
+Difficult terrain is impassable to chariots.

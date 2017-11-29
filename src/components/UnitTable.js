@@ -5,14 +5,8 @@ import TableUtils from '../utils/TableUtils';
 import '../styles/components/UnitTable.css';
 
 class UnitTable extends Component {
-<<<<<<< HEAD
 
     constructor() {
-=======
-  
-
-  constructor() {
->>>>>>> 7c153a070e9f0f8c40a8f541b6c57faea08c6a7f
     super();
     this.state = { columns: [
       {
@@ -92,11 +86,7 @@ class UnitTable extends Component {
     defaultSorted={[{id: 'Name'}]}
     filterable={true}
     minRows={10}
-<<<<<<< HEAD
-    getTrProps={this.props.onRowClick}
-=======
     getTdProps={this.props.handleClick}
->>>>>>> 7c153a070e9f0f8c40a8f541b6c57faea08c6a7f
     />
   );
   }

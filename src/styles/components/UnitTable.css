@@ -482,11 +482,11 @@
 }
 
 .rt-tr-group:hover {
-  background-color: rgba(0, 0, 0, 0.025);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .ReactTable .rt-thead {
-  background-color: rgba(0, 0, 0, 0.025);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 /* TODO: Proper styling for table and viewer */

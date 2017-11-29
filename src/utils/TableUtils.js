@@ -76,7 +76,11 @@ export function getTraitAccessor(unit) {
 
 export function getTraitsCellText(traits) {
   let traitsText = traits.map((trait) => {
-    return (`${trait.name} (${trait.value})`);
+    if (trait.value < 100) {
+      return (`${trait.name} (${trait.value})`);
+    } else {
+      return (`${trait.name}`);
+    }
   });
   traitsText = traitsText.join(', ') || 'None';
   return traitsText;

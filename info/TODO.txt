@@ -8,6 +8,7 @@ Match cards up using an emulation of the game formula / some other comparison
 
 Other games using the same engine (P&S etc.)
 
+Fix caps naming in game data / the rest of the code
 
 LINKS:
 https://react.rocks/tag/DataTable
