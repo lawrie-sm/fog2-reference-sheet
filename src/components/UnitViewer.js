@@ -4,15 +4,14 @@ import '../styles/components/UnitViewer.css';
 //<TraitDesc traits={selectedUnit.traits} descs={descs}/>
 
 const UnitViewer = ({selectedUnit, descs}) => {
-  //console.log(selectedUnit);
   if (selectedUnit) {
     return (
     <div className='UnitViewer'>
       <div className='container'>
-        <h4>{selectedUnit.Name}</h4>
+        <h4>{selectedUnit.Name} - {selectedUnit.Type}</h4>
       <div className='row'>
         <div className='twelve columns'>
-        <TypeDesc type={selectedUnit.Type} descs={descs}/>
+        <UnitDescriptions unit={selectedUnit} descs={descs}/>
         </div>
       </div>
 
@@ -25,65 +24,56 @@ const UnitViewer = ({selectedUnit, descs}) => {
   }
 };
 
-const TypeDesc = ({type, descs}) => {
-  let rules = descs.find((r) => type === r.name);
-  if (type && rules) {
+const UnitDescriptions = ({unit, descs}) => {
 
-    // ******
-    //NB: GROUP RELATED HEADINGS TOGETHER (Cohesion, terrain etc) rather than by type/trait
-    //TODO: An elegant way to deal with null values
-    // ******
+  if (unit && descs) {
+    let rules = [descs.find((r) => r.name === unit.Type)];
+    unit.traits.forEach((trait) => {
+      rules.push(descs.find((r) => r.name === trait.name)); //TODO: Account for mixed units (e.g. append '(33%)' to desc?)
+    });
+    
+    let cohesionRules = [];
+    let impactRules = [];
+    let meleeRules = [];
+    let shootingRules = [];
+    let terrainRules = [];
+    let otherRules = [];
 
-    let otherRules;
-    if (rules.other) {
-      otherRules = rules.other.map((rule, i) => (
-        <li key={i}>
-          {rule}
-        </li>
-      ));
-    }
-
-      return (
-        <div className="TypeDesc">
-        <h6><strong>{type}</strong></h6>
-        <ul>
-          {otherRules}
-        </ul>
-        </div>
-      );
-
-  } else return (<p>Type not found.</p>);
-};
-
-const TraitDesc = ({traits, descs}) => {
- if (traits && traits.length > 0) {
-
-  //console.log(descs);
-  let traitDescs = traits.map((trait) => {
-    let desc = descs[trait.name] || 'No description found';
+    rules.forEach((r) => {
+      if (r) {
+        if (r.cohesion) {
+          cohesionRules.push(r.cohesion);
+        }
+        if (r.impact) {
+          impactRules.push(r.impact);
+        }
+        if (r.melee) {
+          meleeRules.push(r.melee);
+        }
+        if (r.shooting) {
+          shootingRules.push(r.shooting);
+        }
+        if (r.terrain) {
+          terrainRules.push(r.terrain);
+        }
+        if (r.other) {
+          otherRules.push(r.other);
+        }
+      } else return (<div>Problem getting rules.</div>);
+    });
 
     return (
-      <li key={trait.name}>
-      <strong>{trait.name}</strong>
-      <p>{desc}</p>
-      </li>
-    );
-  });
-
-   return (
-    <div className="TraitDesc">
-      <h5>Traits</h5>
       <ul>
-        {traitDescs}
+        <li><strong>Cohesion:</strong> {(cohesionRules.length > 0) ? (cohesionRules.join(' ')) : '' }</li>
+        <li><strong>Impact:</strong> {(impactRules.length > 0) ? impactRules.join(' ') : '' }</li>
+        <li><strong>Melee:</strong> {(meleeRules.length > 0) ? meleeRules.join(' ') : '' }</li>
+        <li><strong>Shooting:</strong> {(shootingRules.length > 0) ? shootingRules.join(' ') : '' }</li>
+        <li><strong>Terrain:</strong> {(terrainRules.length > 0) ? terrainRules.join(' ') : '' }</li>
+        <li><strong>Other:</strong> {(otherRules.length > 0) ? otherRules.join(' ') : '' }</li>
       </ul>
-    </div>
-   );
-  } else return (
-    <div>
-      <h5>Traits</h5>
-      <p><em>No traits.</em></p>
-    </div>
-  );
+    );
+
+  } else return (<p>Type not found.</p>);
 };
 
 export default UnitViewer;
