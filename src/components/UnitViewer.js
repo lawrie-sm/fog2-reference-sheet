@@ -55,7 +55,7 @@ const UnitDescriptions = ({unit, descs}) => {
   let stealthyText = (unit._original.ViewFlags === 1) ?
     'Can hide on the edges of woods.' : 
     'Cannot hide on the the edges of woods.';
-  terrainRules.push(stealthyText);
+  terrainRules.push({name: 'Hiding', desc: stealthyText});
 
     return (
       <ul>
@@ -78,7 +78,7 @@ const Rules = ({ruleName, rules}) => {
     if (rules.length === 1) {
       return (
         <div className={ruleName}>
-          <p><strong>{ruleName}: </strong>{rules[0]}</p>
+          <p><strong>{ruleName}: </strong>{rules[0].desc}</p>
         </div>
       );
     } else {
@@ -86,7 +86,7 @@ const Rules = ({ruleName, rules}) => {
         <div className={ruleName}>
           <p><strong>{ruleName}</strong></p>
           <ul>
-            {rules.map((rule, i) => <li key={i}>{rule}</li>)}
+            {rules.map((rule, i) => <li key={i}>{rule.desc}</li>)}
           </ul>
         </div>
       );
@@ -100,7 +100,7 @@ function getRulesByCategory(category, unitRuleNames, descs) {
     let rule = descs.find((desc) => desc.name === ruleName);
     if (rule && rule[category]) {
       rule[category].forEach((rDesc) => {
-        rules.push(rDesc);
+        rules.push({name: ruleName, desc: rDesc});
       });
     }
   });
@@ -134,8 +134,8 @@ function getRulesByCategory(category, unitRuleNames, descs) {
       }
     });
 
-    //If its not mounted or an elephant then it must be foot
-    if (!(rN.includes('Mounted'))) rN.push('Foot');
+    //If its not mounted or an elephant / scythed chariot then it must be foot
+    if (!(rN.includes('Mounted')) && !(rN.includes('Scythed Chariots'))) rN.push('Foot');
     console.log(rN);
     return rN;
   }
