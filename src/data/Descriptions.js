@@ -11,13 +11,10 @@
 */
 
 const Descriptions = [
-  //Psudeo-traits
+  // PSEUDO-TRAITS
   {
     name: 'Foot',
     cohesion: ['-1 if flank is threatened'],
-    impact: [],
-    melee: [], 
-    terrain: []
   },
   {
     name: 'Mounted',
@@ -40,6 +37,7 @@ const Descriptions = [
     impact: ['Enemy Impact Foot, Offensive Spearmen and Light Spear Infantry do not gain their +100 advantage when initating a charge'],
     melee: ['Prevents enemy cavalry from breaking off if they are the defender'], 
   },
+  // TYPES
   {
     name: 'Heavy Artillery',
     cohesion: ['-1 to opponents\' cohesion tests caused by shooting, regardless of casualties'],
@@ -101,13 +99,6 @@ const Descriptions = [
     name: 'Cavalry', //Unused, see "mounted" (NB: Appears to be more accurate for camels disordering chariots)
   },
   { 
-    name: 'Bow',
-    shooting: [
-      'Short - 2 tiles, Long - 4 tiles',
-      '-50 vs foot, artillery and elephants',
-    ]
-  },
-  { 
     name: 'Elephants',
     cohesion: ['-1 to any enemy cohesion tests when if they lose in close combat'],
     impact: ['+250 vs any', 'No automatic cohesion drop from enemy cavalry flank charges', 'Enemy Impact Foot still get +100'],
@@ -155,9 +146,17 @@ const Descriptions = [
   {
     name: 'Light Foot', // TODO
   },
+  // TRAITS
   { 
     name: 'Light Lancers', // TO REMEMBER
     other: ['May not evade charges']
+  },
+  { 
+    name: 'Bow',
+    shooting: [
+      'Short - 2 tiles, Long - 4 tiles',
+      '-50 vs foot, artillery and elephants',
+    ]
   },
 ];
 export default Descriptions;
