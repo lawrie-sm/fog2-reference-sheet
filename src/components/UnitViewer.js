@@ -6,18 +6,16 @@ import '../styles/components/UnitViewer.css';
 const UnitViewer = ({selectedUnit, descs}) => {
   if (selectedUnit) {
     return (
-    <div className='UnitViewer'>
-      <div className='container'>
-        <h4>{selectedUnit.Name}</h4>
-      <div className='row'>
-        <div className='twelve columns'>
-        <UnitDescriptions unit={selectedUnit} descs={descs}/>
+      <div className='UnitViewer'>
+        <div className='container'>
+          <h4>{selectedUnit.Name}</h4>
+          <div className='row'>
+            <div className='twelve columns'>
+              <UnitDescriptions unit={selectedUnit} descs={descs}/>
+            </div>
+          </div>
         </div>
       </div>
-
-
-      </div>
-    </div>
     );
   } else {
     return <div className='UnitViewer'></div>;
@@ -27,15 +25,31 @@ const UnitViewer = ({selectedUnit, descs}) => {
 const UnitDescriptions = ({unit, descs}) => {
  if(unit && descs) {
 
-  console.log(unit);
-
   let unitRuleNames = [unit.Type];
   unit.traits.forEach ((trait) => unitRuleNames.push(trait.name));
 
   //Need to remove duplicates (Light Artillery)
   unitRuleNames = Array.from(new Set(unitRuleNames));
 
-  //TODO: Deal with armour/quality rules and viewflags
+  //Add mounted/foot pseudo traits
+  if (!(unitRuleNames.find((r) => r === 'Elephants'))) {
+    if (checkIfMounted(unitRuleNames)) {
+      unitRuleNames.push('Mounted');
+    } else {
+      unitRuleNames.push('Foot');
+    }
+  }
+
+  /*
+  TODO: Tidy this up and make an "Add psudo trait function"
+  Rethink how consistent (terrain, shooting, melee modifer) data
+  will be displayed.
+  Break off this component into a container for the functions
+  and a stateless component for the display
+  Add shock troop psuedo traits
+  Deal with armour/quality rules and viewflags
+  */
+
 
   let cohesionRules = getRulesByCategory('cohesion', unitRuleNames, descs);
   let impactRules = getRulesByCategory('impact', unitRuleNames, descs);
@@ -45,9 +59,10 @@ const UnitDescriptions = ({unit, descs}) => {
   let terrainRules = getRulesByCategory('terrain', unitRuleNames, descs);
   let otherRules = getRulesByCategory('other', unitRuleNames, descs);
   
+  //Add viewflag rule to terrain
   let stealthyText = (unit._original.ViewFlags === 1) ?
-  'Can hide on the edges of woods.' : 
-  'Cannot hide on the the edges of woods.'
+    'Can hide on the edges of woods.' : 
+    'Cannot hide on the the edges of woods.'
   terrainRules.push(stealthyText);
 
     return (
@@ -65,21 +80,7 @@ const UnitDescriptions = ({unit, descs}) => {
   } else return (<p>Type not found.</p>);
 };
 
-function getRulesByCategory(category, unitRuleNames, descs) {
-let rules = [];
-unitRuleNames.forEach((ruleName)=> {
-  let rule = descs.find((desc) => desc.name === ruleName);
-  if (rule && rule[category]) {
-    rule[category].forEach((rDesc) => {
-      rules.push(rDesc);
-    });
-  }
-});
-return rules;
-}
-
 const Rules = ({ruleName, rules}) => {
-
   if (rules && rules.length > 0) {
     if (rules.length === 1) {
       return (
@@ -100,5 +101,23 @@ const Rules = ({ruleName, rules}) => {
   } else return '';
 };
 
-
+function getRulesByCategory(category, unitRuleNames, descs) {
+  let rules = [];
+  unitRuleNames.forEach((ruleName) => {
+    let rule = descs.find((desc) => desc.name === ruleName);
+    if (rule && rule[category]) {
+      rule[category].forEach((rDesc) => {
+        rules.push(rDesc);
+      });
+    }
+  });
+  return rules;
+  }
+  
+  function checkIfMounted (rulesArr) {
+    let mountedNames = ['Cavalry', 'Light Horse', 'Cataphracts', 'Camelry', 'Light Chariots', 'Heavy Chariots', 'Scythed Chariots']
+    return mountedNames.some((r) => {
+        return rulesArr.indexOf(r) >= 0;
+    });
+  };
 export default UnitViewer;
