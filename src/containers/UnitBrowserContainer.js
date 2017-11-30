@@ -14,12 +14,14 @@ class UnitBrowserContainer extends Component {
   handleClick = (state, rowInfo, column, instance) => {
     return {
       onClick: (e, handleOriginal) => {
-      if (rowInfo.original) {
-        this.setState({selectedUnit: rowInfo.row});
-      }
-      if (handleOriginal) {
-        handleOriginal()
-      }
+        if(rowInfo) {
+          if (rowInfo.original) {
+            this.setState({selectedUnit: rowInfo.row});
+          }
+          if (handleOriginal) {
+            handleOriginal()
+          }
+        }
       }
     }
   }

@@ -27,15 +27,28 @@ const UnitViewer = ({selectedUnit, descs}) => {
 const UnitDescriptions = ({unit, descs}) => {
  if(unit && descs) {
 
+  console.log(unit);
+
   let unitRuleNames = [unit.Type];
   unit.traits.forEach ((trait) => unitRuleNames.push(trait.name));
+
+  //Need to remove duplicates (Light Artillery)
+  unitRuleNames = Array.from(new Set(unitRuleNames));
+
+  //TODO: Deal with armour/quality rules and viewflags
 
   let cohesionRules = getRulesByCategory('cohesion', unitRuleNames, descs);
   let impactRules = getRulesByCategory('impact', unitRuleNames, descs);
   let meleeRules = getRulesByCategory('melee', unitRuleNames, descs);
   let shootingRules = getRulesByCategory('shooting', unitRuleNames, descs);
+  let movementRules = getRulesByCategory('movement', unitRuleNames, descs);
   let terrainRules = getRulesByCategory('terrain', unitRuleNames, descs);
   let otherRules = getRulesByCategory('other', unitRuleNames, descs);
+  
+  let stealthyText = (unit._original.ViewFlags === 1) ?
+  'Can hide on the edges of woods.' : 
+  'Cannot hide on the the edges of woods.'
+  terrainRules.push(stealthyText);
 
     return (
       <ul>
@@ -43,6 +56,7 @@ const UnitDescriptions = ({unit, descs}) => {
         <Rules ruleName='Impact' rules={impactRules} />
         <Rules ruleName='Melee' rules={meleeRules} />
         <Rules ruleName='Shooting' rules={shootingRules} />
+        <Rules ruleName='Movement' rules={movementRules} />
         <Rules ruleName='Terrain' rules={terrainRules} />
         <Rules ruleName='Other' rules={otherRules} />
       </ul>
@@ -66,19 +80,17 @@ return rules;
 
 const Rules = ({ruleName, rules}) => {
 
-  console.log(rules);
-
   if (rules && rules.length > 0) {
     if (rules.length === 1) {
       return (
         <div className={ruleName}>
-          <p><strong>{ruleName}:</strong> {rules[0]}</p>
+          <p><strong>{ruleName}: </strong>{rules[0]}</p>
         </div>
       );
     } else {
       return (
         <div className={ruleName}>
-          <p><strong>{ruleName}:</strong></p>
+          <p><strong>{ruleName}</strong></p>
           <ul>
             {rules.map((rule, i) => <li key={i}>{rule}</li>)}
           </ul>

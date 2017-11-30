@@ -1,3 +1,11 @@
 .UnitViewer {
   height: 400px;
+  overflow: auto;
+}
+
+.UnitViewer p {
+  margin-bottom: 1rem;
+}
+.UnitViewer ul {
+  margin: 0;
 }
