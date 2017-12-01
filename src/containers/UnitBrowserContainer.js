@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import UnitTable from '../components/UnitTable';
 import UnitViewer from '../components/UnitViewer';
 import UnitData from '../data/UnitData';
-import Descriptions from '../data/Descriptions';
 
 class UnitBrowserContainer extends Component {
 
@@ -30,7 +29,7 @@ class UnitBrowserContainer extends Component {
     return (
       <div className='UnitBrowserContainer'>
           <UnitTable units={UnitData} handleClick={this.handleClick} />
-          <UnitViewer selectedUnit={this.state.selectedUnit} descs={Descriptions} />
+          <UnitViewer selectedUnit={this.state.selectedUnit} />
       </div>
     );
   }
