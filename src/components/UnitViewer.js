@@ -41,7 +41,7 @@ const RuleSet = ({ruleSet}) => {
     if (ruleSet.rules.length === 1) {
       return (
         <div className={ruleSet.name}>
-          <p><strong>{ruleSet.name}: </strong>{ruleSet.rules[0]}</p>
+          <p><strong>{ruleSet.name}: </strong>{ruleSet.rules[0].text} <em>[{ruleSet.rules[0].origin}]</em></p>
         </div>
       );
     } else {
@@ -49,7 +49,7 @@ const RuleSet = ({ruleSet}) => {
         <div className={ruleSet.name}>
           <p><strong>{ruleSet.name}</strong></p>
           <ul>
-            {ruleSet.rules.map((rule, i) => <li key={i}>{rule}</li>)}
+            {ruleSet.rules.map((rule, i) => <li key={i}>{rule.text} <em>[{rule.origin}]</em></li>)}
           </ul>
         </div>
       );
