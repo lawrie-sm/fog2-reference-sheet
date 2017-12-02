@@ -2,6 +2,7 @@ export function getRuleSets(unit) {
   console.log(unit);
   let ruleSets = [];
   let flags = getUnitFlags(unit);
+  ruleSets.push(getShootingRules(unit, flags));
   ruleSets.push(getImpactRules(unit, flags));
   ruleSets.push(getMeleeRules(unit, flags));
   ruleSets.push(getCohesionRules(unit, flags));
@@ -19,9 +20,10 @@ function getUnitFlags(unit) {
     unit.Type === 'Heavy Chariots'),
     isLight: (unit.Type === 'Light Foot' || unit.Type === 'Light Horse'),
     isMissile: !!(unitHasTrait(unit, 'Bow') || unitHasTrait(unit, 'Sling') || unitHasTrait(unit, 'Javelins')),
+    isArtillery: !!(unitHasTrait(unit, 'Light Artillery') || unitHasTrait(unit, 'Heavy Artillery')),
     isChariot: (unit.Type === 'Light Chariots' || unit.Type === 'Heavy Chariots' || unit.Type === 'Scythed Chariots')
   };
-  unitFlags.isFoot = !(unitFlags.isMounted || unit.Type === 'Elephants' || unit.Type === 'Train');
+  unitFlags.isFoot = !(unitFlags.isMounted || unitFlags.isChariot || unit.Type === 'Elephants' || unit.Type === 'Train');
   unitFlags.isBattleTroops = !unitFlags.isLight;
 
   return unitFlags;
@@ -42,13 +44,13 @@ function getImpactRules(unit, flags) {
   }
 
   if (unitHasTrait(unit, 'Pike')) {
-    rules.push({ text: '+100 POA if 3+ ranks deep and not Fragamented or Severely Disordered, unless charging mounted shock troops',
+    rules.push({ text: '+100 POA if 3+ ranks deep and not Fragmented or Severely Disordered, unless charging mounted shock troops',
                  origin: 'Pike' });
     rules.push({ test: '+100 POA if 4+ ranks deep and not Disrupted or Disordered, while in open terrain', origin: 'Pike' });
   }
 
   if (unitHasTrait(unit, 'Offensive Spearmen')) {
-    rules.push({ text: '+100 POA if not Fragamented or Severely Disordered, unless charging mounted shock troops',
+    rules.push({ text: '+100 POA if not Fragmented or Severely Disordered, unless charging mounted shock troops',
                  origin: 'Offensive Spearmen ' });
   }
 
@@ -68,9 +70,9 @@ function getImpactRules(unit, flags) {
     rules.push({ text: '+100 POA vs any foot', origin: 'Heavy Weapon' });
   }
 
-  if (unitHasTrait(unit, 'Light Artillery') || unitHasTrait(unit, 'Heavy Artillery')) {
+  if (flags.isArtillery) {
     rules.push({ text: '-200 POA unless defending an obstacle', origin: 'Artillery' });
-    rules.push({ text: '+100 POA if defending an obstacle and not Fragamented or Severely Disordered', origin: 'Artillery' });
+    rules.push({ text: '+100 POA if defending an obstacle and not Fragmented or Severely Disordered', origin: 'Artillery' });
   }
 
   if (unit.Type === 'Elephants') {
@@ -103,11 +105,13 @@ function getImpactRules(unit, flags) {
     rules.push({ text: 'Does not benefit from automatic +200 POA or enemy cohesion drop when flank-charging non-light enemies',
                  origin: 'Light' });
   }
+
   if (flags.isMounted) {
     rules.push({ text: 'Suffers no automatic cohesion drop when flank-charged by infantry', origin: 'Mounted' });
   }
+
   if (unit.Type === 'Elephants') {
-    rules.push({ text: 'Suffers no automatic cohesion drop when flank-charged by mounted troops', origin: 'Mounted' });
+    rules.push({ text: 'Suffers no automatic cohesion drop when flank-charged by mounted troops', origin: 'Elephant' });
   }
 
   return { name: 'Impact', rules: rules };
@@ -115,6 +119,21 @@ function getImpactRules(unit, flags) {
 
 function getMeleeRules(unit, flags) {
   let rules = [];
+
+  //Special Rules
+  if (unit.Type === 'Scythed Chariots') {
+    rules.push({ text: 'Destroyed if enemy doesn\'t route after first melee round.', origin: 'Scythed Chariots' });
+  }
+
+  if (unitHasTrait(unit, 'Heavy Weapon') || unit.Type === 'Elephants' ||
+      flags.isArtillery || flags.isChariot) {
+    let origin = 'Heavy Weapon';
+    if (unit.Type === 'Elephants') origin = 'Elephants';
+    if (flags.isArtillery) origin = 'Artillery';
+    if (flags.isChariot) origin = 'Chariot';
+    rules.push({ text: 'Ignores enemy armour bonus', origin: origin });
+  }
+
 
    //Melee Table
   if (unitHasTrait(unit, 'Swordsmen')) {
@@ -124,7 +143,7 @@ function getMeleeRules(unit, flags) {
                    origin: 'Mounted Swordsmen' });
     } else if (flags.isFoot) {
       rules.push({ text: '+100 POA vs mounted', origin: 'Foot Swordsmen' });
-      rules.push({ text: '+100 POA vs foot. Drops to +50 POA if steady Offensive / Defensive Spearmen or they are defending an obstacle',
+      rules.push({ text: '+100 POA vs foot. Drops to +50 if against steady Offensive / Defensive Spearmen or they are defending an obstacle',
                    origin: 'Foot Swordsmen' });
     }
   }
@@ -141,9 +160,9 @@ function getMeleeRules(unit, flags) {
     rules.push({ text: '+100 POA', origin: 'Heavy Weapon' });
   }
 
-  if (unitHasTrait(unit, 'Light Artillery') || unitHasTrait(unit, 'Heavy Artillery')) {
+  if (flags.isArtillery) {
     rules.push({ text: '-200 POA unless defending an obstacle', origin: 'Artillery' });
-    rules.push({ text: '+100 POA if defending an obstacle and not Fragamented or Severely Disordered', origin: 'Artillery' });
+    rules.push({ text: '+100 POA if defending an obstacle and not Fragmented or Severely Disordered', origin: 'Artillery' });
   }
 
   if (unit.Type === 'Elephants') {
@@ -162,7 +181,7 @@ function getCohesionRules(unit, flags) {
     rules.push({ text: '+1 cohesion test modifier', origin: 'Heavy Foot' });
   }
 
-  if (unitHasTrait(unit, 'Light Artillery') || unitHasTrait(unit, 'Heavy Artillery')) {
+  if (flags.isArtillery) {
     rules.push({ text: 'Enemies suffer a -1 cohesion test modifer when testing as a result of shooting', origin: 'Artillery' });
   }
 
@@ -188,17 +207,71 @@ function getCohesionRules(unit, flags) {
   }
 
   if (flags.isFoot) {
-    rules.push({ text: '-1 cohesion test modifier when losing the impact phase against Impact Foot', origin: 'Foot' });
+    rules.push({ text: '-1 cohesion test modifier when losing impact phase against Impact Foot', origin: 'Foot' });
   }
 
   //Flanks
   if (flags.isFoot && flags.isBattleTroops) {
-    rules.push({ text: '-1 cohesion test modifier if flanks threatened', origin: 'Foot Battle Troops' });
+    rules.push({ text: '-1 cohesion test modifier when flanks are threatened', origin: 'Foot Battle Troops' });
   }
 
   return { name: 'Cohesion', rules: rules };
 }
 
+function getShootingRules (unit, flags) {
+ let rules = [];
+
+ //Shooting Ranges
+
+if (flags.isFoot && unitHasTrait(unit, 'Bow')) {
+  rules.push({ text: 'Can shoot up to 2 tiles away with full effect, half-effect up to 4 tiles away', origin: 'Foot Bow' });
+}
+if (flags.isMounted && unitHasTrait(unit, 'Bow')) {
+  rules.push({ text: 'Can shoot up to 2 tiles away', origin: 'Mounted Bow' });
+}
+if (unitHasTrait(unit, 'Sling')) {
+  rules.push({ text: 'Can shoot up to 2 tiles away', origin: 'Sling' });
+}
+if (unitHasTrait(unit, 'Javelins')) {
+  rules.push({ text: 'Can shoot at adjacent units', origin: 'Javelins' });
+}
+if (unitHasTrait(unit, 'Light Artillery')) {
+  rules.push({ text: 'Can shoot up to 6 tiles away', origin: 'Light Artillery' });
+}
+if (unitHasTrait(unit, 'Heavy Artillery')) {
+  rules.push({ text: 'Can shoot up to 6 tiles away with full effect, half-effect up to 9 tiles away', origin: 'Heavy Artillery' });
+}
+
+// Shoooting POA table
+
+if (unitHasTrait(unit, 'Bow')) {
+  rules.push({ text: '-50 POA vs foot, artillery and elephants', origin: 'Bow' });
+}
+if (unitHasTrait(unit, 'Sling')) {
+  rules.push({ text: '-50 POA vs foot, artillery and elephants', origin: 'Sling' });
+}
+if (unitHasTrait(unit, 'Javelins')) {
+  rules.push({ text: '+50 POA vs elephants', origin: 'Javelins' });
+  rules.push({ text: '-50 POA vs foot and artillery', origin: 'Javelins' });
+}
+
+
+//Special shooting rules
+
+if (flags.isArtillery) {
+  rules.push({ text: 'Can fire over friendly troops', origin: 'Artillery'});
+  rules.push({ text: 'Bonus vs large or enfiladed targets', origin: 'Artillery'});
+}
+
+if (flags.isLight) {
+  rules.push({ text: 'Reduced casualties from incoming shooting', origin: 'Light'});
+}
+
+ return { name: 'Shooting', rules: rules };
+}
+
+//TODO: Shock troops and break offs , other "other" rules, baggage trains
+//Figure out exact bonuses for quality and armour on impact/melee/shooting/cohesion
 
 export default {
   getRuleSets

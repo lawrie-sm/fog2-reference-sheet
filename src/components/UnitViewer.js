@@ -1,16 +1,19 @@
 import React from 'react';
-import RuleUtils from '../utils/RuleUtils';
+import RuleHelpers from '../helpers/RuleHelpers';
+import RuleSet from './RuleSet';
 import '../styles/components/UnitViewer.css';
 
 const UnitViewer = ({selectedUnit}) => {
   if (selectedUnit) {
+    let ruleSets = RuleHelpers.getRuleSets(selectedUnit);
     return (
       <div className='UnitViewer'>
         <div className='container'>
           <h4>{selectedUnit.Name}</h4>
           <div className='row'>
             <div className='twelve columns'>
-              <UnitDescriptions unit={selectedUnit} />
+              {ruleSets.map((ruleSet, i) =>
+              <RuleSet key={ruleSet.name} ruleSet={ruleSet} />)}
             </div>
           </div>
         </div>
@@ -20,43 +23,5 @@ const UnitViewer = ({selectedUnit}) => {
     return <div className='UnitViewer'></div>;
   }
 };
-
-const UnitDescriptions = ({unit}) => {
- if(unit) {
-
-  let ruleSets = RuleUtils.getRuleSets(unit);
-  
-    return (
-      <ul>
-        {ruleSets.map((ruleSet, i) =>
-        <RuleSet key={ruleSet.name} ruleSet={ruleSet} />)}
-      </ul>
-    );
-
-  } else return (<p>Type not found.</p>);
-};
-
-const RuleSet = ({ruleSet}) => {
-  if (ruleSet && ruleSet.rules.length > 0) {
-    if (ruleSet.rules.length === 1) {
-      return (
-        <div className={ruleSet.name}>
-          <p><strong>{ruleSet.name}: </strong>{ruleSet.rules[0].text} <em>[{ruleSet.rules[0].origin}]</em></p>
-        </div>
-      );
-    } else {
-      return (
-        <div className={ruleSet.name}>
-          <p><strong>{ruleSet.name}</strong></p>
-          <ul>
-            {ruleSet.rules.map((rule, i) => <li key={i}>{rule.text} <em>[{rule.origin}]</em></li>)}
-          </ul>
-        </div>
-      );
-    }
-  } else return '';
-};
-
-
 
 export default UnitViewer;

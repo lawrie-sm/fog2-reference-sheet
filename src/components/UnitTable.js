@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactTable from 'react-table';
 import MatchSorter from 'match-sorter';
-import TableUtils from '../utils/TableUtils';
+import TableHelpers from '../helpers/TableHelpers';
 import '../styles/components/UnitTable.css';
 
 class UnitTable extends Component {
@@ -22,26 +22,26 @@ class UnitTable extends Component {
       {
         id: 'traits',
         Header: 'Traits',
-        accessor: u => TableUtils.getTraitAccessor(u),
-        Cell: props => TableUtils.getTraitsCellText(props.value),
+        accessor: u => TableHelpers.getTraitAccessor(u),
+        Cell: props => TableHelpers.getTraitsCellText(props.value),
         filterMethod: (filter, row) => MatchSorter(row[filter.id], filter.value, {keys: ['name']}).length,
-        sortMethod: TableUtils.getTraitSortFunction(),
+        sortMethod: TableHelpers.getTraitSortFunction(),
       },
       {
         id: 'quality',
         Header: 'Quality', //TODO: Fix 0 values dont work
-        accessor: u => TableUtils.getQualityAccessor(u.Experience, u.Elan),
-        Cell: props => TableUtils.getNamedValueCellText(props.value),
-        filterMethod: (filter, row) => TableUtils.filterNamedValue(row[filter.id], filter.value),
+        accessor: u => TableHelpers.getQualityAccessor(u.Experience, u.Elan),
+        Cell: props => TableHelpers.getNamedValueCellText(props.value),
+        filterMethod: (filter, row) => TableHelpers.filterNamedValue(row[filter.id], filter.value),
         sortMethod: (a,b) => (a.value < b.value) ? -1 : 1,
         maxWidth: 160
       },
       {
         id: 'armour',
         Header: 'Armour',
-        accessor: u => TableUtils.getArmourAccessor(u.BodyArmour),
-        Cell: props => TableUtils.getNamedValueCellText(props.value),
-        filterMethod: (filter, row) => TableUtils.filterNamedValue(row[filter.id], filter.value),
+        accessor: u => TableHelpers.getArmourAccessor(u.BodyArmour),
+        Cell: props => TableHelpers.getNamedValueCellText(props.value),
+        filterMethod: (filter, row) => TableHelpers.filterNamedValue(row[filter.id], filter.value),
         sortMethod: (a,b) => (a.value < b.value) ? -1 : 1,
         maxWidth: 160
       },

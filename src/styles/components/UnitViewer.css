@@ -15,3 +15,24 @@
   font-style: normal;
   color: rgba(0, 0, 0, 0.65);
 }
+
+.UnitViewer hr {
+  margin: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 1em;
+}
+
+.UnitViewer th, .UnitViewer td
+{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.UnitViewer th
+{
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.UnitViewer h6 {
+  margin-top: 1em;
+  margin-bottom: 0;
+}
