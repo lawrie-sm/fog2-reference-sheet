@@ -21,7 +21,7 @@ function getUnitFlags(unit) {
     isLight: (unit.Type === 'Light Foot' || unit.Type === 'Light Horse'),
     isMissile: !!(unitHasTrait(unit, 'Bow') || unitHasTrait(unit, 'Sling') || unitHasTrait(unit, 'Javelins')),
     isArtillery: !!(unitHasTrait(unit, 'Light Artillery') || unitHasTrait(unit, 'Heavy Artillery')),
-    isChariot: (unit.Type === 'Light Chariots' || unit.Type === 'Heavy Chariots' || unit.Type === 'Scythed Chariots')
+    isChariot: (unit.Type === 'Light Chariots' || unit.Type === 'Heavy Chariots' || unit.Type === 'Scythed Chariots'),
   };
   unitFlags.isFoot = !(unitFlags.isMounted || unitFlags.isChariot || unit.Type === 'Elephants' || unit.Type === 'Train');
   unitFlags.isBattleTroops = !unitFlags.isLight;
@@ -270,8 +270,11 @@ if (flags.isLight) {
  return { name: 'Shooting', rules: rules };
 }
 
-//TODO: Shock troops and break offs , other "other" rules, baggage trains
-//Figure out exact bonuses for quality and armour on impact/melee/shooting/cohesion
+//TODO:
+//Quality/Armour
+//Movement
+//Terrain
+//Shock Troop and Unmanevourable
 
 export default {
   getRuleSets
