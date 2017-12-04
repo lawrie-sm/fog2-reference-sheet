@@ -10,6 +10,7 @@ export function getRuleSets(unit) {
 }
 
 function getUnitFlags(unit) {
+  let models = unit.TotalMen / 60;
   let unitFlags = {
     isFoot: undefined,
     isBattleTroops: undefined,
@@ -22,6 +23,8 @@ function getUnitFlags(unit) {
     isMissile: !!(unitHasTrait(unit, 'Bow') || unitHasTrait(unit, 'Sling') || unitHasTrait(unit, 'Javelins')),
     isArtillery: !!(unitHasTrait(unit, 'Light Artillery') || unitHasTrait(unit, 'Heavy Artillery')),
     isChariot: (unit.Type === 'Light Chariots' || unit.Type === 'Heavy Chariots' || unit.Type === 'Scythed Chariots'),
+    isUnmaneuverable: undefined,
+    isShock: undefined
   };
   unitFlags.isFoot = !(unitFlags.isMounted || unitFlags.isChariot || unit.Type === 'Elephants' || unit.Type === 'Train');
   unitFlags.isBattleTroops = !unitFlags.isLight;
@@ -254,7 +257,6 @@ if (unitHasTrait(unit, 'Javelins')) {
   rules.push({ text: '+50 POA vs elephants', origin: 'Javelins' });
   rules.push({ text: '-50 POA vs foot and artillery', origin: 'Javelins' });
 }
-
 
 //Special shooting rules
 

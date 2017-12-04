@@ -36,6 +36,8 @@ Experience - Experience - trop quality is the average of Experience and elan. Ea
 Elan	- Elan
 Reserve - not used
 
+Models  = TotalMen / 60, used for rank bonuses and unmaneuverable checking
+
 These are all capabilities:
 Light_Artillery
 Heavy_Artillery	

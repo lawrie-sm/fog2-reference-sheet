@@ -6,26 +6,33 @@ export function getNamedValueCellText(qualityObj) {
 
 export function getQualityAccessor(experience, elan) {
     let qualityVal = (experience + elan) / 2;
-    let qualityDesc = 'Untrained';
-    if (qualityVal > 0) {
-      qualityDesc = 'Raw';
-      if (qualityVal > 50) {
-        qualityDesc = 'Below Average';
-        if (qualityVal > 75) {
-          qualityDesc = 'Average';
-          if (qualityVal > 100) {
-            qualityDesc = 'Above Average';
-            if (qualityVal >= 200) {
-              qualityDesc = 'Superior';
-              if (qualityVal > 200 ) {
-                qualityDesc = 'Elite';
-              }
+    let qualityDesc = getQualityDesc(qualityVal);
+    let expDesc = getQualityDesc(experience); //Needed for some things (unmaneuverable)
+
+    return ({'name': qualityDesc, 'value': qualityVal, 'expDesc': expDesc, 'expVal': experience});
+}
+
+function getQualityDesc(qualityVal) {
+  let qualityDesc = 'Untrained';
+  if (qualityVal > 0) {
+    qualityDesc = 'Raw';
+    if (qualityVal > 50) {
+      qualityDesc = 'Below Average';
+      if (qualityVal > 75) {
+        qualityDesc = 'Average';
+        if (qualityVal > 100) {
+          qualityDesc = 'Above Average';
+          if (qualityVal >= 200) {
+            qualityDesc = 'Superior';
+            if (qualityVal > 200 ) {
+              qualityDesc = 'Elite';
             }
-          } 
-        }
+          }
+        } 
       }
     }
-    return ({'name': qualityDesc, 'value': qualityVal});
+  }
+  return qualityDesc;
 }
 
 export function getArmourAccessor(armourVal) {
