@@ -31,7 +31,7 @@ class UnitTable extends Component {
         id: 'quality',
         Header: 'Quality', //TODO: Fix 0 values dont work
         accessor: u => TableHelpers.getQualityAccessor(u.Experience, u.Elan),
-        Cell: props => TableHelpers.getNamedValueCellText(props.value),
+        Cell: props => `${props.value.name} (${props.value.value})`,
         filterMethod: (filter, row) => TableHelpers.filterNamedValue(row[filter.id], filter.value),
         sortMethod: (a,b) => (a.value < b.value) ? -1 : 1,
         maxWidth: 160
@@ -40,9 +40,9 @@ class UnitTable extends Component {
         id: 'armour',
         Header: 'Armour',
         accessor: u => TableHelpers.getArmourAccessor(u.BodyArmour),
-        Cell: props => TableHelpers.getNamedValueCellText(props.value),
+        Cell: props =>  `${props.value.name} (${props.value.value})`,
         filterMethod: (filter, row) => TableHelpers.filterNamedValue(row[filter.id], filter.value),
-        sortMethod: (a,b) => (a.value < b.value) ? -1 : 1,
+        sortMethod: (a, b) => (a.value < b.value) ? -1 : 1,
         maxWidth: 160
       },
       {
@@ -52,9 +52,12 @@ class UnitTable extends Component {
         style: {'textAlign': 'center'}
       },
       {
+        id: 'men',
         Header: 'Men',
-        accessor: 'TotalMen',
-        maxWidth: 50,
+        accessor: u => ({'number': u.TotalMen, 'models': u.ManCount}),
+        Cell: props => `${props.value.number} (${props.value.models})`,
+        sortMethod: (a, b) => (a.number < b.number) ? -1 : 1,
+        maxWidth: 70,
         style: {'textAlign': 'center'}
       },
       {

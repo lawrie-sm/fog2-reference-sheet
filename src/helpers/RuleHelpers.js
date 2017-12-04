@@ -1,16 +1,16 @@
 export function getRuleSets(unit) {
-  console.log(unit);
   let ruleSets = [];
   let flags = getUnitFlags(unit);
   ruleSets.push(getShootingRules(unit, flags));
   ruleSets.push(getImpactRules(unit, flags));
   ruleSets.push(getMeleeRules(unit, flags));
   ruleSets.push(getCohesionRules(unit, flags));
+  ruleSets.push(getMovementandTerrainRules(unit, flags));
+  ruleSets.push(getOtherRules(unit, flags));
   return ruleSets;
 }
 
 function getUnitFlags(unit) {
-  let models = unit.TotalMen / 60;
   let unitFlags = {
     isFoot: undefined,
     isBattleTroops: undefined,
@@ -28,6 +28,15 @@ function getUnitFlags(unit) {
   };
   unitFlags.isFoot = !(unitFlags.isMounted || unitFlags.isChariot || unit.Type === 'Elephants' || unit.Type === 'Train');
   unitFlags.isBattleTroops = !unitFlags.isLight;
+
+  unitFlags.isUnmaneuverable = (unit.men.models >= 10 ||
+    unit.quality.expDesc === 'Untrained' || unit.quality.expDesc === 'Raw' || unitFlags.isArtillery ||
+    unit.Type === 'Elephants' || unit.Type === 'Scythed Chariots' || unit.Type === 'Heavy Chariots' ||
+    unit.Type === 'Cataphracts' || unit.Type === 'Warriors' || unit.Type === 'Undrilled Heavy Foot');
+
+  unitFlags.isShock = (unit.Type === 'Impact Foot' || unit.Type === 'Offensive Spearmen' || 
+    unitHasTrait(unit, 'Pike') || (!unitFlags.isLight && unitHasTrait(unit, 'Light Lancers')) ||
+    unit.Type === 'Scythed Chariots' || unit.Type === 'Heavy Chariots');
 
   return unitFlags;
 }
@@ -117,6 +126,11 @@ function getImpactRules(unit, flags) {
     rules.push({ text: 'Suffers no automatic cohesion drop when flank-charged by mounted troops', origin: 'Elephant' });
   }
 
+  //Other special rules
+  if (flags.isMounted && flags.isShock) {
+    rules.push({ text: 'Enemy infantry lose most of their charge bonuses', origin: 'Mounted Shock Troops' });
+  }
+
   return { name: 'Impact', rules: rules };
 }
 
@@ -170,6 +184,12 @@ function getMeleeRules(unit, flags) {
 
   if (unit.Type === 'Elephants') {
     rules.push({ text: '+100 POA', origin: 'Elephants' });
+  }
+
+  //Other rules
+
+  if (flags.isFoot && flags.isShock) {
+    rules.push({ text: 'Can push back enemy foot after initiating combat', origin: 'Foot Shock Troops' });
   }
 
   return { name: 'Melee', rules: rules };
@@ -245,7 +265,7 @@ if (unitHasTrait(unit, 'Heavy Artillery')) {
   rules.push({ text: 'Can shoot up to 6 tiles away with full effect, half-effect up to 9 tiles away', origin: 'Heavy Artillery' });
 }
 
-// Shoooting POA table
+// Shooting POA table
 
 if (unitHasTrait(unit, 'Bow')) {
   rules.push({ text: '-50 POA vs foot, artillery and elephants', origin: 'Bow' });
@@ -272,11 +292,53 @@ if (flags.isLight) {
  return { name: 'Shooting', rules: rules };
 }
 
+function getMovementandTerrainRules (unit, flags) {
+  let rules = [];
+console.log(unit);
+  //Movement
+  if (flags.isUnmaneuverable) {
+    rules.push({ text: 'No free 45 degree turn', origin: 'Unmaneuverable'});
+  }
+
+  //Terrain
+
+  if (unit.Type === 'Light Foot') {
+    rules.push({ text: 'Not disordered by rough or difficult terrain', origin: 'Light Foot'});
+  } else if (unit.Type === 'Medium Foot' || unit.Type === 'Warriors' ||
+      unit.Type === 'Bowmen' || unit.Type === 'Mob') {
+    rules.push({ text: 'Disordered by difficult terrain but not by rough terrain', origin: unit.Type });
+  } else if (unit.Type === 'Cataphracts') {
+    rules.push({ text: 'Severely disordered by both rough and difficult terrain', origin: 'Cataphracts' });
+  } else if (unit.Type === 'Heavy Chariots' || unit.Type === 'Scythed Chariots') {
+    rules.push({ text: 'Difficult terrain is impassable and is severely disordered by rough terrain', origin: unit.Type});
+  } else if (unit.Type === 'Light Chariots') {
+    rules.push({ text: 'Difficult terrain is impassable and is disordered by rough terrain', origin: 'Light Chariots'});
+  } else {
+    rules.push({ text: 'Severly disordered by difficult terrain, disordered by rough terrain', origin: 'Standard Terrain Rules'});
+  }
+
+  if (unit._original.ViewFlags === 1) {
+    rules.push({ text: 'Can hide on the edge of woods', origin: 'Hiding'});
+  } else if (unit._original.ViewFlags === 2) {
+    rules.push({ text: 'Cannot hide on the edge of woods', origin: 'Hiding'});
+  }
+
+  return { name: 'Movement & Terrain', rules: rules };
+}
+
+function getOtherRules (unit, flags) {
+  let rules = [];
+
+  if (unitHasTrait(unit, 'Pike')) {
+    rules.push({ text: 'Can form a defensive square', origin: 'Pike'});
+  }
+
+  return { name: 'Other Rules', rules: rules };
+}
+
 //TODO:
-//Quality/Armour
-//Movement
-//Terrain
-//Shock Troop and Unmanevourable
+//Quality/Armour (note raw troops pursuing)
+//pike square
 
 export default {
   getRuleSets

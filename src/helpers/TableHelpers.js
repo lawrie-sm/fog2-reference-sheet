@@ -1,9 +1,5 @@
 import MatchSorter from 'match-sorter';
 
-export function getNamedValueCellText(qualityObj) {
-  return `${qualityObj.name} (${qualityObj.value})`;
-}
-
 export function getQualityAccessor(experience, elan) {
     let qualityVal = (experience + elan) / 2;
     let qualityDesc = getQualityDesc(qualityVal);
@@ -121,12 +117,11 @@ export function filterNamedValue(cell, filter) {
 }
 
 export default {
-  getNamedValueCellText,
   getArmourAccessor,  
   getQualityAccessor,
   getTraitAccessor,
   getTraitsCellText,
   getTraitSortFunction,
   filterCaseInsensitive,
-  filterNamedValue
+  filterNamedValue,
 };
