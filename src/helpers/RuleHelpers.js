@@ -186,6 +186,22 @@ function getMeleeRules(unit, flags) {
     rules.push({ text: '+100 POA', origin: 'Elephants' });
   }
 
+  //Quality
+
+  if (unit.quality.value > 100) {
+    rules.push({ text: 'Increased combat effectiveness from unit quality', origin: unit.quality.name});
+  }
+
+  if (unit.quality.value < 100) {
+    rules.push({ text: 'Reduced combat effectiveness from unit quality', origin: unit.quality.name});
+  }
+
+  //Armour
+
+  if (unit.armour.value > 0) {
+    rules.push({ text: 'Can benefit from melee armour bonus depending on opponent', origin: unit.armour.name});
+  }
+
   //Other rules
 
   if (flags.isFoot && flags.isShock) {
@@ -278,15 +294,22 @@ if (unitHasTrait(unit, 'Javelins')) {
   rules.push({ text: '-50 POA vs foot and artillery', origin: 'Javelins' });
 }
 
+//Quality
+
+if (unit.quality.value > 100) {
+  rules.push({ text: 'Increased shooting effectiveness from unit quality', origin: unit.quality.name});
+}
+
+if (unit.quality.value < 100) {
+  rules.push({ text: 'Reduced shooting effectiveness from unit quality', origin: unit.quality.name});
+}
+
+
 //Special shooting rules
 
 if (flags.isArtillery) {
   rules.push({ text: 'Can fire over friendly troops', origin: 'Artillery'});
   rules.push({ text: 'Bonus vs large or enfiladed targets', origin: 'Artillery'});
-}
-
-if (flags.isLight) {
-  rules.push({ text: 'Reduced casualties from incoming shooting', origin: 'Light'});
 }
 
  return { name: 'Shooting', rules: rules };
@@ -333,12 +356,18 @@ function getOtherRules (unit, flags) {
     rules.push({ text: 'Can form a defensive square', origin: 'Pike'});
   }
 
+  if (flags.isLight) {
+    rules.push({ text: 'Reduced casualties from incoming shooting', origin: 'Light'});
+  }
+
+  if (unit.armour.value > 0) {
+    rules.push({ text: 'Reduced casualties from incoming shooting', origin: unit.armour.name});
+  }
+
+  console.log(unit);
+
   return { name: 'Other Rules', rules: rules };
 }
-
-//TODO:
-//Quality/Armour (note raw troops pursuing)
-//pike square
 
 export default {
   getRuleSets
