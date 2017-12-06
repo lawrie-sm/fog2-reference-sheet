@@ -10,8 +10,9 @@ class UnitTable extends Component {
     super();
     this.state = { columns: [
       {
-        Header: 'Name', //TODO: Renaming util
-        accessor: 'Name',
+        id: 'name',
+        Header: 'Name',
+        accessor: n => TableHelpers.getFullName(n.Name),
         filterMethod: (filter, row) => MatchSorter([row[filter.id]], filter.value).length,
       },
       {
