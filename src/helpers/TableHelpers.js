@@ -99,7 +99,7 @@ export function getTraitSortFunction() {
   };
 }
 
-export function filterCaseInsensitive(keys) {
+export function filterCaseInsensitive() {
   return function (filter, row) {
     const id = filter.pivotId || filter.id;
     if (row[id] !== null) {
@@ -123,7 +123,7 @@ export function getFullName(shortName) {
       r = 'Indian Light Chariots';
     } break;
     default: {
-      r = shortName
+      r = shortName;
     }
   }
 
