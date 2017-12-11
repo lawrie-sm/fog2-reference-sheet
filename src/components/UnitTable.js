@@ -6,7 +6,7 @@ import '../styles/components/UnitTable.css';
 
 class UnitTable extends Component {
 
-    constructor() {
+  constructor() {
     super();
     this.state = { columns: [
       {
@@ -72,9 +72,9 @@ class UnitTable extends Component {
         accessor: 'Cost',
         maxWidth: 50,
         style: {'textAlign': 'center'}
-      }]};
+      }]
+    };
   }
-
 
   render() {
     return (

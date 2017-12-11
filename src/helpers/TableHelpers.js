@@ -3,8 +3,7 @@ import MatchSorter from 'match-sorter';
 export function getQualityAccessor(experience, elan) {
     let qualityVal = (experience + elan) / 2;
     let qualityDesc = getQualityDesc(qualityVal);
-    let expDesc = getQualityDesc(experience); //Needed for some things (unmaneuverable)
-
+    let expDesc = getQualityDesc(experience);
     return ({'name': qualityDesc, 'value': qualityVal, 'expDesc': expDesc, 'expVal': experience});
 }
 
@@ -73,7 +72,6 @@ export function getTraitAccessor(unit) {
       traits.push({'name' : traitName, 'value' : unit[traitName]});
     }
   });
-  
   return(traits);
 }
 
@@ -122,11 +120,13 @@ export function getFullName(shortName) {
     case ('Indian L Chariots'): {
       r = 'Indian Light Chariots';
     } break;
+    case ('Indian H Chariots'): {
+      r = 'Indian Heavy Chariots';
+    } break;
     default: {
       r = shortName;
     }
   }
-
   return r;
 }
 

@@ -1,5 +1,7 @@
 Renaming properly (e.g fix grk arm cav)
 
+Tooltips (for the square bracketed rules/special terms (shock troops)?)
+
 Move to inline styles?
 
 Group cards by army lists (will need to parse ArmyLists.txt)
