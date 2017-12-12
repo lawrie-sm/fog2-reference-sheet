@@ -343,7 +343,7 @@ function getMovementandTerrainRules (unit, flags) {
   if (unit._original.ViewFlags === 1) {
     rules.push({ text: 'Can hide on the edge of woods', origin: 'Hiding'});
   } else if (unit._original.ViewFlags === 2) {
-    rules.push({ text: 'Cannot hide on the edge of woods', origin: 'Hiding'});
+    rules.push({ text: 'Unable to hide on the edge of woods', origin: 'Hiding'});
   }
 
   return { name: 'Movement & Terrain', rules: rules };

@@ -115,6 +115,10 @@ export function filterNamedValue(cell, filter) {
 }
 
 export function getFullName(shortName) {
+
+  /* TODO: This should probably be some kind of key / value pair 
+  instead of a switch (easier to edit later and add to) */ 
+
   let r = shortName;
   switch(shortName) {
     case ('Indian L Chariots'): {
