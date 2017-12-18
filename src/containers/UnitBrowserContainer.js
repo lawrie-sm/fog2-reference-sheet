@@ -33,11 +33,12 @@ class UnitBrowserContainer extends Component {
 
   updateList = (identifier) => {
     let list = ListData.find((list) => list.identifier === identifier);
+    console.log(list);
     if (list) {
       this.setState({
         unitData: getUnitDataFromList(identifier, list, UnitData),
         terrain: list.map,
-        deploymentType: list.demploymentStyle,
+        deploymentType: list.deploymentStyle,
         selectedUnit: undefined
       })
     }
