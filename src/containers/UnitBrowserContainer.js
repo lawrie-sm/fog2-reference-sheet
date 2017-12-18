@@ -9,7 +9,7 @@ class UnitBrowserContainer extends Component {
 
   constructor() {
   super();
-    this.state = {selectedUnit: undefined};
+    this.state = {unitData: UnitData, selectedUnit: undefined};
   }
 
   handleClick = (state, rowInfo, column, instance) => {
@@ -27,15 +27,36 @@ class UnitBrowserContainer extends Component {
     }
   }
 
+  updateList = (identifier) => {
+    this.setState({
+      unitData: getUnitDataFromList(identifier, ListData, UnitData),
+      selectedUnit: undefined
+    })
+  }
+
   render() {
     return (
       <div className='UnitBrowserContainer'>
-          <ListSelector list={ListData} />
-          <UnitTable units={UnitData} handleClick={this.handleClick} />
+          <ListSelector lists={ListData} updateList={this.updateList} />
+          <UnitTable units={this.state.unitData} handleClick={this.handleClick} />
           <UnitViewer selectedUnit={this.state.selectedUnit} />
       </div>
     );
   }
 }
+
+const getUnitDataFromList = (identifier, listData, unitData) => {
+  if (identifier === 'ALL') return unitData;
+  const list = listData.find((l) => l.identifier === identifier);
+  const units = list.units;
+  const newUnitData = [];
+  units.forEach(unit => {
+    let thisUnitData = unitData.find((u) => u.Name.toLowerCase() === unit.name.toLowerCase());
+    if (thisUnitData) newUnitData.push(thisUnitData);
+  });
+  return(newUnitData);
+}
+
+//TODO: Add upper and lower limits to table
 
 export default UnitBrowserContainer;
