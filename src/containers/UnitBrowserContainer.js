@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import ListSelector from '../components/ListSelector'
 import UnitTable from '../components/UnitTable';
 import UnitViewer from '../components/UnitViewer';
+import ListData from '../data/ListData'
 import UnitData from '../data/UnitData';
 
 class UnitBrowserContainer extends Component {
@@ -28,6 +30,7 @@ class UnitBrowserContainer extends Component {
   render() {
     return (
       <div className='UnitBrowserContainer'>
+          <ListSelector list={ListData} />
           <UnitTable units={UnitData} handleClick={this.handleClick} />
           <UnitViewer selectedUnit={this.state.selectedUnit} />
       </div>
