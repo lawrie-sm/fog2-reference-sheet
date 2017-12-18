@@ -1,4 +1,3 @@
-
 const UnitData = [
 {'Name':'Nomad LH','ID':14,'Type':'Light Horse','ManCount':2,'Cost':40,'ViewFlags':2,'AP':20,'TotalMen':120,'UnitSize':200,'BodyArmour':0,'Experience':100,'Elan':100,'Light Artillery':0,'Heavy Artillery':0,'Bow':100,'Sling':0,'Javelins':0,'Light Lancers':0,'Impact Foot':0,'Pike':0,'Heavy Weapon':0,'Offensive Spearmen':0,'Defensive Spearmen':0,'Light Spear':0,'Swordsmen':100},
 {'Name':'LH Bow','ID':15,'Type':'Light Horse','ManCount':2,'Cost':32,'ViewFlags':2,'AP':20,'TotalMen':120,'UnitSize':200,'BodyArmour':0,'Experience':100,'Elan':100,'Light Artillery':0,'Heavy Artillery':0,'Bow':100,'Sling':0,'Javelins':0,'Light Lancers':0,'Impact Foot':0,'Pike':0,'Heavy Weapon':0,'Offensive Spearmen':0,'Defensive Spearmen':0,'Light Spear':0,'Swordsmen':0},
@@ -87,5 +86,4 @@ const UnitData = [
 {'Name':'Pike Raw','ID':2,'Type':'Heavy Foot','ManCount':16,'Cost':48,'ViewFlags':1,'AP':10,'TotalMen':960,'UnitSize':1200,'BodyArmour':50,'Experience':50,'Elan':50,'Light Artillery':0,'Heavy Artillery':0,'Bow':0,'Sling':0,'Javelins':0,'Light Lancers':0,'Impact Foot':0,'Pike':100,'Heavy Weapon':0,'Offensive Spearmen':0,'Defensive Spearmen':0,'Light Spear':0,'Swordsmen':0},
 {'Name':'Heavy Artillery','ID':24,'Type':'Artillery','ManCount':1,'Cost':36,'ViewFlags':1,'AP':0,'TotalMen':100,'UnitSize':200,'BodyArmour':0,'Experience':100,'Elan':100,'Light Artillery':0,'Heavy Artillery':100,'Bow':0,'Sling':0,'Javelins':0,'Light Lancers':0,'Impact Foot':0,'Pike':0,'Heavy Weapon':0,'Offensive Spearmen':0,'Defensive Spearmen':0,'Light Spear':0,'Swordsmen':0}
 ];
-
 export default UnitData;
