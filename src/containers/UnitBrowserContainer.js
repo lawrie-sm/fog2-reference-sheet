@@ -9,7 +9,11 @@ class UnitBrowserContainer extends Component {
 
   constructor() {
   super();
-    this.state = {unitData: UnitData, selectedUnit: undefined};
+    this.state = {
+      unitData: UnitData,
+      terrain: undefined,
+      deploymentType: undefined,
+      selectedUnit: undefined};
   }
 
   handleClick = (state, rowInfo, column, instance) => {
@@ -28,35 +32,49 @@ class UnitBrowserContainer extends Component {
   }
 
   updateList = (identifier) => {
-    this.setState({
-      unitData: getUnitDataFromList(identifier, ListData, UnitData),
-      selectedUnit: undefined
-    })
+    let list = ListData.find((list) => list.identifier === identifier);
+    if (list) {
+      this.setState({
+        unitData: getUnitDataFromList(identifier, list, UnitData),
+        terrain: list.map,
+        deploymentType: list.demploymentStyle,
+        selectedUnit: undefined
+      })
+    }
   }
 
   render() {
     return (
       <div className='UnitBrowserContainer'>
-          <ListSelector lists={ListData} updateList={this.updateList} />
-          <UnitTable units={this.state.unitData} handleClick={this.handleClick} />
+          <ListSelector
+            lists={ListData}
+            deploymentType={this.state.deploymentType}
+            terrain={this.state.terrain}
+            handleUpdate={this.updateList}
+          />
+          <UnitTable
+            units={this.state.unitData}
+            handleClick={this.handleClick}
+          />
           <UnitViewer selectedUnit={this.state.selectedUnit} />
       </div>
     );
   }
 }
 
-const getUnitDataFromList = (identifier, listData, unitData) => {
+const getUnitDataFromList = (identifier, list, unitData) => {
   if (identifier === 'ALL') return unitData;
-  const list = listData.find((l) => l.identifier === identifier);
-  const units = list.units;
   const newUnitData = [];
-  units.forEach(unit => {
-    let thisUnitData = unitData.find((u) => u.Name.toLowerCase() === unit.name.toLowerCase());
-    if (thisUnitData) newUnitData.push(thisUnitData);
+  list.units.forEach(unit => {
+    //NB: Note case of 'Name' vs 'name'. Also need to set the value toLowerCase.
+    let thisUnit = unitData.find((u) => u.Name.toLowerCase() === unit.name.toLowerCase());
+    if (thisUnit) {
+      thisUnit.Max = unit.max;
+      thisUnit.Min = unit.min;
+      newUnitData.push(thisUnit);
+    }
   });
   return(newUnitData);
 }
-
-//TODO: Add upper and lower limits to table
 
 export default UnitBrowserContainer;

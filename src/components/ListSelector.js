@@ -12,17 +12,26 @@ class ListSelector extends Component {
 
   handleChange(event) {
     this.setState({value: event.target.value});
-    this.props.updateList(event.target.value);
+    this.props.handleUpdate(event.target.value);
   }
 
   render() {
     return (
-      <form>
-        <label htmlFor='listInput'> Army List </label>
-        <select id='listInput' value={this.state.value} onChange={this.handleChange}>
-        {ArmyLists(this.props.lists)}
-        </select>
-      </form>
+      <div className='ListSelector'>
+        <div className='row'>
+          <div className='six columns'>
+            <form>
+              <label htmlFor='listInput'> Army List </label>
+              <select id='listInput' value={this.state.value} onChange={this.handleChange}>
+              {ArmyLists(this.props.lists)}
+              </select>
+            </form>
+          </div>
+          <div className='six columns'>
+            <ExtraInfo deploymentType={this.props.deploymentType} terrain={this.props.terrain} />
+          </div>
+        </div>
+      </div>
     );
   }
 
@@ -49,5 +58,17 @@ const ArmyLists = (lists) => {
   listNames.unshift(defaultOption);
   return (listNames);
 };
+
+const ExtraInfo = ({deploymentType, terrain}) => {
+  if (deploymentType && terrain) {
+    return (
+    <div>
+      <p><strong>Formation: </strong>{deploymentType}</p>
+      <p><strong>Terrain: </strong>{terrain}</p>
+    </div>
+  )} else {
+    return(<div></div>);
+  }
+}
 
 export default ListSelector;
