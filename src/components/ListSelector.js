@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import '../styles/components/ListSelector.css';
 
 class ListSelector extends Component {
@@ -7,7 +8,6 @@ class ListSelector extends Component {
     super(props);
     this.state = {value: ''};
     this.handleChange = this.handleChange.bind(this);
-    
   }
 
   handleChange(event) {

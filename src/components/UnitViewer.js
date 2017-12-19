@@ -23,7 +23,7 @@ const UnitViewer = ({selectedUnit}) => {
       </div>
     );
   } else {
-    return <div className='UnitViewer-disabled'></div>;
+    return <div className='UnitViewer'>Error: No unit selected</div>;
   }
 };
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UnitBrowserHeader from '../components/UnitBrowserHeader';
+import Modal from '../components/Modal'
 import ListSelector from '../components/ListSelector'
 import UnitTable from '../components/UnitTable';
 import UnitViewer from '../components/UnitViewer';
@@ -14,7 +15,14 @@ class UnitBrowserContainer extends Component {
       unitData: UnitData,
       terrain: undefined,
       deploymentType: undefined,
-      selectedUnit: undefined};
+      selectedUnit: undefined,
+      modalIsOpen: false};
+  }
+
+  toggleModal = () => {
+    this.setState({
+      modalIsOpen: !this.state.modalIsOpen
+    });
   }
 
   handleClick = (state, rowInfo, column, instance) => {
@@ -22,7 +30,8 @@ class UnitBrowserContainer extends Component {
       onClick: (e, handleOriginal) => {
         if(rowInfo) {
           if (rowInfo.original) {
-            this.setState({selectedUnit: rowInfo.row});
+            this.toggleModal();
+            this.setState({selectedUnit: rowInfo.row});            
           }
           if (handleOriginal) {
             handleOriginal()
@@ -73,7 +82,10 @@ class UnitBrowserContainer extends Component {
           units={this.state.unitData}
           handleClick={this.handleClick}
         />
-        <UnitViewer selectedUnit={this.state.selectedUnit} />
+        <Modal show={this.state.modalIsOpen}
+          onClose={this.toggleModal}>
+          <UnitViewer selectedUnit={this.state.selectedUnit}/>
+        </Modal>
       </div>
     );
   }
