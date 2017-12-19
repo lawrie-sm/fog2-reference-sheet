@@ -58,6 +58,7 @@ class UnitTable extends Component {
         accessor: u => ({'number': u.TotalMen, 'models': u.ManCount}),
         Cell: props => `${props.value.number} (${props.value.models})`,
         sortMethod: (a, b) => (a.number < b.number) ? -1 : 1,
+        filterMethod: (filter, row) => TableHelpers.filterNamedValue(row[filter.id], filter.value),
         maxWidth: 70,
         style: {'textAlign': 'center'}
       },
