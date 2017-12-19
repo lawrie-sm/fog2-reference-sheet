@@ -3,6 +3,9 @@ import RuleHelpers from '../helpers/RuleHelpers';
 import RuleSet from './RuleSet';
 import '../styles/components/UnitViewer.css';
 
+
+//TODO: https://daveceddia.com/open-modal-in-react/
+
 const UnitViewer = ({selectedUnit}) => {
   if (selectedUnit) {
     let ruleSets = RuleHelpers.getRuleSets(selectedUnit);
@@ -20,7 +23,7 @@ const UnitViewer = ({selectedUnit}) => {
       </div>
     );
   } else {
-    return <div className='UnitViewer'></div>;
+    return <div className='UnitViewer-disabled'></div>;
   }
 };
 

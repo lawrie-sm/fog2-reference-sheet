@@ -33,15 +33,23 @@ class UnitBrowserContainer extends Component {
   }
 
   updateList = (identifier) => {
-    let list = ListData.find((list) => list.identifier === identifier);
-    console.log(list);
-    if (list) {
-      this.setState({
-        unitData: getUnitDataFromList(identifier, list, UnitData),
-        terrain: list.map,
-        deploymentType: list.deploymentStyle,
+    if (identifier === 'ALL') {
+        this.setState({
+        unitData: UnitData,
+        terrain: undefined,
+        deploymentType: undefined,
         selectedUnit: undefined
-      })
+      });
+    } else {
+      let list = ListData.find((list) => list.identifier === identifier);
+      if (list) {
+        this.setState({
+          unitData: getUnitDataFromList(identifier, list, UnitData),
+          terrain: list.map,
+          deploymentType: list.deploymentStyle,
+          selectedUnit: undefined
+        })
+      }
     }
   }
 
@@ -72,7 +80,6 @@ class UnitBrowserContainer extends Component {
 }
 
 const getUnitDataFromList = (identifier, list, unitData) => {
-  if (identifier === 'ALL') return unitData;
   const newUnitData = [];
   list.units.forEach(unit => {
     //NB: Note case of 'Name' vs 'name'. Also need to set the value toLowerCase.
