@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import UnitBrowserHeader from '../components/UnitBrowserHeader';
 import ListSelector from '../components/ListSelector'
 import UnitTable from '../components/UnitTable';
 import UnitViewer from '../components/UnitViewer';
@@ -47,17 +48,24 @@ class UnitBrowserContainer extends Component {
   render() {
     return (
       <div className='UnitBrowserContainer'>
-          <ListSelector
-            lists={ListData}
-            deploymentType={this.state.deploymentType}
-            terrain={this.state.terrain}
-            handleUpdate={this.updateList}
-          />
-          <UnitTable
-            units={this.state.unitData}
-            handleClick={this.handleClick}
-          />
-          <UnitViewer selectedUnit={this.state.selectedUnit} />
+        <div className='row'>
+          <div className='six columns'>
+              <UnitBrowserHeader />
+          </div>
+          <div className='six columns'>
+              <ListSelector
+                lists={ListData}
+                deploymentType={this.state.deploymentType}
+                terrain={this.state.terrain}
+                handleUpdate={this.updateList}
+              />
+          </div>
+        </div>
+        <UnitTable
+          units={this.state.unitData}
+          handleClick={this.handleClick}
+        />
+        <UnitViewer selectedUnit={this.state.selectedUnit} />
       </div>
     );
   }
