@@ -43,4 +43,5 @@
 
 .StatsTable {
   margin: 1em 0em;
+  table-layout: fixed;
 }

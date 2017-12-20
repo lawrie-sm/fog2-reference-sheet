@@ -81,9 +81,10 @@ class UnitBrowserContainer extends Component {
         <UnitTable
           units={this.state.unitData}
           handleClick={this.handleClick}
+          modalIsActive={this.state.modalIsOpen}
         />
         <Modal show={this.state.modalIsOpen}
-          onClose={this.toggleModal}>
+         onClose={this.toggleModal}>
           <UnitViewer selectedUnit={this.state.selectedUnit}/>
         </Modal>
       </div>
