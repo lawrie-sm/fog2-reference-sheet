@@ -16,8 +16,12 @@
   height: 80%;
   margin: auto;
   padding: 30px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
   overflow: auto;
 }
+
 
 .modal-container button {
   float: right;
