@@ -12,7 +12,7 @@ const UnitViewer = ({selectedUnit}) => {
     return (
       <div className='UnitViewer'>
         <div className='container'>
-          <h4>{selectedUnit.Name}</h4>
+          <h4>{selectedUnit.name}</h4>
           <div className='row'>
             <div className='twelve columns'>
               {ruleSets.map((ruleSet, i) =>

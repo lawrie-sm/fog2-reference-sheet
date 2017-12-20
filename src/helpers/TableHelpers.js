@@ -121,12 +121,12 @@ export function getFullName(shortName) {
 
   let r = shortName;
   switch(shortName) {
-    case ('Indian L Chariots'): {
+    case ('Indian L Chariots'):
       r = 'Indian Light Chariots';
-    } break;
-    case ('Indian H Chariots'): {
+      break;
+    case ('Indian H Chariots'):
       r = 'Indian Heavy Chariots';
-    } break;
+    break;
     default: {
       r = shortName;
     }

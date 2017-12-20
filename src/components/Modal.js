@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import '../styles/components/Modal.css';
 
 class Modal extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     if(!this.props.show) {
       return null;
