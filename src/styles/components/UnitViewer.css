@@ -37,6 +37,10 @@
   margin-right: 0.5em;
 }
 
+.UnitViewer .container {
+  width: 95%;
+}
+
 .TraitList {
   color: rgba(0, 0, 0, 0.65);
 }
