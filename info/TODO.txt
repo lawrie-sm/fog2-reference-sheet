@@ -1,16 +1,15 @@
+Fix modal clickthrough, use react responsive wrapper on unit table
+http://www.davidboyne.co.uk/2016/11/07/building-a-media-query-component-in-react.html
+Fix modal button on mobile.
+
+
 Renaming properly (e.g fix grk arm cav)
 
 Tooltips (for the square bracketed rules/special terms (shock troops)?)
 
-Move to inline styles?
-
-Group cards by army lists (will need to parse ArmyLists.txt)
-
 Match cards up using an emulation of the game formula / some other comparison
 
 Other games using the same engine (P&S etc.)
-
-Fix caps naming in game data / the rest of the code
 
 LINKS:
 https://react.rocks/tag/DataTable

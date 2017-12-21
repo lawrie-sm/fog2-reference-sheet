@@ -1,0 +1,11 @@
+@media only screen and (min-width: 640px) {
+  .MQWrapper-mobile{
+      display: none !important;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .MQWrapper-desktop{
+      display: none !important;
+  }
+}

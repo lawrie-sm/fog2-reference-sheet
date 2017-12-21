@@ -1,6 +1,7 @@
 import React from 'react';
 import RuleHelpers from '../helpers/RuleHelpers';
 import RuleSet from './RuleSet';
+import StatsTable from './StatsTable'
 import '../styles/components/UnitViewer.css';
 
 
@@ -37,36 +38,6 @@ const TraitsList = ({selectedUnit}) => {
   );
 }
 
-const StatsTable = ({selectedUnit}) => {
-  console.log(selectedUnit);
-  return (
-  <div className='StatsTable'>
-    <table className="u-full-width">
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Quality</th>
-          <th>Armour</th>
-          <th>AP</th>
-          <th>Men</th>
-          <th>Strength</th>
-          <th>Cost</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{selectedUnit.Type}</td>
-          <td>{selectedUnit.quality.name} ({selectedUnit.quality.value})</td>
-          <td>{selectedUnit.armour.name} ({selectedUnit.armour.value})</td>
-          <td>{selectedUnit.AP}</td>
-          <td>{selectedUnit.men.number} ({selectedUnit.men.models})</td>
-          <td>{selectedUnit.UnitSize}</td>
-          <td>{selectedUnit.Cost}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  );
-};
+
 
 export default UnitViewer;
