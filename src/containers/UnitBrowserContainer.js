@@ -6,6 +6,7 @@ import UnitTable from '../components/UnitTable';
 import UnitViewer from '../components/UnitViewer';
 import ListData from '../data/ListData'
 import UnitData from '../data/UnitData';
+import NameData from '../data/NameData';
 
 class UnitBrowserContainer extends Component {
 
@@ -80,6 +81,7 @@ class UnitBrowserContainer extends Component {
         </div>
         <UnitTable
           units={this.state.unitData}
+          fullNames={NameData}
           handleClick={this.handleClick}
           modalIsActive={this.state.modalIsOpen}
         />

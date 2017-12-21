@@ -367,6 +367,4 @@ function getOtherRules (unit, flags) {
   return { name: 'Other Rules', rules: rules };
 }
 
-export default {
-  getRuleSets
-};
+export default { getRuleSets };

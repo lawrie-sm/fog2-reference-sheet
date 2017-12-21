@@ -114,26 +114,6 @@ export function filterNamedValue(cell, filter) {
   return MatchSorter(tempArr, filter).length;
 }
 
-export function getFullName(shortName) {
-
-  /* TODO: This should probably be some kind of key / value pair 
-  instead of a switch (easier to edit later and add to) */ 
-
-  let r = shortName;
-  switch(shortName) {
-    case ('Indian L Chariots'):
-      r = 'Indian Light Chariots';
-      break;
-    case ('Indian H Chariots'):
-      r = 'Indian Heavy Chariots';
-    break;
-    default: {
-      r = shortName;
-    }
-  }
-  return r;
-}
-
 export default {
   getArmourAccessor,  
   getQualityAccessor,
@@ -142,5 +122,4 @@ export default {
   getTraitSortFunction,
   filterCaseInsensitive,
   filterNamedValue,
-  getFullName
 };

@@ -12,7 +12,7 @@ class UnitTable extends Component {
       {
         id: 'name',
         Header: 'Name',
-        accessor: n => TableHelpers.getFullName(n.Name),
+        accessor: n => this.props.fullNames[n.Name] || n.Name,
         filterMethod: (filter, row) => MatchSorter([row[filter.id]], filter.value).length,
       },
       {
