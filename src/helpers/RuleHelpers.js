@@ -26,8 +26,9 @@ function getUnitFlags(unit) {
     isUnmaneuverable: undefined,
     isShock: undefined
   };
-  unitFlags.isFoot = !(unitFlags.isMounted || unitFlags.isChariot || unit.Type === 'Elephants' || unit.Type === 'Train');
-  unitFlags.isBattleTroops = !unitFlags.isLight;
+  unitFlags.isFoot = !(unitFlags.isMounted || unitFlags.isChariot || unitFlags.isArtillery ||
+                       unit.Type === 'Elephants' || unit.Type === 'Train');
+  unitFlags.isBattleTroops = !unitFlags.isLight && !unitFlags.isArtillery;
 
   unitFlags.isUnmaneuverable = (unit.men.models >= 10 ||
     unit.quality.expDesc === 'Untrained' || unit.quality.expDesc === 'Raw' || unitFlags.isArtillery ||
@@ -49,7 +50,7 @@ function getImpactRules(unit, flags) {
   
   let rules = [];
 
-  // Impact Table
+  //Impact Table
   if (unitHasTrait(unit, 'Impact Foot')) {
     rules.push({ text: '+200 POA vs any foot. Additional +10 POA if 3+ ranks deep', origin: 'Impact Foot' });
     rules.push({ text: '+100 POA vs elephants and mounted, unless charging mounted shock troops', origin: 'Impact Foot' });
@@ -112,7 +113,7 @@ function getImpactRules(unit, flags) {
     rules.push({ text: '+100 POA vs Light Foot, Bowmen and Mob in open terrain', origin: 'Mounted' });
   }
 
-  // Flank charges
+  //Flank charges
   if (flags.isLight) {
     rules.push({ text: 'Does not benefit from automatic +200 POA or enemy cohesion drop when flank-charging non-light enemies',
                  origin: 'Light' });
@@ -126,7 +127,7 @@ function getImpactRules(unit, flags) {
     rules.push({ text: 'Suffers no automatic cohesion drop when flank-charged by mounted troops', origin: 'Elephant' });
   }
 
-  // Other special rules
+  //Other special rules
   if (flags.isMounted && flags.isShock) {
     rules.push({ text: 'Enemy infantry lose most of their charge bonuses', origin: 'Mounted Shock Troops' });
   }
@@ -137,7 +138,7 @@ function getImpactRules(unit, flags) {
 function getMeleeRules(unit, flags) {
   let rules = [];
 
-  // Special Rules
+  //Special Rules
   if (unit.Type === 'Scythed Chariots') {
     rules.push({ text: 'Destroyed if enemy doesn\'t route after first melee round.', origin: 'Scythed Chariots' });
   }
@@ -151,7 +152,8 @@ function getMeleeRules(unit, flags) {
     rules.push({ text: 'Ignores enemy armour bonus', origin: origin });
   }
 
-   // Melee Table
+
+   //Melee Table
   if (unitHasTrait(unit, 'Swordsmen')) {
     if (flags.isMounted) {
       rules.push({ text: '+100 POA vs mounted', origin: 'Mounted Swordsmen' });
@@ -185,7 +187,7 @@ function getMeleeRules(unit, flags) {
     rules.push({ text: '+100 POA', origin: 'Elephants' });
   }
 
-  // Quality
+  //Quality
 
   if (unit.quality.value > 100) {
     rules.push({ text: 'Increased combat effectiveness from unit quality', origin: unit.quality.name});
@@ -195,13 +197,13 @@ function getMeleeRules(unit, flags) {
     rules.push({ text: 'Reduced combat effectiveness from unit quality', origin: unit.quality.name});
   }
 
-  // Armour
+  //Armour
 
   if (unit.armour.value > 0) {
     rules.push({ text: 'Can benefit from melee armour bonus depending on opponent', origin: unit.armour.name});
   }
 
-  // Other rules
+  //Other rules
 
   if (flags.isFoot && flags.isShock) {
     rules.push({ text: 'Can push back enemy foot after initiating combat', origin: 'Foot Shock Troops' });
@@ -213,7 +215,7 @@ function getMeleeRules(unit, flags) {
 function getCohesionRules(unit, flags) {
   let rules = [];
 
- // Cohesion Table
+ //Cohesion Table
 
   if (unit.Type === 'Heavy Foot') {
     rules.push({ text: '+1 cohesion test modifier', origin: 'Heavy Foot' });
@@ -248,7 +250,7 @@ function getCohesionRules(unit, flags) {
     rules.push({ text: '-1 cohesion test modifier when losing impact phase against Impact Foot', origin: 'Foot' });
   }
 
-  // Flanks
+  //Flanks
   if (flags.isFoot && flags.isBattleTroops) {
     rules.push({ text: '-1 cohesion test modifier when flanks are threatened', origin: 'Foot Battle Troops' });
   }
@@ -259,7 +261,7 @@ function getCohesionRules(unit, flags) {
 function getShootingRules (unit, flags) {
  let rules = [];
 
- // Shooting Ranges
+ //Shooting Ranges
 
 if (flags.isFoot && unitHasTrait(unit, 'Bow')) {
   rules.push({ text: 'Can shoot up to 2 tiles away with full effect, half-effect up to 4 tiles away', origin: 'Foot Bow' });
@@ -293,7 +295,7 @@ if (unitHasTrait(unit, 'Javelins')) {
   rules.push({ text: '-50 POA vs foot and artillery', origin: 'Javelins' });
 }
 
-// Quality
+//Quality
 
 if (unit.quality.value > 100) {
   rules.push({ text: 'Increased shooting effectiveness from unit quality', origin: unit.quality.name});
@@ -304,7 +306,7 @@ if (unit.quality.value < 100) {
 }
 
 
-// Special shooting rules
+//Special shooting rules
 
 if (flags.isArtillery) {
   rules.push({ text: 'Can fire over friendly troops', origin: 'Artillery'});
@@ -316,14 +318,12 @@ if (flags.isArtillery) {
 
 function getMovementandTerrainRules (unit, flags) {
   let rules = [];
-
-  // Movement
-
+  //Movement
   if (flags.isUnmaneuverable) {
     rules.push({ text: 'No free 45 degree turn', origin: 'Unmaneuverable'});
   }
 
-  // Terrain
+  //Terrain
 
   if (unit.Type === 'Light Foot') {
     rules.push({ text: 'Not disordered by rough or difficult terrain', origin: 'Light Foot'});
@@ -343,7 +343,7 @@ function getMovementandTerrainRules (unit, flags) {
   if (unit._original.ViewFlags === 1) {
     rules.push({ text: 'Can hide on the edge of woods', origin: 'Hiding'});
   } else if (unit._original.ViewFlags === 2) {
-    rules.push({ text: 'Unable to hide on the edge of woods', origin: 'Hiding'});
+    rules.push({ text: 'Cannot hide on the edge of woods', origin: 'Hiding'});
   }
 
   return { name: 'Movement & Terrain', rules: rules };

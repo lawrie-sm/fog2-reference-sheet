@@ -103,4 +103,5 @@ FILE CHANGES for raw game data squads.csv:
 - Remove unused headers and columns (can include unused capabilities e.g hand cannon)
 - Convert to JSON
 - Convert string digits into ints (Regex)
+- Remove underscores (Better for traits etc)
 - add 'export' syntax and store in hardcoded js file
