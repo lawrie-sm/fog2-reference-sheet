@@ -12,7 +12,7 @@ class UnitTable extends Component {
       {
         id: 'name',
         Header: 'Name',
-        accessor: n => n.Name,
+        accessor: n => n.fullName,
         filterMethod: (filter, row) => MatchSorter([row[filter.id]], filter.value).length,
       },
       {

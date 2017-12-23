@@ -24,7 +24,7 @@ class ListSelector extends Component {
           {ArmyLists(this.props.lists)}
           </select>
         </form>
-        <ExtraInfo deploymentType={this.props.deploymentType} terrain={this.props.terrain} />
+        <ExtraInfo selectedList={this.props.selectedList} />
       </div>
     );
   }
@@ -34,11 +34,9 @@ class ListSelector extends Component {
 const ArmyLists = (lists) => {
   const defaultOption = <option key='-1' value='ALL'>(Show All Units)</option>;
   let listNames = lists.map((list, i) => {
-    const startDate = (list.startDate < 0) ? `${-list.startDate}BC` : `${list.startDate}AD`;
-    const endDate = (list.endDate < 0) ? `${-list.endDate}BC` : `${list.endDate}AD`;
     return (
       <option key ={i} value={list.identifier}>
-        {`${list.name} ${startDate}-${endDate}`}
+        {list.fullName}
       </option>
     );
   });
@@ -53,12 +51,12 @@ const ArmyLists = (lists) => {
   return (listNames);
 };
 
-const ExtraInfo = ({deploymentType, terrain}) => {
-  if (deploymentType && terrain) {
+const ExtraInfo = ({selectedList}) => {
+  if (selectedList) {
     return (
     <div className='extra-info'>
-      <p><strong>Formation: </strong>{deploymentType}</p>
-      <p><strong>Terrain: </strong>{terrain}</p>
+      <p><strong>Formation: </strong>{selectedList.deploymentStyle}</p>
+      <p><strong>Terrain: </strong>{selectedList.map}</p>
     </div>
   )} else {
     return(<div></div>);

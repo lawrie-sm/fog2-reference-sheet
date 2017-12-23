@@ -13,8 +13,7 @@ class UnitBrowserContainer extends Component {
   super();
     this.state = {
       unitData: UnitData,
-      terrain: undefined,
-      deploymentType: undefined,
+      selectedList: undefined,
       selectedUnit: undefined,
       modalIsOpen: false};
   }
@@ -45,8 +44,7 @@ class UnitBrowserContainer extends Component {
     if (identifier === 'ALL') {
         this.setState({
         unitData: UnitData,
-        terrain: undefined,
-        deploymentType: undefined,
+        selectedList: undefined,
         selectedUnit: undefined
       });
     } else {
@@ -54,8 +52,7 @@ class UnitBrowserContainer extends Component {
       if (list) {
         this.setState({
           unitData: getUnitDataFromList(identifier, list, UnitData),
-          terrain: list.map,
-          deploymentType: list.deploymentStyle,
+          selectedList: list,
           selectedUnit: undefined
         })
       }
@@ -72,8 +69,7 @@ class UnitBrowserContainer extends Component {
           <div className='six columns'>
               <ListSelector
                 lists={ListData}
-                deploymentType={this.state.deploymentType}
-                terrain={this.state.terrain}
+                selectedList={this.state.selectedList}
                 handleUpdate={this.updateList}
               />
           </div>
