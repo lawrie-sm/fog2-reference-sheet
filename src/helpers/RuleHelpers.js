@@ -36,7 +36,7 @@ function getUnitFlags(unit) {
     unit.unitType === 'Elephants' || unit.unitType === 'Scythed Chariots' || unit.unitType === 'Heavy Chariots' ||
     unit.unitType === 'Cataphracts' || unit.unitType === 'Warriors' || unit.unitType === 'Undrilled Heavy Foot');
 
-  unitFlags.isShock = (unit.unitType === 'Impact Foot' || unit.unitType === 'Offensive Spearmen' || 
+  unitFlags.isShock = (unitHasTrait(unit, 'Impact Foot') || unitHasTrait(unit, 'Offensive Spearment') || 
     unitHasTrait(unit, 'Pike') || (!unitFlags.isLight && unitHasTrait(unit, 'Light Lancers')) ||
     unit.unitType === 'Scythed Chariots' || unit.unitType === 'Heavy Chariots');
 
@@ -218,10 +218,6 @@ function getCohesionRules(unit, flags) {
 
  //Cohesion Table
 
-  if (unit.unitType === 'Heavy Foot') {
-    rules.push({ text: '+1 cohesion test modifier', origin: 'Heavy Foot' });
-  }
-
   if (flags.isArtillery) {
     rules.push({ text: 'Enemies suffer a -1 cohesion test modifer when testing as a result of shooting', origin: 'Artillery' });
   }
@@ -231,24 +227,26 @@ function getCohesionRules(unit, flags) {
                  origin: (flags.isMounted) ? 'Mounted' : 'Heavy Foot'});
   }
 
-  if (unit.unitType === 'Medium Foot' || unit.unitType === 'Warriors' || 
-      unit.unitType === 'Bowmen' || unit.unitType === 'Light Foot' ||
-      unit.unitType === 'Mob') {
-    rules.push({ text: '-1 cohesion test modifier when losing in combat against mounted troops or heavy foot in open terrain', 
-                 origin: unit.unitType });
-  }
-
+  
   if (unitHasTrait(unit, 'Light Lancers') || unit.unitType === 'Heavy Chariots') {
     rules.push({ text: 'Enemies suffer a -1 cohesion test modifer if they lose in the impact phase',
                  origin: (unitHasTrait(unit, 'Light Lancers')) ? 'Lancers' : 'Heavy Chariots' });
   }
 
-  if (unit.unitType === 'Impact Foot') {
+  if (unitHasTrait(unit, 'Impact Foot')) {
     rules.push({ text: 'Enemy foot suffer a -1 cohesion test modifier if they lose in the impact phase', origin: 'Impact Foot' });
   }
 
-  if (flags.isFoot) {
-    rules.push({ text: '-1 cohesion test modifier when losing impact phase against Impact Foot', origin: 'Foot' });
+  if (unit.unitType === 'Heavy Foot') {
+    rules.push({ text: '+1 cohesion test modifier', origin: 'Heavy Foot' });
+  }
+
+
+  if (unit.unitType === 'Medium Foot' || unit.unitType === 'Warriors' || 
+      unit.unitType === 'Bowmen' || unit.unitType === 'Light Foot' ||
+      unit.unitType === 'Mob') {
+    rules.push({ text: '-1 cohesion test modifier when losing in combat against mounted troops or heavy foot in open terrain', 
+                 origin: unit.unitType });
   }
 
   //Flanks
@@ -298,14 +296,15 @@ if (unitHasTrait(unit, 'Javelins')) {
 
 //Quality
 
-if (unit.quality.value > 100) {
-  rules.push({ text: 'Increased shooting effectiveness from unit quality', origin: unit.quality.name});
-}
+if (flags.isMissile || flags.isArtillery) {
+  if (unit.quality.value > 100) {
+    rules.push({ text: 'Increased shooting effectiveness from unit quality', origin: unit.quality.name});
+  }
 
-if (unit.quality.value < 100) {
-  rules.push({ text: 'Reduced shooting effectiveness from unit quality', origin: unit.quality.name});
+  if (unit.quality.value < 100) {
+    rules.push({ text: 'Reduced shooting effectiveness from unit quality', origin: unit.quality.name});
+  }
 }
-
 
 //Special shooting rules
 

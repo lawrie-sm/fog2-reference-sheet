@@ -8,6 +8,7 @@ import '../styles/components/UnitViewer.css';
 //TODO: https://daveceddia.com/open-modal-in-react/
 
 const UnitViewer = ({selectedUnit}) => {
+  console.log(selectedUnit);
   if (selectedUnit) {
     let ruleSets = RuleHelpers.getRuleSets(selectedUnit);
     return (
@@ -15,6 +16,7 @@ const UnitViewer = ({selectedUnit}) => {
         <div className='container'>
           <h4 className='unit-header'>{selectedUnit.name}</h4>
           <TraitsList selectedUnit={selectedUnit} />
+          <p>{selectedUnit._original.info}</p>
           <StatsTable selectedUnit={selectedUnit} />
           {ruleSets.map((ruleSet, i) =>
           <RuleSet key={ruleSet.name} ruleSet={ruleSet} />)}

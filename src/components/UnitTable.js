@@ -18,7 +18,7 @@ class UnitTable extends Component {
       {
         id: 'unitType',
         Header: 'Type',
-        accessor: t => t.Type.replace('_', ' '),
+        accessor: t => t.Type.replace(/_/g, ' '),
         filterMethod: (filter, row) => MatchSorter([row[filter.id]], filter.value).length,
       },
       {

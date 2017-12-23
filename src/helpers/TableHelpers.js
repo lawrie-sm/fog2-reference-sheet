@@ -69,7 +69,7 @@ export function getTraitAccessor(unit) {
   let traits = [];
   traitNames.forEach((traitName) => {
     if (unit[traitName] > 0) {
-      traits.push({'name' : traitName.replace('_', ' '), 'value' : unit[traitName]});
+      traits.push({'name' : traitName.replace(/_/g, ' '), 'value' : unit[traitName]});
     }
   });
   return(traits);
