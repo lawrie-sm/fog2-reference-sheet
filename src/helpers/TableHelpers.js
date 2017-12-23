@@ -53,15 +53,15 @@ export function getArmourAccessor(armourVal) {
 export function getTraitAccessor(unit) {
   const traitNames = [
     'Bow',
-    'Defensive Spearmen',
-    'Heavy Artillery',
-    'Heavy Weapon',
-    'Impact Foot',
+    'Defensive_Spearmen',
+    'Heavy_Artillery',
+    'Heavy_Weapon',
+    'Impact_Foot',
     'Javelins',
-    'Light Artillery',
-    'Light Lancers',
-    'Light Spear',
-    'Offensive Spearmen',
+    'Light_Artillery',
+    'Light_Lancers',
+    'Light_Spear',
+    'Offensive_Spearmen',
     'Pike',
     'Sling',
     'Swordsmen'
@@ -69,7 +69,7 @@ export function getTraitAccessor(unit) {
   let traits = [];
   traitNames.forEach((traitName) => {
     if (unit[traitName] > 0) {
-      traits.push({'name' : traitName, 'value' : unit[traitName]});
+      traits.push({'name' : traitName.replace('_', ' '), 'value' : unit[traitName]});
     }
   });
   return(traits);

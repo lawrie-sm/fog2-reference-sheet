@@ -105,3 +105,8 @@ FILE CHANGES for raw game data squads.csv:
 - Convert string digits into ints (Regex)
 - Remove underscores (Better for traits etc)
 - add 'export' syntax and store in hardcoded js file
+
+
+UNIT INFO AND NAMES
+
+- Included in \Field of Glory II\Data\Text as "Text2.txt"

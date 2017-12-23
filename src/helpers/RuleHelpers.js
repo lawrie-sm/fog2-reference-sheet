@@ -11,33 +11,34 @@ export function getRuleSets(unit) {
 }
 
 function getUnitFlags(unit) {
+  console.log(unit.unitType);
   let unitFlags = {
     isFoot: undefined,
     isBattleTroops: undefined,
     isMounted: (
-    unit.Type === 'Cavalry' || unit.Type === 'Light Horse' ||
-    unit.Type === 'Cataphracts' || unit.Type === 'Camelry' ||
-    unit.Type === 'Light Chariots' || unit.Type === 'Heavy Chariots' ||
-    unit.Type === 'Heavy Chariots'),
-    isLight: (unit.Type === 'Light Foot' || unit.Type === 'Light Horse'),
+    unit.unitType === 'Cavalry' || unit.unitType === 'Light_Horse' ||
+    unit.unitType === 'Cataphracts' || unit.unitType === 'Camelry' ||
+    unit.unitType === 'Light Chariots' || unit.unitType === 'Heavy Chariots' ||
+    unit.unitType === 'Heavy Chariots'),
+    isLight: (unit.unitType === 'Light Foot' || unit.unitType === 'Light Horse'),
     isMissile: !!(unitHasTrait(unit, 'Bow') || unitHasTrait(unit, 'Sling') || unitHasTrait(unit, 'Javelins')),
     isArtillery: !!(unitHasTrait(unit, 'Light Artillery') || unitHasTrait(unit, 'Heavy Artillery')),
-    isChariot: (unit.Type === 'Light Chariots' || unit.Type === 'Heavy Chariots' || unit.Type === 'Scythed Chariots'),
+    isChariot: (unit.unitType === 'Light Chariots' || unit.unitType === 'Heavy Chariots' || unit.unitType === 'Scythed Chariots'),
     isUnmaneuverable: undefined,
     isShock: undefined
   };
   unitFlags.isFoot = !(unitFlags.isMounted || unitFlags.isChariot || unitFlags.isArtillery ||
-                       unit.Type === 'Elephants' || unit.Type === 'Train');
+                       unit.unitType === 'Elephants' || unit.unitType === 'Train');
   unitFlags.isBattleTroops = !unitFlags.isLight && !unitFlags.isArtillery;
 
   unitFlags.isUnmaneuverable = (unit.men.models >= 10 ||
     unit.quality.expDesc === 'Untrained' || unit.quality.expDesc === 'Raw' || unitFlags.isArtillery ||
-    unit.Type === 'Elephants' || unit.Type === 'Scythed Chariots' || unit.Type === 'Heavy Chariots' ||
-    unit.Type === 'Cataphracts' || unit.Type === 'Warriors' || unit.Type === 'Undrilled Heavy Foot');
+    unit.unitType === 'Elephants' || unit.unitType === 'Scythed Chariots' || unit.unitType === 'Heavy Chariots' ||
+    unit.unitType === 'Cataphracts' || unit.unitType === 'Warriors' || unit.unitType === 'Undrilled Heavy Foot');
 
-  unitFlags.isShock = (unit.Type === 'Impact Foot' || unit.Type === 'Offensive Spearmen' || 
+  unitFlags.isShock = (unit.unitType === 'Impact Foot' || unit.unitType === 'Offensive Spearmen' || 
     unitHasTrait(unit, 'Pike') || (!unitFlags.isLight && unitHasTrait(unit, 'Light Lancers')) ||
-    unit.Type === 'Scythed Chariots' || unit.Type === 'Heavy Chariots');
+    unit.unitType === 'Scythed Chariots' || unit.unitType === 'Heavy Chariots');
 
   return unitFlags;
 }
@@ -88,7 +89,7 @@ function getImpactRules(unit, flags) {
     rules.push({ text: '+100 POA if defending an obstacle and not Fragmented or Severely Disordered', origin: 'Artillery' });
   }
 
-  if (unit.Type === 'Elephants') {
+  if (unit.unitType === 'Elephants') {
     rules.push({ text: '+250 POA', origin: 'Elephants' });
   }
 
@@ -104,12 +105,12 @@ function getImpactRules(unit, flags) {
         origin: 'Heavy Chariots' });
   }
 
-  if (unit.Type === 'Scythed Chariots') {
+  if (unit.unitType === 'Scythed Chariots') {
     rules.push({ text: '+250 POA in open terrain, except against light troops, lancers and elephants or if charging steady Pike / Offensive / Defensive Spearmen',
                  origin: 'Scythed Chariots' });
   }
 
-  if (flags.isMounted && (unit.Type !== 'Scythed Chariots')) {
+  if (flags.isMounted && (unit.unitType !== 'Scythed Chariots')) {
     rules.push({ text: '+100 POA vs Light Foot, Bowmen and Mob in open terrain', origin: 'Mounted' });
   }
 
@@ -123,7 +124,7 @@ function getImpactRules(unit, flags) {
     rules.push({ text: 'Suffers no automatic cohesion drop when flank-charged by infantry', origin: 'Mounted' });
   }
 
-  if (unit.Type === 'Elephants') {
+  if (unit.unitType === 'Elephants') {
     rules.push({ text: 'Suffers no automatic cohesion drop when flank-charged by mounted troops', origin: 'Elephant' });
   }
 
@@ -139,14 +140,14 @@ function getMeleeRules(unit, flags) {
   let rules = [];
 
   //Special Rules
-  if (unit.Type === 'Scythed Chariots') {
+  if (unit.unitType === 'Scythed Chariots') {
     rules.push({ text: 'Destroyed if enemy doesn\'t route after first melee round.', origin: 'Scythed Chariots' });
   }
 
-  if (unitHasTrait(unit, 'Heavy Weapon') || unit.Type === 'Elephants' ||
+  if (unitHasTrait(unit, 'Heavy Weapon') || unit.unitType === 'Elephants' ||
       flags.isArtillery || flags.isChariot) {
     let origin = 'Heavy Weapon';
-    if (unit.Type === 'Elephants') origin = 'Elephants';
+    if (unit.unitType === 'Elephants') origin = 'Elephants';
     if (flags.isArtillery) origin = 'Artillery';
     if (flags.isChariot) origin = 'Chariot';
     rules.push({ text: 'Ignores enemy armour bonus', origin: origin });
@@ -183,7 +184,7 @@ function getMeleeRules(unit, flags) {
     rules.push({ text: '+100 POA if defending an obstacle and not Fragmented or Severely Disordered', origin: 'Artillery' });
   }
 
-  if (unit.Type === 'Elephants') {
+  if (unit.unitType === 'Elephants') {
     rules.push({ text: '+100 POA', origin: 'Elephants' });
   }
 
@@ -217,7 +218,7 @@ function getCohesionRules(unit, flags) {
 
  //Cohesion Table
 
-  if (unit.Type === 'Heavy Foot') {
+  if (unit.unitType === 'Heavy Foot') {
     rules.push({ text: '+1 cohesion test modifier', origin: 'Heavy Foot' });
   }
 
@@ -225,24 +226,24 @@ function getCohesionRules(unit, flags) {
     rules.push({ text: 'Enemies suffer a -1 cohesion test modifer when testing as a result of shooting', origin: 'Artillery' });
   }
 
-  if (flags.isMounted || unit.Type === 'Heavy Foot') {
+  if (flags.isMounted || unit.unitType === 'Heavy Foot') {
     rules.push({ text: 'Enemies suffer a -1 cohesion test modifier in open terrain if they lost combat and are Medium Foot / Light Foot / Warriors / Bowmen / Mob',
                  origin: (flags.isMounted) ? 'Mounted' : 'Heavy Foot'});
   }
 
-  if (unit.Type === 'Medium Foot' || unit.Type === 'Warriors' || 
-      unit.Type === 'Bowmen' || unit.Type === 'Light Foot' ||
-      unit.Type === 'Mob') {
+  if (unit.unitType === 'Medium Foot' || unit.unitType === 'Warriors' || 
+      unit.unitType === 'Bowmen' || unit.unitType === 'Light Foot' ||
+      unit.unitType === 'Mob') {
     rules.push({ text: '-1 cohesion test modifier when losing in combat against mounted troops or heavy foot in open terrain', 
-                 origin: unit.Type });
+                 origin: unit.unitType });
   }
 
-  if (unitHasTrait(unit, 'Light Lancers') || unit.Type === 'Heavy Chariots') {
+  if (unitHasTrait(unit, 'Light Lancers') || unit.unitType === 'Heavy Chariots') {
     rules.push({ text: 'Enemies suffer a -1 cohesion test modifer if they lose in the impact phase',
                  origin: (unitHasTrait(unit, 'Light Lancers')) ? 'Lancers' : 'Heavy Chariots' });
   }
 
-  if (unit.Type === 'Impact Foot') {
+  if (unit.unitType === 'Impact Foot') {
     rules.push({ text: 'Enemy foot suffer a -1 cohesion test modifier if they lose in the impact phase', origin: 'Impact Foot' });
   }
 
@@ -325,16 +326,16 @@ function getMovementandTerrainRules (unit, flags) {
 
   //Terrain
 
-  if (unit.Type === 'Light Foot') {
+  if (unit.unitType === 'Light Foot') {
     rules.push({ text: 'Not disordered by rough or difficult terrain', origin: 'Light Foot'});
-  } else if (unit.Type === 'Medium Foot' || unit.Type === 'Warriors' ||
-      unit.Type === 'Bowmen' || unit.Type === 'Mob') {
-    rules.push({ text: 'Disordered by difficult terrain but not by rough terrain', origin: unit.Type });
-  } else if (unit.Type === 'Cataphracts') {
+  } else if (unit.unitType === 'Medium Foot' || unit.unitType === 'Warriors' ||
+      unit.unitType === 'Bowmen' || unit.unitType === 'Mob') {
+    rules.push({ text: 'Disordered by difficult terrain but not by rough terrain', origin: unit.unitType });
+  } else if (unit.unitType === 'Cataphracts') {
     rules.push({ text: 'Severely disordered by both rough and difficult terrain', origin: 'Cataphracts' });
-  } else if (unit.Type === 'Heavy Chariots' || unit.Type === 'Scythed Chariots') {
-    rules.push({ text: 'Difficult terrain is impassable and is severely disordered by rough terrain', origin: unit.Type});
-  } else if (unit.Type === 'Light Chariots') {
+  } else if (unit.unitType === 'Heavy Chariots' || unit.unitType === 'Scythed Chariots') {
+    rules.push({ text: 'Difficult terrain is impassable and is severely disordered by rough terrain', origin: unit.unitType});
+  } else if (unit.unitType === 'Light Chariots') {
     rules.push({ text: 'Difficult terrain is impassable and is disordered by rough terrain', origin: 'Light Chariots'});
   } else {
     rules.push({ text: 'Severly disordered by difficult terrain, disordered by rough terrain', origin: 'Standard Terrain Rules'});

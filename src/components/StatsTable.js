@@ -26,7 +26,7 @@ const StatsTableMobile = ({selectedUnit}) => (
     </thead>
     <tbody>
       <tr>
-        <td>{selectedUnit.Type}</td>
+        <td>{selectedUnit.unitType}</td>
         <td>{selectedUnit.quality.name} ({selectedUnit.quality.value})</td>
         <td>{selectedUnit.armour.name} ({selectedUnit.armour.value})</td>
 
@@ -69,7 +69,7 @@ const StatsTableDT = ({selectedUnit}) => (
     </thead>
     <tbody>
       <tr>
-        <td>{selectedUnit.Type}</td>
+        <td>{selectedUnit.unitType}</td>
         <td>{selectedUnit.quality.name} ({selectedUnit.quality.value})</td>
         <td>{selectedUnit.armour.name} ({selectedUnit.armour.value})</td>
         <td>{selectedUnit.AP}</td>

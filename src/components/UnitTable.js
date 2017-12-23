@@ -12,13 +12,14 @@ class UnitTable extends Component {
       {
         id: 'name',
         Header: 'Name',
-        accessor: n => this.props.fullNames[n.Name] || n.Name,
+        accessor: n => n.Name,
         filterMethod: (filter, row) => MatchSorter([row[filter.id]], filter.value).length,
       },
       {
+        id: 'unitType',
         Header: 'Type',
-        accessor: 'Type',
-        filterMethod: (filter, row) => MatchSorter([row[filter.id]], filter.value).length
+        accessor: t => t.Type.replace('_', ' '),
+        filterMethod: (filter, row) => MatchSorter([row[filter.id]], filter.value).length,
       },
       {
         id: 'traits',
