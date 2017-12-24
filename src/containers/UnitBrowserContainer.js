@@ -76,6 +76,7 @@ class UnitBrowserContainer extends Component {
         </div>
         <UnitTable
           units={this.state.unitData}
+          selectedList={this.state.selectedList}
           handleClick={this.handleClick}
           modalIsActive={this.state.modalIsOpen}
         />

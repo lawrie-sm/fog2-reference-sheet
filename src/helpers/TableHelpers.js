@@ -114,6 +114,11 @@ export function filterNamedValue(cell, filter) {
   return MatchSorter(tempArr, filter).length;
 }
 
+export function getMinMax(list, unitName) {
+  let unit = list.units.find((unit) => unit.name === unitName);
+  return(`${unit.min}-${unit.max}`);
+}
+
 export default {
   getArmourAccessor,  
   getQualityAccessor,
@@ -122,4 +127,5 @@ export default {
   getTraitSortFunction,
   filterCaseInsensitive,
   filterNamedValue,
+  getMinMax,
 };

@@ -8,7 +8,6 @@ import '../styles/components/UnitViewer.css';
 //TODO: https://daveceddia.com/open-modal-in-react/
 
 const UnitViewer = ({selectedUnit}) => {
-  console.log(selectedUnit);
   if (selectedUnit) {
     let ruleSets = RuleHelpers.getRuleSets(selectedUnit);
     return (

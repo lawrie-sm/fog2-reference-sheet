@@ -6,14 +6,22 @@ import '../styles/components/UnitTable.css';
 
 class UnitTable extends Component {
 
-  constructor() {
-    super();
-    this.state = { columns: [
+  getColumns = (selectedList) => ([
       {
         id: 'name',
         Header: 'Name',
         accessor: n => n.fullName,
         filterMethod: (filter, row) => MatchSorter([row[filter.id]], filter.value).length,
+        minWidth: 120,
+      },
+      {
+        id: 'minMax',
+        Header: 'Min/Max',
+        show: (selectedList) ? true : false,
+        accessor: row => (selectedList) ? TableHelpers.getMinMax(selectedList, row.Name) : '-',
+        filterMethod: (filter, row) => MatchSorter([row[filter.id]], filter.value).length,
+        maxWidth: 85,
+        style: {'textAlign': 'center'}
       },
       {
         id: 'unitType',
@@ -75,14 +83,14 @@ class UnitTable extends Component {
         maxWidth: 50,
         style: {'textAlign': 'center'}
       }]
-    };
-  }
+    )
 
   render() {
+    let columns = this.getColumns(this.props.selectedList);
     return (
     <ReactTable
     data={this.props.units}
-    columns={this.state.columns}
+    columns={columns}
     showPagination={false}
     showPaginationTop={false}
     showPaginationBottom={false}
@@ -91,7 +99,7 @@ class UnitTable extends Component {
     showPageJump={false}
     defaultSorted={[{id: 'Name'}]}
     filterable={true}
-    minRows={10}
+    minRows={0}
     getTdProps={this.props.handleClick}
     />
   );

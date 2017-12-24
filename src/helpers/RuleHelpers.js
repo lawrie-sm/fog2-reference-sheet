@@ -11,7 +11,6 @@ export function getRuleSets(unit) {
 }
 
 function getUnitFlags(unit) {
-  console.log(unit.unitType);
   let unitFlags = {
     isFoot: undefined,
     isBattleTroops: undefined,
