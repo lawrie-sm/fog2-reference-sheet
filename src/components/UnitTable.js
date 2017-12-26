@@ -99,7 +99,7 @@ class UnitTable extends Component {
     showPageJump={false}
     defaultSorted={[{id: 'Name'}]}
     filterable={true}
-    minRows={0}
+    minRows={4}
     getTdProps={this.props.handleClick}
     />
   );
