@@ -13,14 +13,14 @@
 
 .modal-container {
   background: #fff;
-  width: 80%;
-  height: 80%;
-  margin: auto;
-  padding: 20px;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  bottom: 5%;
+  padding: 10px;
   overflow: auto;
+  z-index: 2500;
 }
 
 .modal-container button {
