@@ -221,7 +221,7 @@ function getCohesionRules(unit, flags) {
     rules.push({ text: 'Enemies suffer a -1 cohesion test modifer when testing as a result of shooting', origin: 'Artillery' });
   }
 
-  if (flags.isMounted || unit.unitType === 'Heavy Foot') {
+  if (flags.isMounted || unit.unitType === 'Heavy Foot' || unit.unitType === 'Undrilled Heavy Foot') {
     rules.push({ text: 'Enemies suffer a -1 cohesion test modifier in open terrain if they lost combat and are Medium Foot / Light Foot / Warriors / Bowmen / Mob',
                  origin: (flags.isMounted) ? 'Mounted' : 'Heavy Foot'});
   }
@@ -236,7 +236,7 @@ function getCohesionRules(unit, flags) {
     rules.push({ text: 'Enemy foot suffer a -1 cohesion test modifier if they lose in the impact phase', origin: 'Impact Foot' });
   }
 
-  if (unit.unitType === 'Heavy Foot') {
+  if (unit.unitType === 'Heavy Foot' || unit.unitType === 'Undrilled Heavy Foot') {
     rules.push({ text: '+1 cohesion test modifier', origin: 'Heavy Foot' });
   }
 
