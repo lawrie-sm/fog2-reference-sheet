@@ -2,6 +2,7 @@
   "name": "fog2-cheat-sheet",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://lawrie.scot/fog2",
   "dependencies": {
     "match-sorter": "^2.2.0",
     "react": "^16.1.1",
